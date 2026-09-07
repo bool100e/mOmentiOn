@@ -20,6 +20,8 @@
 .vertical-shot .shot-frame { aspect-ratio: 1080 / 2340; }
 .vertical-shot .shot-frame img { width: 100%; max-width: 100%; }
 .preview-tabs { flex-wrap: wrap; }
+#panel-compare .shot-frame { aspect-ratio: 2340 / 1001; }
+.hero-copy > .eyebrow { letter-spacing: 1px; }
 @media (max-width: 620px) {
   .showcase-panel, .showcase-panel.vertical-shot {
     display: flex;
