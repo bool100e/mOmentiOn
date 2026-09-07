@@ -5,7 +5,7 @@
   <title>mOmentiOn — 움직임을 기록하다</title>
   <meta name="description" content="속도 기반 카메라 자동 녹화부터 GPX 주행 기록, 히트맵과 경로 비교까지. Android 주행 기록 앱 mOmentiOn.">
   <meta name="theme-color" content="#282828"><link rel="canonical" href="https://bool100e.github.io/mOmentiOn/">
-  <link rel="icon" href="assets/icon.png"><link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/icon.png"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="showcase.css">
 </head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -16,16 +16,17 @@
  <div class="hero-logo"><img src="assets/logo.svg" alt="mOmentiOn 로고" width="2307" height="713"><p>YOUR MOVEMENT. YOUR MOMENT.</p></div>
 </section>
 <section id="preview" class="wrap preview-section" aria-labelledby="preview-title">
- <div class="section-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2 id="preview-title">지나온 길을, 한눈에.</h2></div><p>히트맵부터 속도 그래프까지 이어지는 기록.</p></div>
- <div class="preview-tabs" role="tablist" aria-label="앱 화면 선택"><button id="tab-drive" role="tab" aria-selected="true" aria-controls="panel-drive" tabindex="0">주행 기록</button><button id="tab-heatmap" role="tab" aria-selected="false" aria-controls="panel-heatmap" tabindex="-1">히트맵 분석</button><button id="tab-compare" role="tab" aria-selected="false" aria-controls="panel-compare" tabindex="-1">경로 비교</button></div>
- <div class="product-window"><div class="window-bar"><span class="window-title"><span class="status-dot"></span> ROUTE EXPLORER</span><span class="sample">실제 mOmentiOn 앱 화면</span></div>
- <div id="panel-drive" role="tabpanel" aria-labelledby="tab-drive" class="showcase-panel"><div class="shot-frame portrait"><img src="assets/screens/02-route-speed.jpg" alt="주행 경로와 속도 기록 화면"></div><div class="showcase-copy"><p class="eyebrow">MY DRIVE</p><h3>주행 경로와 속도를<br>한 화면에서.</h3><p>이동 경로, 시간, 거리와 속도 변화를 함께 확인합니다.</p></div></div>
+ <div class="section-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2 id="preview-title">속도에 맞춘 자동 녹화</h2></div><p>설정한 속도에 도달하면 녹화를 시작하고,<br>정차하면 마무리합니다.</p></div>
+ <div class="preview-tabs" role="tablist" aria-label="앱 화면 선택"><button id="tab-record" role="tab" aria-selected="true" aria-controls="panel-record" tabindex="0">자동 녹화</button><button id="tab-drive" role="tab" aria-selected="false" aria-controls="panel-drive" tabindex="-1">주행 기록</button><button id="tab-heatmap" role="tab" aria-selected="false" aria-controls="panel-heatmap" tabindex="-1">히트맵 분석</button><button id="tab-compare" role="tab" aria-selected="false" aria-controls="panel-compare" tabindex="-1">경로 비교</button></div>
+ <div class="product-window"><div class="window-bar"><span class="window-title"><span class="status-dot"></span> mOmentiOn</span><span class="sample">실제 mOmentiOn 앱 화면</span></div>
+ <div id="panel-record" role="tabpanel" aria-labelledby="tab-record" class="showcase-panel vertical-shot"><div class="shot-frame portrait"><img src="assets/screens/01-auto-record.jpg" width="1080" height="2340" alt="속도와 카메라 연결 상태를 표시하는 자동 녹화 메인 화면"></div><div class="showcase-copy"><p class="eyebrow">AUTO RECORD</p><h3>주행에 맞춰,<br>녹화도 자동으로.</h3><p>시작·정지 속도와 유지 시간을 설정하면 GPS 속도 조건에 따라 연결된 카메라의 녹화를 제어합니다.</p></div></div>
+ <div id="panel-drive" role="tabpanel" aria-labelledby="tab-drive" class="showcase-panel vertical-shot" hidden><div class="shot-frame portrait"><img src="assets/screens/02-route-speed.jpg" width="1080" height="2340" alt="주행 경로와 속도 기록 화면"></div><div class="showcase-copy"><p class="eyebrow">MY DRIVE</p><h3>주행 경로와 속도를<br>한 화면에서.</h3><p>이동 경로, 시간, 거리와 속도 변화를 함께 확인합니다.</p></div></div>
  <div id="panel-heatmap" role="tabpanel" aria-labelledby="tab-heatmap" class="showcase-panel" hidden><div class="shot-frame"><img src="assets/screens/03-heatmap-graph.jpg" alt="히트맵과 그래프 분석 화면"></div><div class="showcase-copy"><p class="eyebrow">ANALYZE</p><h3>길 위의 변화를<br>이어 봅니다.</h3><p>히트맵 위치와 그래프 값을 맞춰 보며 주행 흐름을 살펴보세요.</p></div></div>
  <div id="panel-compare" role="tabpanel" aria-labelledby="tab-compare" class="showcase-panel" hidden><div class="shot-frame"><img src="assets/screens/04-route-compare.jpg" alt="여러 경로 비교 화면"></div><div class="showcase-copy"><p class="eyebrow">COMPARE</p><h3>같은 길,<br>다른 순간.</h3><p>여러 경로의 속도와 경과 시간을 한 화면에서 비교합니다.</p></div></div>
  </div>
 </section>
 <section id="features" class="wrap features"><div class="section-heading"><div><p class="eyebrow">BUILT AROUND YOUR DRIVE</p><h2>주행 전부터, 돌아온 뒤까지.</h2></div></div><div class="feature-grid">
- <article class="feature-visual"><img src="assets/screens/01-auto-record.jpg" alt="속도로 제어하는 자동 녹화 화면"><div><span class="feature-number">01 / RECORD</span><h3>속도에 맞춘 자동 녹화</h3><p>시작·정지 속도와 유지 시간을 설정하세요. GPS 속도 조건에 따라 연결된 카메라의 녹화를 제어합니다.</p></div></article>
+ <article><span class="feature-number">01 / RECORD</span><h3>속도에 맞춘 자동 녹화</h3><p>시작·정지 속도와 유지 시간을 설정하세요. GPS 속도 조건에 따라 연결된 카메라의 녹화를 제어합니다.</p></article>
  <article><span class="feature-number">02 / CONNECT</span><h3>기억하는 카메라 연결</h3><p>주변 Wi-Fi 목록에서 카메라를 선택하고 연결 정보를 저장합니다. 연결이 끊기면 자동으로 재연결을 시도합니다.</p></article>
  <article><span class="feature-number">03 / TRACK</span><h3>길 위의 순간을 GPX로</h3><p>이동 경로와 속도를 기록하고, 속도별 히트맵으로 확인하세요. 기록한 경로를 확대하고 회전하며 살펴볼 수 있습니다.</p></article>
  <article><span class="feature-number">04 / COMPARE</span><h3>경로를 나란히 비교</h3><p>여러 기록의 속도와 경과 시간을 비교합니다. 경로별 표시를 선택하고 그래프를 확대해 차이를 확인하세요.</p></article>
