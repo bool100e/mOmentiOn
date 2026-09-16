@@ -50,7 +50,6 @@ const translations = new Map([
   ['mOmentiOn을 먼저 경험해 보세요.', 'Take mOmentiOn for a ride.'], ['현재 Google Play 비공개 테스트를 진행하고 있습니다.\n테스터 등록에 사용한 Google 계정으로 참여한 뒤 앱을 설치할 수 있습니다.', 'mOmentiOn is currently in Google Play closed testing.\nJoin with your registered tester account, then install the app.'],
   ['Google Play에서 설치 ↗', 'Install on Google Play ↗'], ['테스터 신청하기 ↗', 'Join the test ↗'],
   ['Android 10 이상 · 비공개 테스트 참여 승인이 필요합니다.\n카메라 지원 범위는 모델과 펌웨어에 따라 달라질 수 있습니다.', 'Android 10+ · Closed-test approval required.\nCamera support may vary by model and firmware.'],
-  ['문제 제보 ↗', 'Report an issue ↗'], ['사이트 소스 ↗', 'Site source ↗']
 ]);
 
 const textNodes = [];
@@ -65,7 +64,7 @@ while (walker.nextNode()) {
 }
 
 const elementTranslations = [
-  ['.links a', ['Features', 'How it works', 'GitHub ↗', 'Download']],
+  ['.links a', ['Features', 'How it works', 'Download']],
   ['.hero-copy > .eyebrow', ['<span></span> SPEED-TRIGGERED REMOTE RECORDING']],
   ['.hero h1', ['Let Your Speed<br><em>Control the Camera.</em>']],
   ['.hero .intro', ['Ride naturally while mOmentiOn automatically starts and stops<br class="desktop"> recording on your action camera based on your speed.']],
@@ -87,8 +86,7 @@ const elementTranslations = [
   ['#download h2', ['Take mOmentiOn for a ride.']],
   ['#download > p:not(.eyebrow):not(.download-note)', ['mOmentiOn is currently in Google Play closed testing.<br>Join with your registered tester account, then install the app.']],
   ['#download .actions a', ['Install on Google Play ↗', 'Join the test ↗']],
-  ['#download .download-note', ['Android 10+ · Closed-test approval required.<br>Camera support may vary by model and firmware.']],
-  ['footer div a', ['Report an issue ↗', 'Site source ↗']]
+  ['#download .download-note', ['Android 10+ · Closed-test approval required.<br>Camera support may vary by model and firmware.']]
 ];
 const localizedElements = [];
 elementTranslations.forEach(([selector, englishValues]) => {
