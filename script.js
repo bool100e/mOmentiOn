@@ -72,7 +72,7 @@ const elementTranslations = [
   ['.hero .availability', ['Android 10+ <span>·</span> Google Play closed testing']],
   ['#preview .section-heading h2', ['Automatic recording on the move']],
   ['#preview .section-heading > p', ['Recording starts at your chosen speed,<br>then finishes when you stop.']],
-  ['.preview-tabs button', ['Auto record', 'Ride history', 'Heatmap', 'Compare']],
+  ['.preview-tabs button', ['Auto record', 'Screen Guide', 'Ride history', 'Heatmap', 'Compare']],
   ['.window-bar .sample', ['Real mOmentiOn app screens']],
   ['.showcase-copy h3', ['Let Your Speed<br>Control the Camera.', 'Route and speed,<br>together.', 'See how every<br>moment connects.', 'Same road.<br>Different moments.']],
   ['.showcase-copy > p:last-child', ['Ride naturally while mOmentiOn automatically starts and stops recording on your action camera based on your speed.', 'Review your route, time, distance, and speed in one place.', 'Match heatmap positions with graph values to understand the flow of your ride.', 'Compare speed and elapsed time across multiple rides.']],
@@ -110,6 +110,7 @@ function setLanguage(language) {
     }
   });
   localizedElements.forEach(item => { item.element.innerHTML = english ? item.english : item.korean; });
+  document.querySelectorAll('[data-ko][data-en]').forEach(element => { element.textContent = english ? element.dataset.en : element.dataset.ko; });
   document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
   document.querySelector('header nav').setAttribute('aria-label', english ? 'Main navigation' : '주 메뉴');
 }
