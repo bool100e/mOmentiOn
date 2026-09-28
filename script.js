@@ -32,9 +32,7 @@ function translate() {
 }
 langButton.addEventListener('click', () => { language = language === 'en' ? 'ko' : 'en'; save('momention-language',language); translate(); });
 themeButton.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; save('momention-theme',root.dataset.theme); updateThemeLabel(); });
-const systemTheme = matchMedia('(prefers-color-scheme: dark)');
-systemTheme.addEventListener('change', event => { if (!safeGet('momention-theme')) { root.dataset.theme = event.matches ? 'dark' : 'light'; updateThemeLabel(); } });
-if (!root.dataset.theme) root.dataset.theme = systemTheme.matches ? 'dark' : 'light';
+if (!root.dataset.theme) root.dataset.theme = 'light';
 const current = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.sidebar a,.nav-links a').forEach(a => { if (a.getAttribute('href') === current) { a.classList.add('active'); a.setAttribute('aria-current','page'); } });
 translate();
