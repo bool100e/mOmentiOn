@@ -32,21 +32,19 @@ function translate() {
 }
 langButton.addEventListener('click', () => { language = language === 'en' ? 'ko' : 'en'; save('momention-language',language); translate(); });
 themeButton.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; save('momention-theme',root.dataset.theme); updateThemeLabel(); });
-if (!root.dataset.theme) root.dataset.theme = 'light';
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+systemTheme.addEventListener('change', event => { if (!safeGet('momention-theme')) { root.dataset.theme = event.matches ? 'dark' : 'light'; updateThemeLabel(); } });
+if (!root.dataset.theme) root.dataset.theme = systemTheme.matches ? 'dark' : 'light';
 const current = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.sidebar a,.nav-links a').forEach(a => { if (a.getAttribute('href') === current) { a.classList.add('active'); a.setAttribute('aria-current','page'); } });
 translate();
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const visibility = new Map();
 const userPaused = new WeakSet();
-const automaticPause = new WeakSet();
+let lastInteraction = 0;
 function syncVideos() {
  document.querySelectorAll('video').forEach(video => {
-  if (document.hidden || !visibility.get(video)) {
-   if (!video.paused) { automaticPause.add(video); video.pause(); }
-  } else if (!reduceMotion.matches && !userPaused.has(video)) {
-   video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
-  }
+  if (document.hidden || !visibility.get(video)) { if (!video.paused) video.pause(); }
+  else if (!userPaused.has(video) && video.paused) video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
  });
 }
 const observer = new IntersectionObserver(entries => {
@@ -56,15 +54,11 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('video').forEach(video => {
  video.muted = true;
  video.loop = true;
- video.addEventListener('pause', () => {
-  if (automaticPause.has(video)) automaticPause.delete(video);
-  else if (visibility.get(video) && !document.hidden) userPaused.add(video);
- });
+ // Only a pause right after the viewer touches the video counts as a user pause.
+ ['pointerdown','keydown'].forEach(type => video.addEventListener(type, () => { lastInteraction = Date.now(); }));
+ video.addEventListener('pause', () => { if (Date.now() - lastInteraction < 1000) userPaused.add(video); });
  video.addEventListener('play', () => userPaused.delete(video));
+ video.addEventListener('ended', () => { video.currentTime = 0; video.play().catch(() => {}); });
  observer.observe(video);
 });
 document.addEventListener('visibilitychange', syncVideos);
-reduceMotion.addEventListener('change', () => {
- if (reduceMotion.matches) document.querySelectorAll('video').forEach(v => { if (!v.paused) { automaticPause.add(v); v.pause(); } });
- else syncVideos();
-});
