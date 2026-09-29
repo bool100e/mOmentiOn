@@ -1,0 +1,6 @@
+@font-face{font-family:Outfit;src:url('assets/outfit_regular.ttf');font-weight:400;font-display:swap}
+@font-face{font-family:Outfit;src:url('assets/outfit_bold.ttf');font-weight:700;font-display:swap}
+:root{--bg:#F5F7F6;--soft:#E6ECE8;--ink:#202824;--muted:#5C6C62;--line:#CCD7D0;--accent:#237653;--head:#F5F7F6;--button-text:#FFFFFF}
+:root[data-theme=dark]{--bg:#202221;--soft:#2B2E2C;--ink:#F4F5F2;--muted:#ADB5AF;--line:#454B46;--accent:#E8C900;--head:#202221;--button-text:#202221}
+.site-header{border-bottom:0}.nav{min-height:76px}.nav-links{font-weight:400}.preferences{border:0}.preferences button{background:transparent;border:0;min-height:44px;min-width:44px}.article h1{font-weight:400;font-size:clamp(32px,4vw,52px);letter-spacing:-.05em}.article h2{font-weight:400}.article{padding-top:65px}.article section{margin-top:50px}.sidebar,.toc{font-size:13px}.button{font-weight:400}.button.primary{background:var(--accent);border-color:var(--accent);color:var(--button-text)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

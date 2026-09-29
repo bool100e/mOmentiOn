@@ -10,7 +10,7 @@ function updateThemeLabel() {
  themeButton.textContent = dark ? '☀' : '◐';
  themeButton.setAttribute('aria-label', language === 'ko' ? (dark ? '라이트 테마로 전환' : '다크 테마로 전환') : (dark ? 'Switch to light theme' : 'Switch to dark theme'));
  themeButton.setAttribute('aria-pressed', String(dark));
- document.querySelector('meta[name="theme-color"]').content = dark ? '#1b1b1f' : '#ffffff';
+ document.querySelector('meta[name="theme-color"]').content = dark ? '#202221' : '#F5F7F6';
 }
 function toc() {
  const target = document.getElementById('toc');
@@ -38,27 +38,21 @@ if (!root.dataset.theme) root.dataset.theme = systemTheme.matches ? 'dark' : 'li
 const current = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.sidebar a,.nav-links a').forEach(a => { if (a.getAttribute('href') === current) { a.classList.add('active'); a.setAttribute('aria-current','page'); } });
 translate();
-const visibility = new Map();
-const userPaused = new WeakSet();
-let lastInteraction = 0;
-function syncVideos() {
- document.querySelectorAll('video').forEach(video => {
-  if (document.hidden || !visibility.get(video)) { if (!video.paused) video.pause(); }
-  else if (!userPaused.has(video) && video.paused) video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
+// Requested continuous, muted, inline video playback. Native controls remain available.
+const autoplayVideos = [...document.querySelectorAll('video')];
+function startVideos() {
+ autoplayVideos.forEach(video => {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.play().catch(() => {}); // Browser policy may require interaction.
  });
 }
-const observer = new IntersectionObserver(entries => {
- entries.forEach(entry => visibility.set(entry.target, entry.isIntersecting && entry.intersectionRatio >= .2));
- syncVideos();
-}, {threshold:[0,.2]});
-document.querySelectorAll('video').forEach(video => {
- video.muted = true;
- video.loop = true;
- // Only a pause right after the viewer touches the video counts as a user pause.
- ['pointerdown','keydown'].forEach(type => video.addEventListener(type, () => { lastInteraction = Date.now(); }));
- video.addEventListener('pause', () => { if (Date.now() - lastInteraction < 1000) userPaused.add(video); });
- video.addEventListener('play', () => userPaused.delete(video));
- video.addEventListener('ended', () => { video.currentTime = 0; video.play().catch(() => {}); });
- observer.observe(video);
-});
-document.addEventListener('visibilitychange', syncVideos);
+autoplayVideos.forEach(video => video.addEventListener('canplay', () => {
+ if (video.autoplay && video.paused) video.play().catch(() => {});
+}, {once:true}));
+startVideos();
+document.addEventListener('visibilitychange', () => { if (!document.hidden) startVideos(); });
+document.addEventListener('pointerdown', startVideos, {once:true});
