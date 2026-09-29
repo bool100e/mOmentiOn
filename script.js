@@ -56,3 +56,35 @@ autoplayVideos.forEach(video => video.addEventListener('canplay', () => {
 startVideos();
 document.addEventListener('visibilitychange', () => { if (!document.hidden) startVideos(); });
 document.addEventListener('pointerdown', startVideos, {once:true});
+
+// Read the actual dial color so the tally stays in sync through seeks and loops.
+const heroVideo = document.querySelector('.hero-product video');
+const recordingTally = document.querySelector('.recording-tally');
+if (heroVideo && recordingTally) {
+ const sample = document.createElement('canvas');
+ sample.width = sample.height = 1;
+ const context = sample.getContext('2d', { willReadFrequently: true });
+ function updateTally() {
+  if (!context || heroVideo.readyState < 2) return;
+  try {
+   let red = 0, green = 0;
+   for (const [x, y] of [[.5, .38], [.3, .48], [.7, .48]]) {
+    context.drawImage(heroVideo, Math.floor(heroVideo.videoWidth * x), Math.floor(heroVideo.videoHeight * y), 1, 1, 0, 0, 1, 1);
+    const pixel = context.getImageData(0, 0, 1, 1).data;
+    red += pixel[0]; green += pixel[1];
+   }
+   recordingTally.classList.toggle('is-recording', red > 210 && red > green * 1.25);
+  } catch {
+   recordingTally.classList.remove('is-recording');
+  }
+ }
+ if ('requestVideoFrameCallback' in heroVideo) {
+  const onFrame = () => { updateTally(); heroVideo.requestVideoFrameCallback(onFrame); };
+  heroVideo.requestVideoFrameCallback(onFrame);
+ } else {
+  heroVideo.addEventListener('timeupdate', updateTally);
+ }
+ heroVideo.addEventListener('seeked', updateTally);
+ heroVideo.addEventListener('loadeddata', updateTally);
+ heroVideo.addEventListener('emptied', () => recordingTally.classList.remove('is-recording'));
+}
