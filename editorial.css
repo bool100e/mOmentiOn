@@ -45,3 +45,5 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 
 /* Optical centering across the open space beside the hero copy. */
 @media(min-width:768px){.kinetic-hero{grid-template-columns:minmax(0,1fr) minmax(280px,1fr);column-gap:24px}.hero-product{left:0;justify-self:start;margin-left:clamp(16px,3vw,40px)}.kinetic-hero h1{font-size:clamp(34px,4.4vw,62px)}}
+
+.slogan-ending{white-space:nowrap;display:inline-block}
