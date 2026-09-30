@@ -61,3 +61,5 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .brand{font-size:22px}.brand img{width:36px;height:36px}
 @media(max-width:767px){.hero-brand{margin:24px 0 4px}.hero-brand img{width:100px}.brand{font-size:19px}.brand img{width:30px;height:30px}}
 .hero-lead,.hero-copy p{word-break:keep-all}
+.hero-copy .round-link{display:flex;width:fit-content;margin-inline:auto}
+.hero-product{translate:var(--hero-shift,0px) 0}

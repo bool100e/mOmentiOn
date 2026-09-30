@@ -147,3 +147,22 @@ if (guideCapture) {
  guideCapture.addEventListener('mouseleave', () => setGuide(null));
  guideCapture.addEventListener('focusout', event => { if (!guideCapture.contains(event.relatedTarget)) setGuide(null); });
 }
+
+// Center the hero phone between the headline's tally dot and the right end of the section divider.
+const heroProduct = document.querySelector('.hero-product');
+const heroTally = document.querySelector('.kinetic-hero .recording-tally');
+const heroDivider = document.querySelector('.kinetic-hero')?.nextElementSibling;
+function alignHeroProduct() {
+ if (!heroProduct || !heroTally || !heroDivider) return;
+ heroProduct.style.setProperty('--hero-shift', '0px');
+ if (matchMedia('(max-width: 767px)').matches) return;
+ const tally = heroTally.getBoundingClientRect();
+ const product = heroProduct.getBoundingClientRect();
+ const target = (tally.left + tally.width / 2 + heroDivider.getBoundingClientRect().right) / 2;
+ const shift = Math.min(target - (product.left + product.width / 2), document.documentElement.clientWidth - 8 - product.right);
+ heroProduct.style.setProperty('--hero-shift', `${Math.round(shift)}px`);
+}
+alignHeroProduct();
+addEventListener('resize', alignHeroProduct);
+langButton.addEventListener('click', alignHeroProduct);
+document.fonts?.ready.then(alignHeroProduct);
