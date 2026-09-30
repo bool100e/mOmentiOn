@@ -63,3 +63,4 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .hero-lead,.hero-copy p{word-break:keep-all}
 .hero-copy .round-link{display:flex;width:fit-content;margin-inline:auto}
 .hero-product{translate:var(--hero-shift,0px) 0}
+:lang(ja) .hero-lead,:lang(ja) .hero-copy p{word-break:normal;line-break:strict}
