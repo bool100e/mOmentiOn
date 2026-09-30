@@ -116,8 +116,34 @@ if (guideCapture) {
   }, {rootMargin: '200px'}).observe(guideCapture);
  } else { guideVideo.src = guideVideo.dataset.src; guideVisible = true; }
  document.addEventListener('visibilitychange', syncGuideVideo);
+ const guideTip = document.createElement('div');
+ guideTip.className = 'guide-tip';
+ guideTip.setAttribute('role', 'tooltip');
+ guideTip.hidden = true;
+ guideTip.innerHTML = '<strong></strong><p></p>';
+ guideCapture.append(guideTip);
+ // Show the item's title and description beside its area, reading the text in the current language.
+ function showGuideTip(id) {
+  const item = document.querySelector(`.guide-items li[data-guide="${id}"]`);
+  const spots = [...guideCapture.querySelectorAll(`.guide-spot[data-guide="${id}"]`)];
+  if (!item || !spots.length) { guideTip.hidden = true; return; }
+  guideTip.querySelector('strong').textContent = `${id}. ${(item.querySelector('h4, .guide-item-title span[data-en]')?.textContent || '').trim()}`;
+  guideTip.querySelector('p').textContent = (item.querySelector('p[data-en]')?.textContent || '').trim();
+  guideTip.hidden = false;
+  const box = guideCapture.getBoundingClientRect();
+  const rects = spots.map(spot => spot.getBoundingClientRect());
+  const top = Math.min(...rects.map(r => r.top)) - box.top;
+  const bottom = Math.max(...rects.map(r => r.bottom)) - box.top;
+  const center = (Math.min(...rects.map(r => r.left)) + Math.max(...rects.map(r => r.right))) / 2 - box.left;
+  const width = guideTip.offsetWidth, height = guideTip.offsetHeight, gap = 8;
+  const below = bottom + gap + height <= box.height - gap || top - gap - height < gap;
+  const y = below ? Math.min(bottom + gap, box.height - height - gap) : top - gap - height;
+  guideTip.style.left = `${Math.round(Math.min(Math.max(center - width / 2, gap), box.width - width - gap))}px`;
+  guideTip.style.top = `${Math.round(Math.max(y, gap))}px`;
+ }
  function setGuide(id) {
   activeGuide = id;
+  if (id === null) guideTip.hidden = true; else showGuideTip(id);
   syncGuideVideo();
   guideCapture.classList.toggle('has-active', id !== null);
   [...guideParts, ...guideItems].forEach(el => el.classList.toggle('is-active', el.dataset.guide === id));
@@ -135,16 +161,21 @@ if (guideCapture) {
   item.addEventListener('mouseenter', () => setGuide(item.dataset.guide));
   item.addEventListener('click', () => setGuide(activeGuide === item.dataset.guide && !matchMedia('(hover: hover)').matches ? null : item.dataset.guide));
  });
- document.querySelector('.guide-items')?.addEventListener('mouseleave', () => setGuide(null));
+ document.querySelector('.guide-items')?.addEventListener('mouseleave', () => { if (matchMedia('(hover: hover)').matches) setGuide(null); });
  guideCapture.querySelectorAll('.guide-badge').forEach(badge => {
   badge.addEventListener('mouseenter', () => setGuide(badge.dataset.guide));
   badge.addEventListener('focus', () => setGuide(badge.dataset.guide));
   badge.addEventListener('click', () => {
    setGuide(badge.dataset.guide);
-   document.querySelector(`.guide-items li[data-guide="${badge.dataset.guide}"]`)?.scrollIntoView({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+   if (matchMedia('(min-width: 768px)').matches) document.querySelector(`.guide-items li[data-guide="${badge.dataset.guide}"]`)?.scrollIntoView({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
   });
  });
- guideCapture.addEventListener('mouseleave', () => setGuide(null));
+ guideCapture.querySelectorAll('.guide-spot').forEach(spot => {
+  spot.addEventListener('mouseenter', () => setGuide(spot.dataset.guide));
+  spot.addEventListener('click', () => setGuide(spot.dataset.guide));
+ });
+ const canHover = matchMedia('(hover: hover)');
+ guideCapture.addEventListener('mouseleave', () => { if (canHover.matches) setGuide(null); });
  guideCapture.addEventListener('focusout', event => { if (!guideCapture.contains(event.relatedTarget)) setGuide(null); });
 }
 
