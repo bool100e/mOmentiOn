@@ -39,7 +39,7 @@ const current = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.sidebar a,.nav-links a').forEach(a => { if (a.getAttribute('href') === current) { a.classList.add('active'); a.setAttribute('aria-current','page'); } });
 translate();
 // Requested continuous, muted, inline video playback. Native controls remain available.
-const autoplayVideos = [...document.querySelectorAll('video')];
+const autoplayVideos = [...document.querySelectorAll('video:not([data-guide-video])')];
 function startVideos() {
  autoplayVideos.forEach(video => {
   video.muted = true;
@@ -95,13 +95,30 @@ if (guideCapture) {
  const dim = document.createElementNS(svgNS, 'svg');
  dim.setAttribute('class', 'guide-dim'); dim.setAttribute('viewBox', '0 0 100 100'); dim.setAttribute('preserveAspectRatio', 'none'); dim.setAttribute('aria-hidden', 'true');
  dim.innerHTML = '<defs><mask id="guide-dim-mask"><rect width="100" height="100" fill="white"/><g class="guide-holes"></g></mask></defs><rect width="100" height="100" fill="rgba(0,0,0,.6)" mask="url(#guide-dim-mask)"/>';
- guideCapture.querySelector('picture').after(dim);
+ guideCapture.querySelector('video').after(dim);
  const holes = dim.querySelector('.guide-holes');
  const guideItems = document.querySelectorAll('.guide-items li[data-guide]');
  const guideParts = guideCapture.querySelectorAll('[data-guide]');
+ const guideVideo = guideCapture.querySelector('[data-guide-video]');
+ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
  let activeGuide = null;
+ let guideVisible = false;
+ // Load the clip only once the guide is near the viewport; pause it while an item is highlighted.
+ function syncGuideVideo() {
+  if (guideVisible && activeGuide === null && !reduceMotion.matches && !document.hidden) guideVideo.play().catch(() => {});
+  else guideVideo.pause();
+ }
+ if ('IntersectionObserver' in window) {
+  new IntersectionObserver(entries => {
+   guideVisible = entries[0].isIntersecting;
+   if (guideVisible && !guideVideo.src) guideVideo.src = guideVideo.dataset.src;
+   syncGuideVideo();
+  }, {rootMargin: '200px'}).observe(guideCapture);
+ } else { guideVideo.src = guideVideo.dataset.src; guideVisible = true; }
+ document.addEventListener('visibilitychange', syncGuideVideo);
  function setGuide(id) {
   activeGuide = id;
+  syncGuideVideo();
   guideCapture.classList.toggle('has-active', id !== null);
   [...guideParts, ...guideItems].forEach(el => el.classList.toggle('is-active', el.dataset.guide === id));
   holes.replaceChildren(...[...guideCapture.querySelectorAll(`.guide-spot[data-guide="${id}"]`)].map(spot => {
