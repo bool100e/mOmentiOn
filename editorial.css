@@ -49,3 +49,6 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .slogan-ending{white-space:nowrap;display:inline-block}
 .ride-image-scroll{width:min(100%,calc(630px*1080/2340));margin-inline:auto}
 @media(max-width:767px){.ride-image-scroll{width:100%}}
+.gallery-media video{background:#282828}
+.gallery-media video{background:transparent;width:min(100%,calc(630px*1080/2340));margin-inline:auto}
+@media(max-width:767px){.gallery-media video{width:100%}}
