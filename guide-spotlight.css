@@ -1,4 +1,9 @@
 .guide-capture{position:relative;overflow:hidden;border-radius:12px}
+.guide-phone{position:sticky;top:90px;align-self:start;width:min(100%,260px);padding:7px;background:#101112;border:2px solid #686b6c;border-radius:36px;box-shadow:inset 0 0 0 2px #292b2c;isolation:isolate}
+.guide-phone::before{content:"";position:absolute;z-index:2;top:13px;left:50%;transform:translateX(-50%);width:44px;height:15px;background:#050505;border-radius:12px}
+.guide-phone::after{content:"";position:absolute;right:-5px;top:108px;width:3px;height:43px;border-radius:0 2px 2px 0;background:#535657}
+.guide-phone .phone-buttons{position:absolute;left:-5px;top:75px;width:3px;height:25px;border-radius:2px 0 0 2px;background:#535657;box-shadow:0 38px 0 #535657,0 70px 0 #535657}
+.guide-phone .guide-capture{position:relative;top:auto;width:100%;max-width:none;margin:0;border-radius:27px}
 .guide-capture .guide-video{display:block;width:100%;height:auto;aspect-ratio:720/1564;border-radius:0;background:#232323}
 .guide-dim{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity .2s}
 .guide-capture.has-active .guide-dim{opacity:1}
@@ -12,7 +17,7 @@
 .guide-items li.is-active{background:#f2c80f1f}
 .guide-items li.is-active .guide-number{background:#f2c80f;color:#111}
 .home-screen-guide .screen-guide{grid-template-columns:300px minmax(0,1fr)}
-.home-screen-guide .guide-capture{width:300px;max-width:300px}
-@media(max-width:1050px){.home-screen-guide .screen-guide{grid-template-columns:230px minmax(0,1fr)}.home-screen-guide .guide-capture{width:230px;max-width:230px}.guide-badge{width:19px;height:19px;font-size:10px}}
-@media(max-width:767px){.home-screen-guide .screen-guide{display:block}.home-screen-guide .guide-capture{width:min(100%,280px);max-width:280px;margin:0 auto 26px}}
+.home-screen-guide .guide-phone{width:300px;max-width:300px;margin:0}
+@media(max-width:1050px){.home-screen-guide .screen-guide{grid-template-columns:230px minmax(0,1fr)}.home-screen-guide .guide-phone{width:230px;max-width:230px}.guide-badge{width:19px;height:19px;font-size:10px}}
+@media(max-width:767px){.home-screen-guide .screen-guide{display:block}.guide-phone{position:relative;top:auto;margin:0 auto 26px;padding:6px;border-radius:31px}.guide-phone .guide-capture{border-radius:23px}.guide-phone::before{top:12px;width:38px;height:13px}.home-screen-guide .guide-phone{width:min(100%,280px);max-width:280px;margin:0 auto 26px}}
 @media(prefers-reduced-motion:reduce){.guide-dim,.guide-spot,.guide-badge,.guide-items li[data-guide]{transition:none}}
