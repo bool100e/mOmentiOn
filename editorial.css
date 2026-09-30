@@ -51,3 +51,14 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 @media(max-width:767px){.ride-image-scroll{width:100%}}
 .gallery-media video{background:transparent;width:min(100%,calc(630px*1080/2340));margin-inline:auto}
 @media(max-width:767px){.gallery-media video{width:100%}}
+.hero-brand{grid-column:1;grid-row:1;margin:10px 0 0}
+.hero-brand img{display:block;width:clamp(110px,10vw,140px);height:auto}
+.hero-brand p{margin:12px 0 0;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.kinetic-hero h1{grid-row:2}.hero-copy{grid-row:3}.availability-summary{grid-row:4}.hero-product{grid-row:1/5}
+.logo-on-light{display:none!important}
+:root[data-theme=light] .logo-on-dark{display:none!important}
+:root[data-theme=light] .logo-on-light{display:block!important}
+.brand-name{font-weight:700;color:var(--accent)}
+.brand{font-size:22px}.brand img{width:36px;height:36px}
+@media(max-width:767px){.hero-brand{margin:0 0 18px}.hero-brand img{width:100px}.brand{font-size:19px}.brand img{width:30px;height:30px}}
+.hero-lead,.hero-copy p{word-break:keep-all}
