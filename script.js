@@ -88,3 +88,45 @@ if (heroVideo && recordingTally) {
  heroVideo.addEventListener('loadeddata', updateTally);
  heroVideo.addEventListener('emptied', () => recordingTally.classList.remove('is-recording'));
 }
+
+const guideCapture = document.querySelector('[data-guide-capture]');
+if (guideCapture) {
+ const svgNS = 'http://www.w3.org/2000/svg';
+ const dim = document.createElementNS(svgNS, 'svg');
+ dim.setAttribute('class', 'guide-dim'); dim.setAttribute('viewBox', '0 0 100 100'); dim.setAttribute('preserveAspectRatio', 'none'); dim.setAttribute('aria-hidden', 'true');
+ dim.innerHTML = '<defs><mask id="guide-dim-mask"><rect width="100" height="100" fill="white"/><g class="guide-holes"></g></mask></defs><rect width="100" height="100" fill="rgba(0,0,0,.6)" mask="url(#guide-dim-mask)"/>';
+ guideCapture.querySelector('picture').after(dim);
+ const holes = dim.querySelector('.guide-holes');
+ const guideItems = document.querySelectorAll('.guide-items li[data-guide]');
+ const guideParts = guideCapture.querySelectorAll('[data-guide]');
+ let activeGuide = null;
+ function setGuide(id) {
+  activeGuide = id;
+  guideCapture.classList.toggle('has-active', id !== null);
+  [...guideParts, ...guideItems].forEach(el => el.classList.toggle('is-active', el.dataset.guide === id));
+  holes.replaceChildren(...[...guideCapture.querySelectorAll(`.guide-spot[data-guide="${id}"]`)].map(spot => {
+   const [x, y, w, h] = ['left', 'top', 'width', 'height'].map(key => parseFloat(spot.style[key]));
+   const round = spot.classList.contains('is-round');
+   const shape = document.createElementNS(svgNS, round ? 'ellipse' : 'rect');
+   const attrs = round ? {cx: x + w / 2, cy: y + h / 2, rx: w / 2, ry: h / 2} : {x, y, width: w, height: h, rx: 1.5, ry: .75};
+   Object.entries(attrs).forEach(([key, value]) => shape.setAttribute(key, value));
+   shape.setAttribute('fill', 'black');
+   return shape;
+  }));
+ }
+ guideItems.forEach(item => {
+  item.addEventListener('mouseenter', () => setGuide(item.dataset.guide));
+  item.addEventListener('click', () => setGuide(activeGuide === item.dataset.guide && !matchMedia('(hover: hover)').matches ? null : item.dataset.guide));
+ });
+ document.querySelector('.guide-items')?.addEventListener('mouseleave', () => setGuide(null));
+ guideCapture.querySelectorAll('.guide-badge').forEach(badge => {
+  badge.addEventListener('mouseenter', () => setGuide(badge.dataset.guide));
+  badge.addEventListener('focus', () => setGuide(badge.dataset.guide));
+  badge.addEventListener('click', () => {
+   setGuide(badge.dataset.guide);
+   document.querySelector(`.guide-items li[data-guide="${badge.dataset.guide}"]`)?.scrollIntoView({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  });
+ });
+ guideCapture.addEventListener('mouseleave', () => setGuide(null));
+ guideCapture.addEventListener('focusout', event => { if (!guideCapture.contains(event.relatedTarget)) setGuide(null); });
+}
