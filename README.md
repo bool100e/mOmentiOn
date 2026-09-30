@@ -7,8 +7,7 @@ Static HTML/CSS/JavaScript. No build dependencies. Publish the root of `main` wi
 ## Pages
 
 - `index.html`: product overview, supplied banner, ride image, heatmap/comparison videos, download links.
-- `guide.html`: introduction and product media.
-- `getting-started.html`: setup instructions.
+- `getting-started.html`: setup instructions, camera compatibility and safety notes.
 - `screen-guide.html`: original 12 numbered Android controls and brand logos.
 - `release-notes.html`: bilingual build history based on the supplied release notes.
 - `privacy.html`: bilingual privacy policy, including advertising, local files, support email, retention/deletion, and website storage.
@@ -37,5 +36,5 @@ Logo and icon copied from the app repository. Outfit fonts use the SIL Open Font
 The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and `es/` are generated copies — do not edit them by hand.
 
 - Korean text comes from each element's `data-ko` attribute; Japanese, German and Spanish text comes from `i18n/<lang>.json`, keyed by the English text.
-- Japanese, German and Spanish cover Home, Guide, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
+- Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.

@@ -20,8 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://bool100e.github.io/mOmentiOn/'
-ALL_PAGES = ['index', 'guide', 'getting-started', 'screen-guide', 'support', 'release-notes', 'privacy']
-CORE_PAGES = ['index', 'guide', 'getting-started', 'screen-guide']
+ALL_PAGES = ['index', 'getting-started', 'screen-guide', 'support', 'release-notes', 'privacy']
+CORE_PAGES = ['index', 'getting-started', 'screen-guide']
 LANGUAGES = {'ko': ALL_PAGES, 'ja': CORE_PAGES, 'de': CORE_PAGES, 'es': CORE_PAGES}
 ALT_START, ALT_END = '<!-- i18n:alternates -->', '<!-- /i18n:alternates -->'
 
