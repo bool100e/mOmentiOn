@@ -1,0 +1,56 @@
+/* Keep the logo and navigation geometry identical on every page. */
+.site-header .nav {
+  max-width: 1320px;
+  min-height: 72px;
+  height: 72px;
+  margin: auto;
+  padding: 0 40px;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+.site-header .brand {
+  flex-shrink: 0;
+  gap: 10px;
+  font-size: 22px;
+}
+.site-header .brand img {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.site-header .nav-links {
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.site-header .preferences {
+  border: 0;
+  padding: 0;
+  gap: 5px;
+}
+.site-header .preferences button {
+  min-width: 42px;
+  min-height: 42px;
+  background: transparent;
+  border: 0;
+}
+@media (max-width: 767px) {
+  .site-header .nav {
+    height: auto;
+    padding: 12px 24px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .site-header .brand { font-size: 19px; }
+  .site-header .brand img { width: 30px; height: 30px; }
+  .site-header .preferences { margin-left: auto; }
+  .site-header .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 4px;
+    font-size: 12px;
+  }
+}
