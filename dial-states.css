@@ -1,0 +1,15 @@
+.dial-state-cards{display:grid;gap:18px;margin:24px 0}.dial-state-card{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:24px;padding:20px;border:1px solid var(--border,#8885);border-radius:16px}.dial-state-card h3{margin:0 0 10px}.dial-state-card p{margin:0}.dial-example{margin:0;line-height:0;display:grid;place-items:center;justify-self:center;width:180px;max-width:100%;aspect-ratio:1;background:transparent}.dial-example img{display:block;width:100%;height:auto;object-fit:contain}@media(max-width:620px){.dial-state-card{grid-template-columns:136px minmax(0,1fr);gap:16px;padding:16px}}@media(max-width:420px){.dial-state-card{grid-template-columns:1fr}.dial-example{width:180px;justify-self:center}}
+.dial-example .dial-static{display:none}@media(prefers-reduced-motion:reduce){.dial-example .dial-animation{display:none}.dial-example .dial-static{display:block}}
+
+/* Keep the phone in document flow whenever the controls use one column. */
+#controls{container-type:inline-size}
+#panel-screen{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+#panel-screen .guide-phone{position:relative;top:auto;width:min(100%,260px);max-width:100%;margin:0 auto}
+#panel-screen .guide-details{min-width:0}
+#panel-screen .guide-items li>div{min-width:0}
+@container(min-width:680px){
+ #panel-screen{grid-template-columns:240px minmax(0,1fr)}
+ #panel-screen .guide-phone{position:sticky;top:90px;width:240px;margin:0}
+}
+
+.connection-state-cards{display:grid;gap:16px;margin:24px 0}.connection-state-card{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:center;gap:24px;padding:20px;border:1px solid var(--line);border-radius:16px}.connection-example{display:grid;place-items:center;margin:0;width:100px}.connection-example img{display:block;width:100%;height:auto}.connection-state-card h3{margin:0 0 10px}.connection-state-card p{margin:0}.connection-inline-examples{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}.connection-inline-example{display:inline-flex;align-items:center;gap:6px}.connection-inline-example img{display:block;width:40px;height:40px;flex:none}@media(max-width:420px){.connection-state-card{grid-template-columns:72px minmax(0,1fr);gap:12px;padding:16px}.connection-example{width:72px}}
