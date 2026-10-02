@@ -4,3 +4,10 @@
 :root[data-theme=dark]{--bg:#202221;--soft:#2B2E2C;--ink:#F4F5F2;--muted:#ADB5AF;--line:#454B46;--accent:#E8C900;--head:#202221;--button-text:#202221}
 .site-header{border-bottom:0}.nav{min-height:76px}.nav-links{font-weight:400}.preferences{border:0}.preferences button{background:transparent;border:0;min-height:44px;min-width:44px}.article h1{font-weight:400;font-size:clamp(32px,4vw,52px);letter-spacing:-.05em}.article h2{font-weight:400}.article{padding-top:65px}.article section{margin-top:50px}.sidebar,.toc{font-size:13px}.button{font-weight:400}.button.primary{background:var(--accent);border-color:var(--accent);color:var(--button-text)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Integrate the current page outline below its sidebar entry. */
+.docs{max-width:1132px;margin-inline:auto;grid-template-columns:230px minmax(0,800px);justify-content:center}
+.sidebar-toc{margin:4px 0 14px 12px;padding-left:12px;border-left:1px solid var(--line)}
+.sidebar .sidebar-toc a{font-size:12px;font-weight:400;line-height:1.5;padding:5px 0}
+@media(max-width:1100px){.docs{grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:760px){.docs{display:block}.sidebar .sidebar-toc a{font-size:12px}}

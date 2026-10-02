@@ -1,0 +1,9 @@
+/* Prominent entry to button instructions, shared by all home translations. */
+.button-details-link{display:inline-flex;align-items:center;justify-content:center;gap:12.8px;min-height:38.4px;padding:8px 19.2px;margin-top:20px;border:1px solid var(--accent);border-radius:19.2px;color:var(--accent);font-size:12px;font-weight:600;line-height:1.4;text-decoration:none;box-sizing:border-box;transition:background-color .15s,color .15s}
+.button-details-link:hover{background:var(--accent);color:var(--bg);text-decoration:none}
+@media(max-width:760px){.button-details-link{display:flex;width:80%}}
+@media(prefers-reduced-motion:reduce){.button-details-link{transition:none}}
+
+/* Align the state-guide action below the main-button card title. */
+.button-details-row{display:flex;justify-content:flex-end;margin:0}
+.button-details-row .button-details-link{margin-top:0;width:auto}

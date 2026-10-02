@@ -17,6 +17,13 @@ function updateThemeLabel() {
 function toc() {
  const target = document.getElementById('toc');
  if (!target) return;
+ const pageLink = [...document.querySelectorAll('.sidebar a')].find(a => a.getAttribute('href')?.split('#')[0] === current);
+ if (!pageLink) return;
+ const oldContainer = target.closest('aside.toc');
+ target.classList.add('sidebar-toc');
+ target.setAttribute('aria-label', document.querySelector('.article h1')?.textContent.trim() || 'Page sections');
+ pageLink.after(target);
+ oldContainer?.remove();
  target.replaceChildren();
  document.querySelectorAll('.article section[id]').forEach(section => {
    const heading = section.querySelector('h2'); if (!heading) return;
