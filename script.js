@@ -44,7 +44,10 @@ function toc() {
    if (match) select(match.section.id); else fromScroll();
  }
  function fromScroll() {
-   const offset = (document.querySelector('.site-header')?.getBoundingClientRect().height || 76) + 40;
+   const headerOffset = (document.querySelector('.site-header')?.getBoundingClientRect().height || 76) + 40;
+   const anchorOffset = (parseFloat(getComputedStyle(root).scrollPaddingTop) || 0)
+     + (entries[0] ? parseFloat(getComputedStyle(entries[0].section).scrollMarginTop) || 0 : 0);
+   const offset = Math.max(headerOffset, anchorOffset + 2);
    let selected = entries[0];
    for (const entry of entries) {
      if (entry.section.getBoundingClientRect().top <= offset) selected = entry;
