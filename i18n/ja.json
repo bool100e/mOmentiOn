@@ -198,15 +198,12 @@
  "Confirmed in official OSC documentation": "公式OSC資料で確認",
  "Confirmed in app implementation documentation: model identification and shared Bluetooth control on iOS and Android": "アプリ実装資料で確認・iOS/Androidのモデル識別と共通Bluetooth制御",
  "This table distinguishes device connection verification, manufacturer documentation and app implementation documentation. Connection verification does not certify every function or firmware version.": "実機接続検証、メーカー公式資料、アプリ実装資料を区別しています。接続検証は全機能・全ファームウェアの検証を意味しません。",
- "Email to use for testing": "テストに使うメールアドレス",
- "Android: your Google Play account. iPhone: the Apple ID that receives the TestFlight invitation.": "Androidの場合はGoogle Playのアカウント、iPhoneの場合はTestFlightの招待を受け取るApple IDのメールアドレスを入力してください。",
- "Enter a valid email address.": "有効なメールアドレスを入力してください。",
  "Join the Android test": "Androidテストに参加",
  "Join the iPhone test": "iPhoneテストに参加",
  "Android build 23": "Android ビルド 23",
  "iOS build 25": "iOS ビルド 25",
- "Your mail app opens with the request filled in. Send it to finish signing up.": "申し込み内容が入力された状態でメールアプリが開きます。送信すると申し込みが完了します。",
  "Supported devices": "対応デバイス",
  "Phones": "スマートフォン",
- "Full compatibility table →": "互換性の一覧を見る →"
+ "Full compatibility table →": "互換性の一覧を見る →",
+ "Your mail app opens. Add the account email you will use for testing, then send to finish signing up.": "メールアプリが開きます。テストに使うアカウントのメールアドレスを書いて送信すると、申し込みが完了します。"
 }

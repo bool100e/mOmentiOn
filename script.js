@@ -206,23 +206,10 @@ addEventListener('resize', alignHeroProduct);
 document.fonts?.ready.then(alignHeroProduct);
 
 // Tester sign-up opens the visitor's mail app; nothing is sent until they press send there.
-const testerForm = document.querySelector('[data-tester-form]');
-if (testerForm) {
- const emailInput = testerForm.querySelector('input[type="email"]');
- const errorText = testerForm.querySelector('.tester-error');
- testerForm.addEventListener('submit', event => event.preventDefault());
- emailInput.addEventListener('input', () => { errorText.hidden = true; emailInput.removeAttribute('aria-invalid'); });
- testerForm.querySelectorAll('[data-tester-platform]').forEach(button => button.addEventListener('click', () => {
-  const email = emailInput.value.trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-   errorText.hidden = false;
-   emailInput.setAttribute('aria-invalid', 'true');
-   emailInput.focus();
-   return;
-  }
-  const platform = button.dataset.testerPlatform;
-  const subject = `[mOmentiOn] ${platform} 테스트 참여 / ${platform} test sign-up`;
-  const body = `Platform: ${platform}\nTester email: ${email}\nPage language: ${language}\n`;
-  location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
- }));
-}
+const testerAccountLabels = {Android: 'Google Play account', iPhone: 'Apple ID for TestFlight'};
+document.querySelectorAll('[data-tester-platform]').forEach(button => button.addEventListener('click', () => {
+ const platform = button.dataset.testerPlatform;
+ const subject = `[mOmentiOn] ${platform} 테스트 참여 / ${platform} test sign-up`;
+ const body = `Platform: ${platform}\nTester email (${testerAccountLabels[platform]}): \nPage language: ${language}\n`;
+ location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}));
