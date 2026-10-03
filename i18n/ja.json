@@ -208,6 +208,5 @@
  "Your mail app opens with the request filled in. Send it to finish signing up.": "申し込み内容が入力された状態でメールアプリが開きます。送信すると申し込みが完了します。",
  "Supported devices": "対応デバイス",
  "Phones": "スマートフォン",
- "✓ Connection verified on a device · △ Not yet verified · Others: based on official or implementation documentation": "✓ 実機で接続を確認済み · △ 未検証 · その他：公式資料・アプリ実装資料に基づく",
  "Full compatibility table →": "互換性の一覧を見る →"
 }
