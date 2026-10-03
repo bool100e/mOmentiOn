@@ -17,3 +17,13 @@
 .release-platforms table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .release-platforms th, .release-platforms td { padding: .65rem .8rem; text-align: left; border-bottom: 1px solid var(--line, #8886); vertical-align: top; }
 .release-platforms th { white-space: nowrap; }
+
+/* One release link; neutral navigation with one selected section. */
+.sidebar-group { border-bottom: 1px solid var(--line); padding: 8px 0 22px; margin-bottom: 16px; }
+.sidebar a { color: var(--ink); }
+.sidebar a.active { color: var(--accent); font-weight: 700; }
+.sidebar a.has-outline.active { color: var(--ink); }
+.sidebar .sidebar-toc a { color: var(--muted); }
+.sidebar .sidebar-toc a.active { color: var(--accent); font-weight: 700; border-left: 2px solid currentColor; padding-left: 8px; }
+.sidebar a:hover { color: var(--accent); }
+@media(max-width:760px) { .sidebar-group { flex: 1; border: 0; margin: 0; padding: 8px 0 10px; } }

@@ -23,12 +23,42 @@ function toc() {
  target.classList.add('sidebar-toc');
  target.setAttribute('aria-label', document.querySelector('.article h1')?.textContent.trim() || 'Page sections');
  pageLink.after(target);
+ pageLink.classList.add('has-outline');
  oldContainer?.remove();
  target.replaceChildren();
+ const entries = [];
  document.querySelectorAll('.article section[id]').forEach(section => {
    const heading = section.querySelector('h2'); if (!heading) return;
-   const a = document.createElement('a'); a.href = '#' + section.id; a.textContent = heading.textContent; target.append(a);
+   const a = document.createElement('a'); a.href = '#' + section.id; a.textContent = heading.textContent;
+   target.append(a); entries.push({section, a});
  });
+ function select(id) {
+   entries.forEach(({section, a}) => {
+     const selected = section.id === id;
+     a.classList.toggle('active', selected);
+     if (selected) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+   });
+ }
+ function fromHash() {
+   const match = entries.find(({a}) => a.hash === location.hash);
+   if (match) select(match.section.id); else fromScroll();
+ }
+ function fromScroll() {
+   const offset = (document.querySelector('.site-header')?.getBoundingClientRect().height || 76) + 40;
+   let selected = entries[0];
+   for (const entry of entries) {
+     if (entry.section.getBoundingClientRect().top <= offset) selected = entry;
+   }
+   if (selected) select(selected.section.id);
+ }
+ let scheduled = false;
+ window.addEventListener('scroll', () => {
+   if (scheduled) return;
+   scheduled = true;
+   requestAnimationFrame(() => { scheduled = false; fromScroll(); });
+ }, {passive: true});
+ window.addEventListener('hashchange', fromHash);
+ fromHash();
 }
 // Go to the same page in the chosen language, or that language's home when the page is not translated.
 function switchLanguage(target) {
