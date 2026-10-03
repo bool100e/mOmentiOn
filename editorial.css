@@ -64,3 +64,27 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .hero-copy .round-link{display:flex;width:fit-content;margin-inline:auto}
 .hero-product{translate:var(--hero-shift,0px) 0}
 :lang(ja) .hero-lead,:lang(ja) .hero-copy p{word-break:normal;line-break:strict}
+.download .tester-signup{grid-column:1;grid-row:3;display:flex;flex-direction:column;gap:8px;max-width:520px}
+.tester-signup label{font-size:13px;color:var(--ink)}
+.tester-signup input{min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-size:14px}
+.tester-signup input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.tester-signup input[aria-invalid=true]{border-color:#d33}
+.download .tester-signup p{margin:0;font-size:12px;line-height:1.6;color:var(--muted)}
+.download .tester-signup .tester-error{color:#d33}
+.tester-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.tester-option{display:flex;flex-direction:column;align-items:center;gap:6px}
+.tester-option .button{width:100%}
+.build-version{font-size:11px;color:var(--muted)}
+.build-version:hover{color:var(--accent)}
+.download .device-list{grid-column:2;grid-row:2/4;align-self:start;font-size:12px}
+.device-list h3{font-size:15px;font-weight:600;margin:0 0 10px}
+.device-list dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0}
+.device-list dt{color:var(--muted)}
+.device-list dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.device-model{padding:2px 8px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.device-model.is-verified{border-color:var(--accent);color:var(--accent)}
+.device-model.is-unverified{opacity:.7;border-style:dashed}
+.download .device-list .device-legend{margin:12px 0 6px;font-size:11px;line-height:1.6;color:var(--muted)}
+.device-more{font-size:12px;color:var(--accent)}
+@media(max-width:767px){.download .tester-signup{max-width:none}.download .device-list{margin-top:28px}.tester-option{flex:1 1 180px}}
+:lang(ko) .download h2{word-break:keep-all}
