@@ -22,7 +22,7 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 /* Equal media frames; the complete ride capture scrolls inside its frame. */
 .gallery-media{grid-template-columns:repeat(3,minmax(0,1fr))}
 .gallery-media #ride-history{padding-top:0}
-.ride-image-scroll{width:100%;aspect-ratio:1080/2340;max-height:630px;overflow-y:auto;overflow-x:hidden;border-radius:8px;background:#262626;overscroll-behavior-y:contain}
+.ride-image-scroll{width:100%;aspect-ratio:1080/2340;max-height:630px;overflow-y:auto;overflow-x:hidden;border-radius:8px;background:#262626}
 .gallery-media .ride-image-scroll img{width:100%;height:auto;max-height:none;aspect-ratio:auto;border-radius:0;display:block}
 .ride-image-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(max-width:767px){.gallery-media{grid-template-columns:1fr}.ride-image-scroll{max-height:none}}
