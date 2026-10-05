@@ -249,11 +249,3 @@ document.querySelectorAll('[data-tester-platform]').forEach(button => button.add
  location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }));
 
-// Release notes: open a collapsed build when its address is linked or picked from the page outline.
-function openReleaseFromHash() {
- const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
- const details = target?.closest('.release')?.querySelector('details');
- if (details && !details.open) { details.open = true; target.scrollIntoView(); }
-}
-openReleaseFromHash();
-addEventListener('hashchange', openReleaseFromHash);

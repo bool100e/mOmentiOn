@@ -4,12 +4,7 @@
 .release{position:relative;margin:0 0 6px}
 .release::before{content:"";position:absolute;left:-22px;top:17px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--muted);box-sizing:border-box}
 .release:first-child::before{background:var(--accent);border-color:var(--accent)}
-.release summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;padding:8px 0;min-height:44px}
-.release summary::-webkit-details-marker{display:none}
-.release summary::after{content:"";flex:none;width:7px;height:7px;margin-left:auto;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
-.release details[open]>summary::after{transform:rotate(-135deg)}
-.release summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-.release h2{margin:0;font-size:17px;line-height:1.4;font-weight:600}
+.release h2{margin:0;padding:8px 0;font-size:17px;line-height:1.4;font-weight:600}
 .release-build{white-space:nowrap}
 .release-sep,.release-title{font-weight:400;color:var(--muted)}
 .release-items{list-style:none;margin:2px 0 18px;padding:0;display:grid;gap:9px}
@@ -25,5 +20,4 @@
 :root[data-theme=dark] .tag-fix{color:#ff9a6b}
 :root[data-theme=dark] .tag-removed{color:#b3b8c2}
 .release-platform{flex:none;padding:0 6px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--muted);line-height:1.6}
-@media(prefers-reduced-motion:reduce){.release summary::after{transition:none}}
 @media(max-width:767px){.release h2{font-size:16px}.release-items li{font-size:13px}}
