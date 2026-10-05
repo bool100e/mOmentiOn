@@ -29,7 +29,9 @@ function toc() {
  const entries = [];
  document.querySelectorAll('.article section[id]').forEach(section => {
    const heading = section.querySelector('h2'); if (!heading) return;
-   const a = document.createElement('a'); a.href = '#' + section.id; a.textContent = heading.textContent;
+   // Release entries list only their build number so the outline stays short.
+   const label = heading.querySelector('.release-build') || heading;
+   const a = document.createElement('a'); a.href = '#' + section.id; a.textContent = label.textContent;
    target.append(a); entries.push({section, a});
  });
  function select(id) {
@@ -246,3 +248,12 @@ document.querySelectorAll('[data-tester-platform]').forEach(button => button.add
  const body = `Platform: ${platform}\nTester email (${testerAccountLabels[platform]}): \nPage language: ${language}\n`;
  location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }));
+
+// Release notes: open a collapsed build when its address is linked or picked from the page outline.
+function openReleaseFromHash() {
+ const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+ const details = target?.closest('.release')?.querySelector('details');
+ if (details && !details.open) { details.open = true; target.scrollIntoView(); }
+}
+openReleaseFromHash();
+addEventListener('hashchange', openReleaseFromHash);
