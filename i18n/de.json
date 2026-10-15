@@ -217,9 +217,8 @@
  "The Watch screen has been checked in the simulator. Watch-to-iPhone commands, screen-off operation and reconnection still need real-device testing.": "Die Watch-Anzeige wurde im Simulator geprüft. Befehle von der Watch an das iPhone, der Betrieb bei ausgeschaltetem Display und die Wiederverbindung müssen noch auf echten Geräten getestet werden.",
  "Turn the camera on and select its brand in Settings. Current X5 and DJI test builds use Bluetooth control, without joining the camera Wi-Fi network. Tap Connect, approve any pairing prompt, and wait for the green main button and connection log before recording.": "Schalten Sie die Kamera ein und wählen Sie ihre Marke in den Einstellungen. Die aktuellen X5- und DJI-Testbuilds nutzen Bluetooth, ohne eine Verbindung zum Kamera-WLAN herzustellen. Tippen Sie auf Verbinden, bestätigen Sie die Kopplung und warten Sie vor der Aufnahme auf die grüne Haupttaste und den Verbindungseintrag im Protokoll.",
  "X5 connection and selected-mode recording verified on S23 and iPhone; iOS simulated speed-triggered recording verified. Extended real-ride testing remains pending.": "X5-Verbindung und Aufnahme im gewählten Modus auf S23 und iPhone sowie simulierte geschwindigkeitsabhängige Aufnahme unter iOS geprüft. Längere Tests bei echten Fahrten stehen noch aus.",
- "Your ": "Deine ",
- " speed": " Geschwindigkeit",
  "controls your": "steuert deine",
  "action camera": "Actioncam",
- "Set the speeds that start and stop recording.": "Lege die Geschwindigkeiten fest, bei denen die Aufnahme startet und stoppt."
+ "Set the speeds that start and stop recording.": "Lege die Geschwindigkeiten fest, bei denen die Aufnahme startet und stoppt.",
+ "speed": "Geschwindigkeit"
 }

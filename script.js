@@ -250,24 +250,30 @@ document.querySelectorAll('[data-tester-platform]').forEach(button => button.add
 }));
 
 
-// Hero pictogram dial: roll to the next activity every 2 s; the duplicated first icon makes the loop seamless.
-const activityTrack = document.querySelector('.activity-track');
-if (activityTrack && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
- const count = activityTrack.children.length;
- activityTrack.append(activityTrack.firstElementChild.cloneNode(true));
+// Hero activity roller: like a mechanical counter, roll to the next pictogram every 2 s.
+// The track holds [last, …all…, first] so the previous icon shows above and the loop wraps without a jump.
+const rollerTrack = document.querySelector('.roller-track');
+if (rollerTrack) {
+ const cells = [...rollerTrack.children];
+ const count = cells.length;
+ rollerTrack.prepend(cells[count - 1].cloneNode(true));
+ rollerTrack.append(cells[0].cloneNode(true), cells[1].cloneNode(true));
  let step = 0;
- setInterval(() => {
-  if (document.hidden) return;
-  step += 1;
-  activityTrack.style.transform = `translateY(${-step}em)`;
-  if (step === count) {
-   activityTrack.addEventListener('transitionend', () => {
-    activityTrack.style.transition = 'none';
-    activityTrack.style.transform = 'translateY(0)';
-    step = 0;
-    activityTrack.offsetHeight;
-    activityTrack.style.transition = '';
-   }, {once: true});
-  }
- }, 2000);
+ const place = () => { rollerTrack.style.transform = `translateY(calc((2.1em - var(--cell)) / 2 - var(--cell) * ${step + 1}))`; };
+ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  setInterval(() => {
+   if (document.hidden) return;
+   step += 1;
+   place();
+   if (step === count) {
+    rollerTrack.addEventListener('transitionend', () => {
+     rollerTrack.style.transition = 'none';
+     step = 0;
+     place();
+     rollerTrack.offsetHeight;
+     rollerTrack.style.transition = '';
+    }, {once: true});
+   }
+  }, 2000);
+ }
 }
