@@ -106,3 +106,12 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .kinetic-hero .hero-lead{font-size:17px;max-width:none}
 .hero-copy .round-link{margin-inline:0;margin-top:18px}
 }
+@media(max-width:767px){
+.kinetic-hero{grid-template-columns:minmax(0,1fr) 50vw}
+.kinetic-hero h1{margin-left:16px}
+.kinetic-hero .hero-lead{display:none}
+.kinetic-hero .hero-brand{display:block;margin:0;text-align:center}
+.kinetic-hero .hero-brand img{width:min(100%,96px);margin-inline:auto}
+.kinetic-hero .hero-brand p{font-size:9px;letter-spacing:.22em;margin-top:8px}
+.hero-copy .round-link{margin-inline:auto;margin-top:16px;gap:24px}
+}
