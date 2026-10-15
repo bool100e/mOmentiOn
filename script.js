@@ -250,48 +250,49 @@ document.querySelectorAll('[data-tester-platform]').forEach(button => button.add
 }));
 
 
-// Hero activity roller: like a mechanical counter, roll to the next pictogram every 2 s.
-// The track holds [last, …all…, first] so the previous icon shows above and the loop wraps without a jump.
+// Hero activity roller, slot-machine style: wait, spin downward through two or three turns while
+// blurring with speed, then settle with a small mechanical bounce on a random pictogram.
+// Position is computed each frame (modulo the icon count), so the loop never runs out of icons.
 const rollerTrack = document.querySelector('.roller-track');
 if (rollerTrack) {
  const cells = [...rollerTrack.children];
  const count = cells.length;
  rollerTrack.prepend(cells[count - 1].cloneNode(true));
  rollerTrack.append(cells[0].cloneNode(true), cells[1].cloneNode(true));
- let step = 0;
- // Vertical motion blur that peaks mid-roll and clears before the bounce settles.
- const blurAmount = document.getElementById('roller-motion-blur-amount');
- const motionBlur = () => {
-  if (!blurAmount) return;
-  const peak = parseFloat(getComputedStyle(rollerTrack.firstElementChild).height) * .1;
+ let index = 0;
+ const render = (position, speed = 0) => {
+  const p = ((position % count) + count) % count;
+  rollerTrack.style.transform = `translateY(calc((2.1em - var(--cell)) / 2 - var(--cell) * ${(p + 1).toFixed(4)}))`;
+  rollerTrack.style.setProperty('--roller-stretch', (1 + Math.min(speed / 40, .35)).toFixed(3));
+  rollerTrack.style.filter = speed > 1 ? `blur(${Math.min(speed / 14, 2.2).toFixed(2)}px)` : '';
+ };
+ render(0);
+ const easeOut = t => 1 - Math.pow(1 - t, 4);
+ const easeInOut = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+ const spin = () => {
+  let target = Math.floor(Math.random() * (count - 1));
+  if (target >= index) target += 1;
+  const distance = count * (2 + Math.floor(Math.random() * 2)) + ((index - target + count) % count);
+  const overshoot = .2, spinTime = 1500, settleTime = 260;
   const start = performance.now();
-  rollerTrack.classList.add('is-rolling');
+  let last = start, lastValue = 0;
   const frame = now => {
-   const t = Math.min(Math.max((now - start) / 520, 0), 1);
-   blurAmount.setAttribute('stdDeviation', `0 ${(peak * Math.sin(Math.PI * t)).toFixed(2)}`);
-   if (t < 1) requestAnimationFrame(frame);
-   else { blurAmount.setAttribute('stdDeviation', '0 0'); rollerTrack.classList.remove('is-rolling'); }
+   const elapsed = now - start;
+   const value = elapsed < spinTime
+    ? (distance + overshoot) * easeOut(elapsed / spinTime)
+    : distance + overshoot * (1 - easeInOut(Math.min((elapsed - spinTime) / settleTime, 1)));
+   const speed = Math.abs(value - lastValue) / Math.max(now - last, 1) * 1000;
+   last = now; lastValue = value;
+   render(index - value, speed);
+   if (elapsed < spinTime + settleTime) { requestAnimationFrame(frame); return; }
+   index = target;
+   render(index);
+   setTimeout(next, 2000);
   };
   requestAnimationFrame(frame);
  };
- const place = () => { rollerTrack.style.transform = `translateY(calc((2.1em - var(--cell)) / 2 - var(--cell) * ${step + 1}))`; };
- if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  setInterval(() => {
-   if (document.hidden) return;
-   step += 1;
-   place();
-   motionBlur();
-   if (step === count) {
-    rollerTrack.addEventListener('transitionend', () => {
-     rollerTrack.style.transition = 'none';
-     step = 0;
-     place();
-     rollerTrack.offsetHeight;
-     rollerTrack.style.transition = '';
-    }, {once: true});
-   }
-  }, 2000);
- }
+ const next = () => { if (document.hidden) setTimeout(next, 1000); else spin(); };
+ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setTimeout(next, 2000);
 }
 
 // Keep each headline line on one line: if a line is wider than its column (long translations or wide fonts),

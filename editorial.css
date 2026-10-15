@@ -90,13 +90,9 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .activity-roller{--cell:1.3em;grid-column:1;grid-row:1/3;position:relative;width:1.75em;height:2.1em;overflow:hidden;border-radius:.16em;color:var(--ink);background:linear-gradient(180deg,var(--soft),var(--bg) 30%,var(--bg) 70%,var(--soft));box-shadow:inset 0 0 0 .02em var(--line),inset 0 .14em .22em -.06em rgb(0 0 0/.22),inset 0 -.14em .22em -.06em rgb(0 0 0/.22)}
 .activity-roller::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,var(--bg) 0,transparent 30%,transparent 70%,var(--bg) 100%);opacity:.85}
 .activity-roller::after{content:"";position:absolute;left:.1em;right:.1em;top:calc(50% - var(--cell)/2);height:var(--cell);z-index:1;pointer-events:none;border-top:.015em solid var(--line);border-bottom:.015em solid var(--line)}
-.roller-track{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;transform:translateY(calc((2.1em - var(--cell))/2 - var(--cell)));transition:transform .65s cubic-bezier(.5,0,.2,1.3)}
+.roller-track{position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;transform:translateY(calc((2.1em - var(--cell))/2 - var(--cell)))}
 .roller-cell{flex:none;height:var(--cell);display:grid;place-items:center}
-.roller-cell svg{display:block;width:1.2em;height:1.2em;transition:transform .3s ease-out}
-@media(prefers-reduced-motion:reduce){.roller-track{transition:none}}
-.sr-filter{position:absolute;width:0;height:0;overflow:hidden}
-.roller-track.is-rolling{filter:url(#roller-motion-blur)}
-.roller-track.is-rolling .roller-cell svg{transform:scaleY(1.15);transition-duration:.15s;transition-timing-function:ease-in}
+.roller-cell svg{display:block;width:1.2em;height:1.2em;transform:scaleY(var(--roller-stretch,1))}
 .roller-headline .headline-line{white-space:nowrap}
 .roller-headline>*{font-size:calc(1em * var(--headline-fit,1))}
 :lang(ja) .roller-headline>*{font-size:calc(.75em * var(--headline-fit,1))}
