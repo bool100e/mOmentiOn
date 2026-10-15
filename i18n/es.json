@@ -59,7 +59,6 @@
  "What's new · v1.0.0 (25)": "Novedades · v1.0.0 (25)",
  "Support": "Soporte",
  "Privacy Policy": "Política de privacidad",
- "mOmentiOn — Your speed starts the recording.": "mOmentiOn — Tu velocidad inicia la grabación.",
  "Automatic action-camera recording triggered by motion, with GPX route tracking, heatmaps, and ride comparison.": "Grabación automática con cámara de acción activada por el movimiento, con registro de rutas GPX, mapas de calor y comparación de recorridos.",
  "Speed-triggered remote recording for compatible action cameras.": "Grabación remota activada por velocidad para cámaras de acción compatibles.",
  "Switch color theme": "Cambiar tema de color",
@@ -220,7 +219,8 @@
  "controls your": "controla tu",
  "action camera": "cámara de acción",
  "Set the speeds that start and stop recording.": "Configura las velocidades a las que empieza y se detiene la grabación.",
- "speed": "Tu velocidad",
  "Latest test builds: iOS 1.0.1 (39) and Android 1.0 (32).": "Compilaciones de prueba más recientes: iOS 1.0.1 (39) y Android 1.0 (32).",
- "iOS build 39 is available to existing internal testers in TestFlight. Open TestFlight to install or update to 1.0.1 (39). Android build 32 is available to enrolled Alpha closed-test users.": "Los testers internos existentes pueden instalar o actualizar iOS 1.0.1 (39) desde TestFlight. La compilación 32 de Android está disponible para los participantes inscritos en la prueba cerrada Alpha."
+ "iOS build 39 is available to existing internal testers in TestFlight. Open TestFlight to install or update to 1.0.1 (39). Android build 32 is available to enrolled Alpha closed-test users.": "Los testers internos existentes pueden instalar o actualizar iOS 1.0.1 (39) desde TestFlight. La compilación 32 de Android está disponible para los participantes inscritos en la prueba cerrada Alpha.",
+ "mOmentiOn — Speed controls your action camera.": "mOmentiOn — Tu velocidad controla tu cámara de acción.",
+ "Speed": "Tu velocidad"
 }

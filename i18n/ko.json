@@ -4,7 +4,6 @@
  "Switch to dark theme": "다크 테마로 전환",
  "Language": "언어",
  "(English)": "(영어)",
- "mOmentiOn — Your speed starts the recording.": "mOmentiOn — 설정한 속도에 맞춰, 녹화가 시작됩니다.",
  "Automatic action-camera recording triggered by motion, with GPX route tracking, heatmaps, and ride comparison.": "속도 기반 액션캠 자동 녹화부터 GPX 경로 기록, 히트맵, 주행 비교까지.",
  "Speed-triggered remote recording for compatible action cameras.": "호환 액션캠을 속도에 맞춰 원격으로 녹화합니다.",
  "Switch color theme": "색상 테마 전환",
@@ -13,5 +12,6 @@
  "Privacy Policy — mOmentiOn": "개인정보처리방침 — mOmentiOn",
  "Getting started — mOmentiOn": "시작하기 — mOmentiOn",
  "Screen guide — mOmentiOn": "화면 설명 — mOmentiOn",
- "mOmentiOn — Let Your Speed Control the Camera.": "mOmentiOn — 카메라 제어는 속도에 맡기세요."
+ "mOmentiOn — Let Your Speed Control the Camera.": "mOmentiOn — 카메라 제어는 속도에 맡기세요.",
+ "mOmentiOn — Speed controls your action camera.": "mOmentiOn — 속도에 맞춰, 액션캠을 녹화 제어합니다."
 }
