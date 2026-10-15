@@ -220,5 +220,7 @@
  "controls your": "controla tu",
  "action camera": "cámara de acción",
  "Set the speeds that start and stop recording.": "Configura las velocidades a las que empieza y se detiene la grabación.",
- "speed": "Tu velocidad"
+ "speed": "Tu velocidad",
+ "Latest test builds: iOS 1.0.1 (39) and Android 1.0 (32).": "Compilaciones de prueba más recientes: iOS 1.0.1 (39) y Android 1.0 (32).",
+ "iOS build 39 has finished TestFlight processing; tester-group assignment is pending. Android build 32 is available to enrolled Alpha closed-test users.": "La compilación 39 de iOS ha terminado de procesarse en TestFlight y está pendiente de asignación a un grupo de testers. La compilación 32 de Android está disponible para los participantes inscritos en la prueba cerrada Alpha."
 }
