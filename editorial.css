@@ -97,3 +97,12 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .roller-headline .headline-line{white-space:nowrap}
 .roller-headline>*{font-size:calc(1em * var(--headline-fit,1))}
 :lang(ja) .roller-headline>*{font-size:calc(.75em * var(--headline-fit,1))}
+@media(max-width:767px){
+.kinetic-hero{display:grid;grid-template-columns:minmax(0,1fr) 34%;column-gap:14px;align-items:start}
+.kinetic-hero h1{grid-column:1/-1;grid-row:1;margin-bottom:18px}
+.kinetic-hero .hero-copy{grid-column:1;grid-row:2;align-self:center;margin:0}
+.kinetic-hero .hero-product{grid-column:2;grid-row:2;width:100%;margin:0;order:0;align-self:start}
+.kinetic-hero .hero-product figcaption,.kinetic-hero .hero-brand{display:none}
+.kinetic-hero .hero-lead{font-size:17px;max-width:none}
+.hero-copy .round-link{margin-inline:0;margin-top:18px}
+}
