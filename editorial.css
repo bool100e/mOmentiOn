@@ -62,7 +62,8 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 @media(max-width:767px){.hero-brand{margin:24px 0 4px}.hero-brand img{width:100px}.brand{font-size:19px}.brand img{width:30px;height:30px}}
 .hero-lead,.hero-copy p{word-break:keep-all}
 .hero-copy .round-link{display:flex;width:fit-content;margin-inline:auto}
-.hero-product{translate:var(--hero-shift,0px) 0}
+.hero-product{translate:calc(var(--hero-shift,0px) + var(--hero-group-shift,0px)) 0}
+.kinetic-hero h1,.kinetic-hero .hero-copy{translate:var(--hero-group-shift,0px) 0}
 :lang(ja) .hero-lead,:lang(ja) .hero-copy p{word-break:normal;line-break:strict}
 .download .tester-signup{grid-column:1;grid-row:3;display:flex;flex-direction:column;gap:8px;max-width:520px}
 .download .tester-signup p{margin:0;font-size:12px;line-height:1.6;color:var(--muted)}

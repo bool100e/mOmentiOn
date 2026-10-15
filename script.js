@@ -228,13 +228,22 @@ const heroTally = document.querySelector('.kinetic-hero .recording-tally');
 const heroDivider = document.querySelector('.kinetic-hero')?.nextElementSibling;
 function alignHeroProduct() {
  if (!heroProduct || !heroTally || !heroDivider) return;
+ const hero = heroProduct.closest('.kinetic-hero');
+ hero.style.setProperty('--hero-group-shift', '0px');
  heroProduct.style.setProperty('--hero-shift', '0px');
  if (matchMedia('(max-width: 767px)').matches) return;
+ // Keep the existing gap between headline and phone, then centre the whole group
+ // (headline's left edge to the phone's right edge) so both page margins match.
  const tally = heroTally.getBoundingClientRect();
  const product = heroProduct.getBoundingClientRect();
  const target = (tally.left + tally.width / 2 + heroDivider.getBoundingClientRect().right) / 2;
- const shift = Math.min(target - (product.left + product.width / 2), document.documentElement.clientWidth - 8 - product.right);
- heroProduct.style.setProperty('--hero-shift', `${Math.round(shift)}px`);
+ const shift = Math.round(target - (product.left + product.width / 2));
+ heroProduct.style.setProperty('--hero-shift', `${shift}px`);
+ const viewport = document.documentElement.clientWidth;
+ const left = hero.querySelector('h1').getBoundingClientRect().left;
+ const right = product.right + shift;
+ const groupShift = Math.max(-left + 16, ((viewport - right) - left) / 2);
+ hero.style.setProperty('--hero-group-shift', `${Math.round(groupShift)}px`);
 }
 alignHeroProduct();
 addEventListener('resize', alignHeroProduct);
