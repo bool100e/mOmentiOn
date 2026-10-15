@@ -87,13 +87,13 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .download .test-build-status p{font-size:14px;line-height:1.7;margin:6px 0;max-width:900px}
 .roller-headline{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:.2em;align-items:center}
 .roller-headline .roller-line-1,.roller-headline .roller-line-2{grid-column:2;margin-left:0}
-.roller-headline .roller-line-3{grid-column:1/-1;margin-left:0}
-.activity-roller{--cell:1.3em;grid-column:1;grid-row:1/3;position:relative;width:1.75em;height:2.1em;overflow:hidden;border-radius:.16em;color:var(--ink);background:linear-gradient(180deg,var(--soft),var(--bg) 30%,var(--bg) 70%,var(--soft));box-shadow:inset 0 0 0 .02em var(--line),inset 0 .14em .22em -.06em rgb(0 0 0/.22),inset 0 -.14em .22em -.06em rgb(0 0 0/.22)}
+.roller-headline .roller-line-3{grid-column:2;margin-left:0}
+.activity-roller{--roller-h:3.2em;--cell:1.95em;grid-column:1;grid-row:1/4;position:relative;width:2.6em;height:var(--roller-h);overflow:hidden;border-radius:.16em;color:var(--ink);background:linear-gradient(180deg,var(--soft),var(--bg) 30%,var(--bg) 70%,var(--soft));box-shadow:inset 0 0 0 .02em var(--line),inset 0 .14em .22em -.06em rgb(0 0 0/.22),inset 0 -.14em .22em -.06em rgb(0 0 0/.22)}
 .activity-roller::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,var(--bg) 0,transparent 30%,transparent 70%,var(--bg) 100%);opacity:.85}
 .activity-roller::after{content:"";position:absolute;left:.1em;right:.1em;top:calc(50% - var(--cell)/2);height:var(--cell);z-index:1;pointer-events:none;border-top:.015em solid var(--line);border-bottom:.015em solid var(--line)}
-.roller-track{position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;transform:translateY(calc((2.1em - var(--cell))/2 - var(--cell)))}
+.roller-track{position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;transform:translateY(calc((var(--roller-h) - var(--cell))/2 - var(--cell)))}
 .roller-cell{flex:none;height:var(--cell);display:grid;place-items:center}
-.roller-cell svg{display:block;width:1.2em;height:1.2em;transform:scaleY(var(--roller-stretch,1))}
+.roller-cell svg{display:block;width:1.8em;height:1.8em;transform:scaleY(var(--roller-stretch,1))}
 .roller-headline .headline-line{white-space:nowrap}
 .roller-headline>*{font-size:calc(1em * var(--headline-fit,1))}
 :lang(ja) .roller-headline>*{font-size:calc(.75em * var(--headline-fit,1))}

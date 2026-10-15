@@ -271,7 +271,7 @@ if (rollerTrack) {
  let index = 0;
  const render = (position, speed = 0) => {
   const p = ((position % count) + count) % count;
-  rollerTrack.style.transform = `translateY(calc((2.1em - var(--cell)) / 2 - var(--cell) * ${(p + 1).toFixed(4)}))`;
+  rollerTrack.style.transform = `translateY(calc((var(--roller-h) - var(--cell)) / 2 - var(--cell) * ${(p + 1).toFixed(4)}))`;
   rollerTrack.style.setProperty('--roller-stretch', (1 + Math.min(speed / 40, .35)).toFixed(3));
   rollerTrack.style.filter = speed > 1 ? `blur(${Math.min(speed / 14, 2.2).toFixed(2)}px)` : '';
  };
