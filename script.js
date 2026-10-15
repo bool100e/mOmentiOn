@@ -293,3 +293,23 @@ if (rollerTrack) {
   }, 2000);
  }
 }
+
+// Keep each headline line on one line: if a line is wider than its column (long translations or wide fonts),
+// shrink the headline just enough to fit, then re-centre the hero phone.
+const rollerHeadline = document.querySelector('.roller-headline');
+function fitRollerHeadline() {
+ if (!rollerHeadline) return;
+ rollerHeadline.style.setProperty('--headline-fit', '1');
+ let ratio = 1;
+ rollerHeadline.querySelectorAll('.headline-line').forEach(line => {
+  const range = document.createRange();
+  range.selectNodeContents(line);
+  const need = range.getBoundingClientRect().width;
+  if (need > line.clientWidth) ratio = Math.min(ratio, line.clientWidth / need);
+ });
+ if (ratio < 1) rollerHeadline.style.setProperty('--headline-fit', (ratio * .98).toFixed(3));
+ alignHeroProduct();
+}
+fitRollerHeadline();
+addEventListener('resize', fitRollerHeadline);
+document.fonts?.ready.then(fitRollerHeadline);

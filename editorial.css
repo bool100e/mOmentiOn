@@ -97,3 +97,6 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .sr-filter{position:absolute;width:0;height:0;overflow:hidden}
 .roller-track.is-rolling{filter:url(#roller-motion-blur)}
 .roller-track.is-rolling .roller-cell svg{transform:scaleY(1.15);transition-duration:.15s;transition-timing-function:ease-in}
+.roller-headline .headline-line{white-space:nowrap}
+.roller-headline>*{font-size:calc(1em * var(--headline-fit,1))}
+:lang(ja) .roller-headline>*{font-size:calc(.75em * var(--headline-fit,1))}
