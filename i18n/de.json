@@ -222,5 +222,5 @@
  "Set the speeds that start and stop recording.": "Lege die Geschwindigkeiten fest, bei denen die Aufnahme startet und stoppt.",
  "speed": "Geschwindigkeit",
  "Latest test builds: iOS 1.0.1 (39) and Android 1.0 (32).": "Aktuelle Testbuilds: iOS 1.0.1 (39) und Android 1.0 (32).",
- "iOS build 39 has finished TestFlight processing; tester-group assignment is pending. Android build 32 is available to enrolled Alpha closed-test users.": "Die TestFlight-Verarbeitung von iOS-Build 39 ist abgeschlossen; die Zuweisung zu einer Testgruppe steht noch aus. Android-Build 32 ist für angemeldete Teilnehmer des geschlossenen Alpha-Tests verfügbar."
+ "iOS build 39 is available to existing internal testers in TestFlight. Open TestFlight to install or update to 1.0.1 (39). Android build 32 is available to enrolled Alpha closed-test users.": "Bestehende interne Tester können iOS 1.0.1 (39) über TestFlight installieren oder aktualisieren. Android-Build 32 ist für angemeldete Teilnehmer des geschlossenen Alpha-Tests verfügbar."
 }

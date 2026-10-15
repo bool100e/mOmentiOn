@@ -222,5 +222,5 @@
  "Set the speeds that start and stop recording.": "録画を開始・停止する速度を設定しましょう。",
  "speed": "スピードに合わせて、",
  "Latest test builds: iOS 1.0.1 (39) and Android 1.0 (32).": "最新テストビルド：iOS 1.0.1 (39)・Android 1.0 (32)。",
- "iOS build 39 has finished TestFlight processing; tester-group assignment is pending. Android build 32 is available to enrolled Alpha closed-test users.": "iOSビルド39はTestFlightの処理が完了し、テスターグループへの割り当て前です。Androidビルド32はAlphaクローズドテストの参加者に配信中です。"
+ "iOS build 39 is available to existing internal testers in TestFlight. Open TestFlight to install or update to 1.0.1 (39). Android build 32 is available to enrolled Alpha closed-test users.": "既存の内部テスターはTestFlightでiOS 1.0.1 (39)をインストールまたはアップデートできます。Androidビルド32はAlphaクローズドテストの参加者に配信中です。"
 }
