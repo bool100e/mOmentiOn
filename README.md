@@ -40,3 +40,5 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
 Latest website update: iOS 1.0.1 (38), Android 1.0 (32), Bluetooth-only X5 control, and Apple Watch companion preview. X5 is the verified Insta360 test device; do not present legacy OSC model support as verified Bluetooth support. Watch real-device validation remains pending. Store statuses describe this update and must be refreshed when availability changes.
+
+Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).

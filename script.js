@@ -249,3 +249,25 @@ document.querySelectorAll('[data-tester-platform]').forEach(button => button.add
  location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }));
 
+
+// Hero pictogram dial: roll to the next activity every 2 s; the duplicated first icon makes the loop seamless.
+const activityTrack = document.querySelector('.activity-track');
+if (activityTrack && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+ const count = activityTrack.children.length;
+ activityTrack.append(activityTrack.firstElementChild.cloneNode(true));
+ let step = 0;
+ setInterval(() => {
+  if (document.hidden) return;
+  step += 1;
+  activityTrack.style.transform = `translateY(${-step}em)`;
+  if (step === count) {
+   activityTrack.addEventListener('transitionend', () => {
+    activityTrack.style.transition = 'none';
+    activityTrack.style.transform = 'translateY(0)';
+    step = 0;
+    activityTrack.offsetHeight;
+    activityTrack.style.transition = '';
+   }, {once: true});
+  }
+ }, 2000);
+}

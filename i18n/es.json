@@ -2,11 +2,6 @@
  "Home": "Inicio",
  "Guide": "Guía",
  "Download": "Descargar",
- "Your speed": "Tu velocidad",
- "starts the ": "inicia la ",
- "recording": "grabación",
- "Set your start and stop speeds.": "Configura las velocidades de inicio y parada.",
- " controls your action camera and keeps a record of your ride.": " controla tu cámara de acción y registra tu recorrido.",
  "Automatic recording. Actual app screen.": "Grabación automática. Pantalla real de la app.",
  "Your ride, connected.": "Tu recorrido, conectado.",
  "Speed-Triggered Recording": "Grabación activada por velocidad",
@@ -221,5 +216,10 @@
  "The iPhone companion shows the same capture dial: speed during automatic recording, REC during manual recording, and X for recording started on the camera.": "La app complementaria del iPhone muestra el mismo botón: velocidad durante la grabación automática, REC durante la manual y X cuando se inicia desde la cámara.",
  "The Watch screen has been checked in the simulator. Watch-to-iPhone commands, screen-off operation and reconnection still need real-device testing.": "La pantalla del Watch se ha comprobado en el simulador. Los comandos al iPhone, el funcionamiento con la pantalla apagada y la reconexión aún requieren pruebas con dispositivos reales.",
  "Turn the camera on and select its brand in Settings. Current X5 and DJI test builds use Bluetooth control, without joining the camera Wi-Fi network. Tap Connect, approve any pairing prompt, and wait for the green main button and connection log before recording.": "Encienda la cámara y seleccione su marca en Ajustes. Las compilaciones de prueba actuales para X5 y DJI usan Bluetooth sin conectarse al Wi-Fi de la cámara. Pulse Conectar, acepte el emparejamiento y espere a que el botón principal se vuelva verde y aparezca el registro de conexión antes de grabar.",
- "X5 connection and selected-mode recording verified on S23 and iPhone; iOS simulated speed-triggered recording verified. Extended real-ride testing remains pending.": "Se han verificado la conexión X5 y la grabación en el modo seleccionado en S23 e iPhone, y la grabación automática con velocidad simulada en iOS. Quedan pendientes las pruebas prolongadas en recorridos reales."
+ "X5 connection and selected-mode recording verified on S23 and iPhone; iOS simulated speed-triggered recording verified. Extended real-ride testing remains pending.": "Se han verificado la conexión X5 y la grabación en el modo seleccionado en S23 e iPhone, y la grabación automática con velocidad simulada en iOS. Quedan pendientes las pruebas prolongadas en recorridos reales.",
+ "Your ": "La velocidad de tu ",
+ " speed": "",
+ "controls your": "controla tu",
+ "action camera": "cámara de acción",
+ "Set the speeds that start and stop recording.": "Configura las velocidades a las que empieza y se detiene la grabación."
 }

@@ -84,3 +84,7 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 /* Current test status occupies its own row below signup and compatibility. */
 .download .test-build-status{grid-column:1/-1;grid-row:4;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
 .download .test-build-status p{font-size:14px;line-height:1.7;margin:6px 0;max-width:900px}
+.activity-dial{display:inline-block;width:1.05em;height:1em;overflow:hidden;vertical-align:-.12em;color:var(--accent)}
+.activity-track{display:flex;flex-direction:column;transition:transform .55s cubic-bezier(.3,.7,.2,1)}
+.activity-track svg{display:block;flex:none;width:1em;height:1em}
+@media(prefers-reduced-motion:reduce){.activity-track{transition:none}}
