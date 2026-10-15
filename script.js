@@ -259,12 +259,28 @@ if (rollerTrack) {
  rollerTrack.prepend(cells[count - 1].cloneNode(true));
  rollerTrack.append(cells[0].cloneNode(true), cells[1].cloneNode(true));
  let step = 0;
+ // Vertical motion blur that peaks mid-roll and clears before the bounce settles.
+ const blurAmount = document.getElementById('roller-motion-blur-amount');
+ const motionBlur = () => {
+  if (!blurAmount) return;
+  const peak = parseFloat(getComputedStyle(rollerTrack.firstElementChild).height) * .1;
+  const start = performance.now();
+  rollerTrack.classList.add('is-rolling');
+  const frame = now => {
+   const t = Math.min(Math.max((now - start) / 520, 0), 1);
+   blurAmount.setAttribute('stdDeviation', `0 ${(peak * Math.sin(Math.PI * t)).toFixed(2)}`);
+   if (t < 1) requestAnimationFrame(frame);
+   else { blurAmount.setAttribute('stdDeviation', '0 0'); rollerTrack.classList.remove('is-rolling'); }
+  };
+  requestAnimationFrame(frame);
+ };
  const place = () => { rollerTrack.style.transform = `translateY(calc((2.1em - var(--cell)) / 2 - var(--cell) * ${step + 1}))`; };
  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   setInterval(() => {
    if (document.hidden) return;
    step += 1;
    place();
+   motionBlur();
    if (step === count) {
     rollerTrack.addEventListener('transitionend', () => {
      rollerTrack.style.transition = 'none';
