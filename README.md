@@ -38,3 +38,5 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 - Korean text comes from each element's `data-ko` attribute; Japanese, German and Spanish text comes from `i18n/<lang>.json`, keyed by the English text.
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
+
+Latest website update: iOS 1.0.1 (38), Android 1.0 (32), Bluetooth-only X5 control, and Apple Watch companion preview. X5 is the verified Insta360 test device; do not present legacy OSC model support as verified Bluetooth support. Watch real-device validation remains pending. Store statuses describe this update and must be refreshed when availability changes.

@@ -80,3 +80,7 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .device-more{display:inline-block;margin-top:12px;font-size:12px;color:var(--accent)}
 @media(max-width:767px){.download .tester-signup{max-width:none}.download .device-list{margin-top:28px}.tester-option{flex:1 1 180px}}
 :lang(ko) .download h2{word-break:keep-all}
+
+/* Current test status occupies its own row below signup and compatibility. */
+.download .test-build-status{grid-column:1/-1;grid-row:4;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+.download .test-build-status p{font-size:14px;line-height:1.7;margin:6px 0;max-width:900px}

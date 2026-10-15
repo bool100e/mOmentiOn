@@ -205,5 +205,21 @@
  "Supported devices": "対応デバイス",
  "Phones": "スマートフォン",
  "Full compatibility table →": "互換性の一覧を見る →",
- "Your mail app opens. Add the account email you will use for testing, then send to finish signing up.": "メールアプリが開きます。テストに使うアカウントのメールアドレスを書いて送信すると、申し込みが完了します。"
+ "Your mail app opens. Add the account email you will use for testing, then send to finish signing up.": "メールアプリが開きます。テストに使うアカウントのメールアドレスを書いて送信すると、申し込みが完了します。",
+ "Apple Watch simulator preview": "Apple Watchシミュレータの画面",
+ "Bluetooth SDK control": "Bluetooth SDK制御",
+ "Camera compatibility": "カメラの互換性",
+ "Connect Button": "接続ボタン",
+ "Connect Button Guide": "接続ボタンの説明",
+ "Main Button Guide": "メインボタンの説明",
+ "Legacy OSC camera list": "従来のOSC対応カメラ一覧",
+ "Not verified in the Bluetooth test build": "Bluetoothテストビルドでは未確認",
+ "Earlier Wi-Fi/OSC compatibility does not establish support in the current X5-only Bluetooth discovery flow.": "従来のWi-Fi/OSC互換性は、現在のX5専用Bluetooth検索での対応を保証しません。",
+ "Latest test builds: iOS 1.0.1 (38) and Android 1.0 (32).": "最新テストビルド：iOS 1.0.1 (38)・Android 1.0 (32)。",
+ "iOS build 38 has finished TestFlight processing and is being prepared for tester distribution. Android build 32 is under Google Play closed-test review.": "iOSビルド38はTestFlightの処理が完了し、テスターへの配信準備中です。Androidビルド32はGoogle Playのクローズドテスト審査中です。",
+ "X5 and DJI test builds control cameras over Bluetooth, leaving the phone free to stay on its internet Wi-Fi network.": "X5・DJIテストビルドはBluetoothでカメラを制御するため、スマートフォンのインターネット用Wi-Fi接続を維持できます。",
+ "The iPhone companion shows the same capture dial: speed during automatic recording, REC during manual recording, and X for recording started on the camera.": "iPhone連携アプリには同じ録画ダイヤルを表示します。自動録画中は速度、手動録画中はREC、カメラ本体で開始した録画中はXを表示します。",
+ "The Watch screen has been checked in the simulator. Watch-to-iPhone commands, screen-off operation and reconnection still need real-device testing.": "Watch画面はシミュレータで確認済みです。WatchからiPhoneへの操作、画面消灯時の動作、再接続は実機テストが必要です。",
+ "Turn the camera on and select its brand in Settings. Current X5 and DJI test builds use Bluetooth control, without joining the camera Wi-Fi network. Tap Connect, approve any pairing prompt, and wait for the green main button and connection log before recording.": "カメラの電源を入れ、設定でブランドを選択します。最新のX5・DJIテストビルドはカメラのWi-Fiに接続せず、Bluetoothで制御します。接続をタップしてペアリング要求を許可し、メインボタンが緑色になり接続ログが表示されてから録画してください。",
+ "X5 connection and selected-mode recording verified on S23 and iPhone; iOS simulated speed-triggered recording verified. Extended real-ride testing remains pending.": "S23・iPhoneでX5接続と選択モードでの録画、iOSで模擬速度による自動録画を確認済みです。長時間の実走行テストは未実施です。"
 }

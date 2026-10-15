@@ -205,5 +205,21 @@
  "Supported devices": "Unterstützte Geräte",
  "Phones": "Smartphones",
  "Full compatibility table →": "Vollständige Kompatibilitätstabelle →",
- "Your mail app opens. Add the account email you will use for testing, then send to finish signing up.": "Deine Mail-App öffnet sich. Trage die Konto-E-Mail-Adresse für den Test ein und sende die Nachricht ab, um dich anzumelden."
+ "Your mail app opens. Add the account email you will use for testing, then send to finish signing up.": "Deine Mail-App öffnet sich. Trage die Konto-E-Mail-Adresse für den Test ein und sende die Nachricht ab, um dich anzumelden.",
+ "Apple Watch simulator preview": "Apple-Watch-Simulatorvorschau",
+ "Bluetooth SDK control": "Steuerung über Bluetooth-SDK",
+ "Camera compatibility": "Kamerakompatibilität",
+ "Connect Button": "Verbindungstaste",
+ "Connect Button Guide": "Anleitung zur Verbindungstaste",
+ "Main Button Guide": "Anleitung zur Haupttaste",
+ "Legacy OSC camera list": "Frühere OSC-Kameraliste",
+ "Not verified in the Bluetooth test build": "Im Bluetooth-Testbuild nicht geprüft",
+ "Earlier Wi-Fi/OSC compatibility does not establish support in the current X5-only Bluetooth discovery flow.": "Frühere Wi-Fi/OSC-Kompatibilität bestätigt keine Unterstützung durch die aktuelle Bluetooth-Suche, die nur X5-Geräte auswählt.",
+ "Latest test builds: iOS 1.0.1 (38) and Android 1.0 (32).": "Aktuelle Testbuilds: iOS 1.0.1 (38) und Android 1.0 (32).",
+ "iOS build 38 has finished TestFlight processing and is being prepared for tester distribution. Android build 32 is under Google Play closed-test review.": "Die TestFlight-Verarbeitung von iOS-Build 38 ist abgeschlossen; die Verteilung an Tester wird vorbereitet. Android-Build 32 wird für den geschlossenen Google-Play-Test geprüft.",
+ "X5 and DJI test builds control cameras over Bluetooth, leaving the phone free to stay on its internet Wi-Fi network.": "Die X5- und DJI-Testbuilds steuern Kameras über Bluetooth. Das Smartphone kann mit seinem Internet-WLAN verbunden bleiben.",
+ "The iPhone companion shows the same capture dial: speed during automatic recording, REC during manual recording, and X for recording started on the camera.": "Die iPhone-Begleitapp zeigt denselben Aufnahmeknopf: Geschwindigkeit bei automatischer Aufnahme, REC bei manueller Aufnahme und X bei einer an der Kamera gestarteten Aufnahme.",
+ "The Watch screen has been checked in the simulator. Watch-to-iPhone commands, screen-off operation and reconnection still need real-device testing.": "Die Watch-Anzeige wurde im Simulator geprüft. Befehle von der Watch an das iPhone, der Betrieb bei ausgeschaltetem Display und die Wiederverbindung müssen noch auf echten Geräten getestet werden.",
+ "Turn the camera on and select its brand in Settings. Current X5 and DJI test builds use Bluetooth control, without joining the camera Wi-Fi network. Tap Connect, approve any pairing prompt, and wait for the green main button and connection log before recording.": "Schalten Sie die Kamera ein und wählen Sie ihre Marke in den Einstellungen. Die aktuellen X5- und DJI-Testbuilds nutzen Bluetooth, ohne eine Verbindung zum Kamera-WLAN herzustellen. Tippen Sie auf Verbinden, bestätigen Sie die Kopplung und warten Sie vor der Aufnahme auf die grüne Haupttaste und den Verbindungseintrag im Protokoll.",
+ "X5 connection and selected-mode recording verified on S23 and iPhone; iOS simulated speed-triggered recording verified. Extended real-ride testing remains pending.": "X5-Verbindung und Aufnahme im gewählten Modus auf S23 und iPhone sowie simulierte geschwindigkeitsabhängige Aufnahme unter iOS geprüft. Längere Tests bei echten Fahrten stehen noch aus."
 }
