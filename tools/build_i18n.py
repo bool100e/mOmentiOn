@@ -88,6 +88,8 @@ def translate_page(source, page, lang, table):
     out = out.replace(f'href="{page_url("en", page)}"', f'href="{page_url(lang, page)}"')
     out = out.replace(f'content="{page_url("en", page)}"', f'content="{page_url(lang, page)}"')
     out = out.replace(f'<option value="{lang}">', f'<option value="{lang}" selected>')
+    if lang == 'ko':
+        out = out.replace('assets/social-preview-v2.png', 'assets/social-preview-v2-ko.png')
     out = RELATIVE_URL.sub(url, out)
     note = html.escape(text('(English)'))
     for other in ALL_PAGES:

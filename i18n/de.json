@@ -222,5 +222,8 @@
  "Latest test builds: iOS 1.0.1 (39) and Android 1.0 (32).": "Aktuelle Testbuilds: iOS 1.0.1 (39) und Android 1.0 (32).",
  "iOS build 39 is available to existing internal testers in TestFlight. Open TestFlight to install or update to 1.0.1 (39). Android build 32 is available to enrolled Alpha closed-test users.": "Bestehende interne Tester können iOS 1.0.1 (39) über TestFlight installieren oder aktualisieren. Android-Build 32 ist für angemeldete Teilnehmer des geschlossenen Alpha-Tests verfügbar.",
  "mOmentiOn — Speed controls your action camera.": "mOmentiOn — Deine Geschwindigkeit steuert deine Actioncam.",
- "Speed": "Geschwindigkeit"
+ "Speed": "Geschwindigkeit",
+ "Speed-triggered recording for your action camera. Set start and stop speeds, then review your ride with GPX routes, heatmaps, and comparisons.": "Geschwindigkeitsgesteuerte Aufnahme für deine Actioncam. Lege Start- und Stopp-Geschwindigkeit fest und sieh dir deine Fahrt mit GPX-Routen, Heatmaps und Vergleichen an.",
+ "Set up mOmentiOn: permissions and storage, camera connection, recording speeds, and checking your rides. Includes camera compatibility.": "mOmentiOn einrichten: Berechtigungen und Speicher, Kameraverbindung, Aufnahmegeschwindigkeiten und Fahrten prüfen. Mit Hinweisen zur Kamerakompatibilität.",
+ "What each control on the mOmentiOn main screen does, from the speed button to saved rides and logs.": "Was jedes Bedienelement auf dem mOmentiOn-Hauptbildschirm macht – von der Geschwindigkeitstaste bis zu gespeicherten Fahrten und Protokollen."
 }
