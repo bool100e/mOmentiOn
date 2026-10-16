@@ -224,5 +224,11 @@
  "Bluetooth · DJI R SDK protocol": "Bluetooth · DJI R SDKプロトコル",
  "Verified on Galaxy S23 and iPhone": "Galaxy S23・iPhoneで確認済み",
  "Supported in the app; device check pending": "アプリ対応 · 実機確認予定",
- "Bluetooth · Insta360 SDK": "Bluetooth · Insta360 SDK"
+ "Bluetooth · Insta360 SDK": "Bluetooth · Insta360 SDK",
+ "Android build 34 and iOS build 40 recognize ONE X2, X3, X4, X4 Air, X5 and X6 Bluetooth names. X6 support uses SDK 2.1.5 on Android and 1.11.3 on iOS. Saved-camera matching remains strict; X6 physical-device testing and regression testing with the updated SDK are pending.": "Android ビルド34とiOS ビルド40はONE X2・X3・X4・X4 Air・X5・X6のBluetooth名を認識します。X6対応にはAndroid SDK 2.1.5とiOS SDK 1.11.3を使用します。保存済みカメラを厳密に識別します。X6実機確認と更新SDKでの実機回帰テストは未実施です。",
+ "Insta360 SDK updated to Android 2.1.5 and iOS 1.11.3, with X6 support added. X6 physical-device testing is pending. Android build 34 is confirmed as supporting 16 KB memory pages by Google Play.": "Insta360 SDKをAndroid 2.1.5・iOS 1.11.3に更新し、X6対応を追加しました。X6実機確認は未実施です。Android ビルド34の16 KBメモリページ対応はGoogle Playで確認済みです。",
+ "Insta360 and DJI cameras use Bluetooth control, leaving the phone free to stay on its internet Wi-Fi network.": "Insta360とDJIはBluetoothで制御するため、スマートフォンのインターネット用Wi-Fi接続を維持できます。",
+ "Latest test builds: iOS 1.0.1 (40) and Android 1.0 (34).": "最新テストビルド：iOS 1.0.1 (40)・Android 1.0 (34)。",
+ "Turn the camera on and select its brand in Settings. Current Insta360 and DJI test builds use Bluetooth control, without joining the camera Wi-Fi network. Tap Connect, approve any pairing prompt, and wait for the green main button and connection log before recording.": "カメラの電源を入れ、設定でブランドを選択します。現在のInsta360・DJIテストビルドはカメラのWi-Fiに接続せずBluetoothで制御します。接続をタップし、ペアリングを許可して、メインボタンが緑になり接続ログが表示されてから録画してください。",
+ "iOS build 40 is available to existing TestFlight internal group 093026. Android build 34 is published to enrolled Alpha closed-test users. Open TestFlight or Google Play with your enrolled account to install or update.": "iOS ビルド40は既存のTestFlight内部グループ093026に配信しています。Android ビルド34はAlphaクローズドテスト参加者向けに公開済みです。登録済みアカウントでTestFlightまたはGoogle Playを開き、インストール・更新してください。"
 }

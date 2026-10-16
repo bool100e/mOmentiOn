@@ -39,6 +39,6 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
-Latest website update: iOS 1.0.1 (39), Android 1.0 (32), Bluetooth-only X5 control, and Apple Watch companion preview. X5 is the verified Insta360 test device; do not present legacy OSC model support as verified Bluetooth support. Watch real-device validation remains pending. Store statuses describe this update and must be refreshed when availability changes.
+Latest website update: iOS 1.0.1 (40) is assigned to existing TestFlight internal group 093026; Android 1.0 (34) is published to enrolled Alpha closed-test users. Insta360 SDK versions: iOS 1.11.3 and Android 2.1.5. X6 Bluetooth discovery is supported in the app; physical X6 testing and updated-SDK camera regression remain pending. Google Play confirms build 34 supports 16 KB pages. Earlier X5 device checks do not establish validation of the updated SDK. Watch real-device validation remains pending.
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
