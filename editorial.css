@@ -131,3 +131,7 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 :lang(ko) .watch-copy p{word-break:keep-all}
 
 .watch-frame.wear-round{border-radius:50%;padding:6px}.watch-frame.wear-round img{width:240px;border-radius:50%}@media(max-width:767px){.watch-frame.wear-round img{width:220px}}
+.capability-list article{padding-left:0}.capability-list .feature-icon{position:static;display:block;margin-bottom:10px;line-height:0}.capability-list .feature-icon svg{width:30px;height:30px}
+.home-screen-guide .guide-more{align-self:center;font-size:15px;color:var(--accent)}
+.watch-pair{display:flex;gap:24px;align-items:center;justify-content:center}.device-brands{font-size:15px;margin:6px 0 10px}
+@media(max-width:767px){.watch-pair{gap:14px}.watch-pair .watch-frame :is(img,video){width:130px}}
