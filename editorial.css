@@ -129,3 +129,5 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .watch-states strong{color:var(--accent)}
 @media(max-width:767px){.watch-section{grid-template-columns:1fr;gap:24px;padding-top:28px;padding-bottom:28px}.watch-figure{order:2}.watch-frame :is(img,video){width:150px}}
 :lang(ko) .watch-copy p{word-break:keep-all}
+
+.watch-frame.wear-round{border-radius:50%;padding:6px}.watch-frame.wear-round img{width:240px;border-radius:50%}@media(max-width:767px){.watch-frame.wear-round img{width:220px}}
