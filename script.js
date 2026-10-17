@@ -124,6 +124,12 @@ if (watchVideo) {
 
 // Read the actual dial color so the tally stays in sync through seeks and loops.
 const heroVideo = document.querySelector('.hero-product video');
+// The hero clip plays at double speed; the screen guide uses the same file at normal speed.
+if (heroVideo) {
+ const doubleSpeed = () => { heroVideo.defaultPlaybackRate = 2; if (heroVideo.playbackRate !== 2) heroVideo.playbackRate = 2; };
+ doubleSpeed();
+ ['loadedmetadata', 'play'].forEach(type => heroVideo.addEventListener(type, doubleSpeed));
+}
 const recordingTally = document.querySelector('.recording-tally');
 if (heroVideo && recordingTally) {
  const sample = document.createElement('canvas');
