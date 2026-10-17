@@ -135,3 +135,9 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .home-screen-guide .guide-more{align-self:center;font-size:15px;color:var(--accent)}
 .watch-pair{display:flex;gap:24px;align-items:center;justify-content:center}.device-brands{font-size:15px;margin:6px 0 10px}
 @media(max-width:767px){.watch-pair{gap:14px}.watch-pair .watch-frame :is(img,video){width:130px}}
+
+/* Match screen heights without stretching rectangular or circular displays. */
+.watch-pair .watch-frame{padding:12px;flex:none}
+.watch-pair .watch-frame :is(img,video){height:240px;width:auto;max-width:none}
+.watch-pair .wear-round :is(img,video){border-radius:50%}
+@media(max-width:767px){.watch-pair .watch-frame :is(img,video){height:clamp(110px,34vw,150px);width:auto}}

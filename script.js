@@ -101,8 +101,7 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) star
 document.addEventListener('pointerdown', startVideos, {once:true});
 
 // Actual Watch simulator footage: loop silently only while visible.
-const watchVideo = document.querySelector('[data-watch-video]');
-if (watchVideo) {
+document.querySelectorAll('[data-watch-video]').forEach(watchVideo => {
  const reducedWatchMotion = matchMedia('(prefers-reduced-motion: reduce)');
  let watchVisible = false;
  const syncWatchPlayback = () => {
@@ -120,7 +119,7 @@ if (watchVideo) {
  document.addEventListener('visibilitychange', syncWatchPlayback);
  reducedWatchMotion.addEventListener('change', syncWatchPlayback);
  document.addEventListener('pointerdown', syncWatchPlayback, {once: true});
-}
+});
 
 // Read the actual dial color so the tally stays in sync through seeks and loops.
 const heroVideo = document.querySelector('.hero-product video');
