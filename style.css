@@ -20,3 +20,9 @@
   :lang(ko) main :is(h1,h2,h3,h4,p,li){word-break:keep-all}
   :lang(de) main :is(h1,h2,h3,h4,p,li){hyphens:auto}
 }
+
+/* Setup summaries remain visible; supplementary instructions open on request. */
+.guide-more{margin:14px 0 0;border-top:1px solid var(--line);padding-top:8px}
+.guide-more>summary{cursor:pointer;padding:10px 0;min-height:44px;box-sizing:border-box;font-weight:600}
+.guide-more-body{padding:0 0 8px}
+.guide-more-body>:first-child{margin-top:8px}

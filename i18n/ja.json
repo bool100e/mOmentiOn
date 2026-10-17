@@ -250,5 +250,14 @@
   "X means recording started on the camera. Stop it there. App controls are locked; this is not a connection error.": "Xはカメラ本体で開始した録画です。本体で停止してください。アプリ操作はロックされ、接続エラーではありません。",
   "Controls are locked while commands run. Android also locks them until camera controls are ready. Red may remain during recovery; check the connection too.": "命令の処理中は操作がロックされます。Androidでは制御準備前もロックされます。復旧中は赤色が残る場合があるため、接続も確認してください。",
   "The red power button ends GPS monitoring and connections, and attempts to stop app-started recording. Stop camera-started recording on the camera.": "赤い電源ボタンでGPS・接続を終了し、アプリで開始した録画の停止を試みます。本体で開始した録画は本体で停止してください。",
-  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOSは終了前に確認し、Androidはすぐ終了を開始します。応答がなければカメラで録画状態を確認してください。"
+  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOSは終了前に確認し、Androidはすぐ終了を開始します。応答がなければカメラで録画状態を確認してください。",
+  "Allow location and Bluetooth. The floating button requires display-over-other-apps permission (Android).": "位置情報・Bluetoothを許可してください。フローティングボタンには「他のアプリの上に表示」の権限が必要です（Android）。",
+  "While stationary, enable GPS monitoring and check reception. Zero speed alone does not confirm reception.": "停車中にGPS監視を有効にし、受信を確認してください。速度0だけでは受信を判断できません。",
+  "Turn on the camera → select brand → connect → approve pairing. A green main button confirms connection.": "カメラをオン → ブランド選択 → 接続 → ペアリング許可。メインボタンが緑なら接続完了です。",
+  "Use the main button to start and stop. If X appears, stop recording on the camera.": "メインボタンで開始・停止します。Xが表示されたらカメラ本体で停止してください。",
+  "Set start/stop speeds and hold times. Keep the stop speed lower; manual recording does not stop automatically.": "開始・停止速度と継続時間を設定してください。停止速度は低く設定し、手動録画は自動停止しません。",
+  "Stop safely, review your records, and tap Quit. Stop camera-started recording on the camera.": "停車後に記録を確認して終了ボタンを押してください。本体で始めた録画は本体で停止します。",
+  "Supported cameras use Bluetooth control. Find your model in the table below.": "対応カメラはBluetoothで制御します。機種は下の表で確認してください。",
+  "Set up and test while stationary. Do not operate the phone while riding.": "停車中に設定・テストし、走行中はスマートフォンを操作しないでください。",
+  "Details": "詳しく"
 }

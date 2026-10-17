@@ -250,5 +250,14 @@
   "X means recording started on the camera. Stop it there. App controls are locked; this is not a connection error.": "X bedeutet Aufnahme über die Kamera. Dort stoppen. Die App-Steuerung ist gesperrt; kein Verbindungsfehler.",
   "Controls are locked while commands run. Android also locks them until camera controls are ready. Red may remain during recovery; check the connection too.": "Während Befehlen sind Tasten gesperrt. Android sperrt sie auch vor Steuerbereitschaft. Rot kann während der Wiederherstellung bleiben; auch die Verbindung prüfen.",
   "The red power button ends GPS monitoring and connections, and attempts to stop app-started recording. Stop camera-started recording on the camera.": "Die rote Einschalttaste beendet GPS und Verbindungen und versucht, App-Aufnahmen zu stoppen. Kamera-Aufnahmen an der Kamera stoppen.",
-  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOS fragt vor dem Beenden; Android beginnt sofort. Bei fehlender Antwort den Aufnahmestatus an der Kamera prüfen."
+  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOS fragt vor dem Beenden; Android beginnt sofort. Bei fehlender Antwort den Aufnahmestatus an der Kamera prüfen.",
+  "Allow location and Bluetooth. The floating button requires display-over-other-apps permission (Android).": "Standort und Bluetooth erlauben. Die schwebende Taste benötigt die Berechtigung zur Anzeige über anderen Apps (Android).",
+  "While stationary, enable GPS monitoring and check reception. Zero speed alone does not confirm reception.": "Im Stand GPS-Überwachung aktivieren und Empfang prüfen. Tempo null allein bestätigt keinen Empfang.",
+  "Turn on the camera → select brand → connect → approve pairing. A green main button confirms connection.": "Kamera einschalten → Marke wählen → verbinden → Kopplung erlauben. Die grüne Haupttaste bestätigt die Verbindung.",
+  "Use the main button to start and stop. If X appears, stop recording on the camera.": "Mit der Haupttaste starten und stoppen. Bei X die Aufnahme an der Kamera stoppen.",
+  "Set start/stop speeds and hold times. Keep the stop speed lower; manual recording does not stop automatically.": "Start-/Stoppgeschwindigkeit und Haltezeiten festlegen. Stoppgeschwindigkeit niedriger wählen; manuelle Aufnahmen stoppen nicht automatisch.",
+  "Stop safely, review your records, and tap Quit. Stop camera-started recording on the camera.": "Im Stand Aufzeichnungen prüfen und Beenden antippen. Kamera-Aufnahmen an der Kamera stoppen.",
+  "Supported cameras use Bluetooth control. Find your model in the table below.": "Unterstützte Kameras werden per Bluetooth gesteuert. Modelle stehen in der Tabelle unten.",
+  "Set up and test while stationary. Do not operate the phone while riding.": "Im Stand einrichten und testen. Das Telefon während der Fahrt nicht bedienen.",
+  "Details": "Details"
 }

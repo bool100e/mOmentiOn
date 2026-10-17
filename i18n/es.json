@@ -250,5 +250,14 @@
   "X means recording started on the camera. Stop it there. App controls are locked; this is not a connection error.": "X indica grabación iniciada en la cámara. Deténla allí. Los controles están bloqueados; no es un error de conexión.",
   "Controls are locked while commands run. Android also locks them until camera controls are ready. Red may remain during recovery; check the connection too.": "Los controles se bloquean al procesar órdenes. Android también los bloquea hasta estar listos. El rojo puede persistir durante la recuperación; comprueba la conexión.",
   "The red power button ends GPS monitoring and connections, and attempts to stop app-started recording. Stop camera-started recording on the camera.": "El botón rojo termina el GPS y las conexiones e intenta detener la grabación iniciada en la app. Detén en la cámara lo iniciado allí.",
-  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOS pide confirmación; Android comienza el cierre de inmediato. Si no responde, comprueba la grabación en la cámara."
+  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOS pide confirmación; Android comienza el cierre de inmediato. Si no responde, comprueba la grabación en la cámara.",
+  "Allow location and Bluetooth. The floating button requires display-over-other-apps permission (Android).": "Permite ubicación y Bluetooth. El botón flotante requiere permiso para mostrarse sobre otras apps (Android).",
+  "While stationary, enable GPS monitoring and check reception. Zero speed alone does not confirm reception.": "Con el vehículo detenido, activa el GPS y comprueba la recepción. Una velocidad cero no la confirma.",
+  "Turn on the camera → select brand → connect → approve pairing. A green main button confirms connection.": "Enciende la cámara → elige marca → conecta → acepta el emparejamiento. El botón principal verde confirma la conexión.",
+  "Use the main button to start and stop. If X appears, stop recording on the camera.": "Usa el botón principal para iniciar y detener. Si aparece X, detén la grabación en la cámara.",
+  "Set start/stop speeds and hold times. Keep the stop speed lower; manual recording does not stop automatically.": "Configura velocidades y tiempos de espera. La parada debe ser menor; la grabación manual no se detiene automáticamente.",
+  "Stop safely, review your records, and tap Quit. Stop camera-started recording on the camera.": "Detente, revisa los registros y pulsa Salir. Detén en la cámara las grabaciones iniciadas allí.",
+  "Supported cameras use Bluetooth control. Find your model in the table below.": "Las cámaras compatibles se controlan por Bluetooth. Consulta los modelos en la tabla inferior.",
+  "Set up and test while stationary. Do not operate the phone while riding.": "Configura y prueba con el vehículo detenido. No uses el teléfono al conducir.",
+  "Details": "Detalles"
 }
