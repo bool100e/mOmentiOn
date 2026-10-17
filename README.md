@@ -43,4 +43,4 @@ Latest website update: iOS 1.0.1 (40) is assigned to existing TestFlight interna
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
 
-Apple Watch media: `assets/apple-watch-loop.mp4` is 13.5 seconds of actual simulator preview capture (automatic, manual and camera-body recording states), 416x496, without an audio track. It loops while visible and pauses offscreen or in a hidden tab; reduced-motion preferences retain the poster. No live camera or phone link was used to record this preview.
+Apple Watch media: `assets/apple-watch-speed-loop.mp4` is 12 seconds of actual simulator preview capture with continuously changing automatic-recording speed (6–42 km/h), 416x496, without an audio track. The website preview was built in a temporary app copy; release app sources are unchanged. It loops while visible and pauses offscreen or in a hidden tab; reduced-motion preferences retain the poster. No live camera or phone link was used to record this preview.
