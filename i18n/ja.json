@@ -235,5 +235,20 @@
   "Speed, connection and recording status synchronize every second while the watch screen is active. Camera-button recordings are protected, duplicate commands are blocked, and controls are disabled when phone updates stop for five seconds.": "ウォッチ画面がアクティブな間、速度・接続・録画状態を1秒ごとに同期します。本体で開始した録画の保護、重複コマンドの防止、スマートフォンからの更新が5秒間途絶えた際の操作無効化に対応しています。",
   "Wear OS integration is not included in Android test build 34. A test release is pending.": "Wear OS連携は現在のAndroidテストビルド34には含まれていません。テスト配信を準備中です。",
   "Learn more →": "詳しく見る →",
-  "Supports Apple Watch and Wear OS. See your speed and recording status, and start or stop recording through your paired phone.": "Apple WatchとWear OSに対応。ペアリングしたスマートフォンを通じて速度と録画状態を確認し、録画を開始・停止できます。"
+  "Supports Apple Watch and Wear OS. See your speed and recording status, and start or stop recording through your paired phone.": "Apple WatchとWear OSに対応。ペアリングしたスマートフォンを通じて速度と録画状態を確認し、録画を開始・停止できます。",
+  "Shows the selected camera brand. Tap during connection to switch brands.": "選択したカメラブランドを表示。接続中にタップすると切り替わります。",
+  "Connection and recording logs in English, newest first.": "接続・録画ログを英語で新しい順に表示します。",
+  "Red dot: recording start speed. Green dot: stop speed.": "赤い点：録画開始速度。緑の点：停止速度。",
+  "Apple Watch and Wear OS support. Check speed and recording status, and control recording from your wrist.": "Apple Watch・Wear OS対応。手首で速度・録画状態を確認し、録画を操作できます。",
+  "Install through TestFlight or Google Play with your enrolled account.": "登録済みアカウントでTestFlightまたはGoogle Playからインストールしてください。",
+  "Allow location and Bluetooth access. Change denied permissions in system Settings.": "位置情報・Bluetoothを許可してください。拒否した権限はシステム設定で変更できます。",
+  "Stop with a clear view of the sky, enable GPS monitoring, and check reception in the indicator and log. Zero speed alone does not confirm reception.": "空の見える場所に停車し、GPS監視を有効にして表示・ログで受信を確認してください。速度0だけでは受信を確認できません。",
+  "Turn on the camera, select its brand, and connect. Approve pairing and wait for the green main button.": "カメラの電源を入れ、ブランドを選んで接続してください。ペアリングを許可し、メインボタンが緑になるまで待ちます。",
+  "Set start/stop speeds and hold times. Keep the stop speed lower. With GPS and camera ready, recording follows these conditions. Manual recording does not stop automatically.": "開始・停止速度と継続時間を設定してください。停止速度は低く設定します。GPS・カメラの準備後、条件に従って自動録画します。手動録画は自動停止しません。",
+  "Set up and test while stationary. Do not use the phone while riding. Automatic recording requires GPS reception and a camera connection.": "停車中に設定・テストしてください。走行中はスマートフォンを操作しないでください。自動録画にはGPS受信とカメラ接続が必要です。",
+  "REC means manual recording started in the app. Tap to stop; speed conditions do not stop it.": "RECはアプリで開始した手動録画です。タップで停止します。速度条件では停止しません。",
+  "X means recording started on the camera. Stop it there. App controls are locked; this is not a connection error.": "Xはカメラ本体で開始した録画です。本体で停止してください。アプリ操作はロックされ、接続エラーではありません。",
+  "Controls are locked while commands run. Android also locks them until camera controls are ready. Red may remain during recovery; check the connection too.": "命令の処理中は操作がロックされます。Androidでは制御準備前もロックされます。復旧中は赤色が残る場合があるため、接続も確認してください。",
+  "The red power button ends GPS monitoring and connections, and attempts to stop app-started recording. Stop camera-started recording on the camera.": "赤い電源ボタンでGPS・接続を終了し、アプリで開始した録画の停止を試みます。本体で開始した録画は本体で停止してください。",
+  "iOS asks for confirmation; Android starts shutdown immediately. If unresponsive, check recording on the camera.": "iOSは終了前に確認し、Androidはすぐ終了を開始します。応答がなければカメラで録画状態を確認してください。"
 }
