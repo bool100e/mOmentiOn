@@ -13,3 +13,10 @@
 .home-screen-guide{padding-top:60px;padding-bottom:30px}.home-screen-guide>.screen-guide{display:grid;grid-template-columns:minmax(220px,350px) minmax(0,1fr);gap:56px}.home-screen-guide .guide-capture{position:sticky;top:90px;align-self:start;width:100%}.camera-brands{background:transparent;padding:0;align-items:center;gap:24px}.camera-brands img{width:auto;height:44px;max-width:110px;object-fit:contain}.guide-number{background:#306cca;color:#fff}:root[data-theme=dark] .guide-number{background:#8eb6ff;color:#16243d}.footer-links{display:flex;gap:22px;flex-wrap:wrap}footer{flex-wrap:wrap}.legal-contact{background:var(--soft);padding:20px;border-radius:12px}.article a{overflow-wrap:anywhere}
 @media(max-width:760px){.home-screen-guide>.screen-guide{grid-template-columns:1fr;gap:24px}.home-screen-guide .guide-capture{position:relative;top:auto;max-width:360px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Keep mobile copy readable without clipping long translated words. */
+@media(max-width:767px){
+  main :is(h1,h2,h3,h4,p,li){overflow-wrap:anywhere}
+  :lang(ko) main :is(h1,h2,h3,h4,p,li){word-break:keep-all}
+  :lang(de) main :is(h1,h2,h3,h4,p,li){hyphens:auto}
+}
