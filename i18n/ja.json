@@ -231,5 +231,7 @@
   "Wear OS · standby preview": "Wear OS · 待機画面プレビュー",
   "A round dial for Wear OS.": "Wear OSのための円形ダイアル。",
   "A centered main button fills the round display while leaving room for its pulse effect. The symbol sits just below the upper arc.": "パルス効果が画面内に収まる最大サイズのメインボタンを中央に配置。シンボルは上部のアーチのすぐ下に表示します。",
-  "UI preview in development. Phone synchronization and camera control are not yet available on Wear OS.": "開発中の画面プレビューです。Wear OSでのスマートフォン連携とカメラ制御はまだ利用できません。"
+  "Wear OS phone synchronization and camera control are implemented in the development version. The paired Android phone handles GPS and Bluetooth camera control; the watch sends recording start and stop commands.": "開発版にWear OSのスマートフォン連携とカメラ制御を実装しました。ペアリングしたAndroidスマートフォンがGPSとBluetoothカメラ制御を担当し、ウォッチが録画開始・停止コマンドを送信します。",
+  "Speed, connection and recording status synchronize every second while the watch screen is active. Camera-button recordings are protected, duplicate commands are blocked, and controls are disabled when phone updates stop for five seconds.": "ウォッチ画面がアクティブな間、速度・接続・録画状態を1秒ごとに同期します。本体で開始した録画の保護、重複コマンドの防止、スマートフォンからの更新が5秒間途絶えた際の操作無効化に対応しています。",
+  "Wear OS integration is not included in Android test build 34. A test release is pending.": "Wear OS連携は現在のAndroidテストビルド34には含まれていません。テスト配信を準備中です。"
 }
