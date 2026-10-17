@@ -22,7 +22,21 @@ function toc() {
  const oldContainer = target.closest('aside.toc');
  target.classList.add('sidebar-toc');
  target.setAttribute('aria-label', document.querySelector('.article h1')?.textContent.trim() || 'Page sections');
- pageLink.after(target);
+ let releaseDisclosure = null;
+ const mobileOutline = matchMedia('(max-width:760px)');
+ if (current === 'release-notes.html') {
+   releaseDisclosure = document.createElement('details');
+   releaseDisclosure.className = 'release-build-menu';
+   const summary = document.createElement('summary');
+   summary.textContent = language === 'ko' ? '빌드 목록' : 'Build list';
+   pageLink.after(releaseDisclosure);
+   releaseDisclosure.append(summary, target);
+   const syncOutline = () => { releaseDisclosure.open = !mobileOutline.matches; };
+   syncOutline();
+   mobileOutline.addEventListener('change', syncOutline);
+ } else {
+   pageLink.after(target);
+ }
  pageLink.classList.add('has-outline');
  oldContainer?.remove();
  target.replaceChildren();
@@ -32,6 +46,13 @@ function toc() {
    // Release entries list only their build number so the outline stays short.
    const label = heading.querySelector('.release-build') || heading;
    const a = document.createElement('a'); a.href = '#' + section.id; a.textContent = label.textContent;
+   if (releaseDisclosure) a.addEventListener('click', event => {
+     if (!mobileOutline.matches || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+     event.preventDefault();
+     releaseDisclosure.open = false;
+     location.hash = a.hash;
+     section.scrollIntoView({behavior: 'instant', block: 'start'});
+   });
    target.append(a); entries.push({section, a});
  });
  function select(id) {

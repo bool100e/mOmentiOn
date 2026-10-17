@@ -259,5 +259,6 @@
   "Stop safely, review your records, and tap Quit. Stop camera-started recording on the camera.": "停車後に記録を確認して終了ボタンを押してください。本体で始めた録画は本体で停止します。",
   "Supported cameras use Bluetooth control. Find your model in the table below.": "対応カメラはBluetoothで制御します。機種は下の表で確認してください。",
   "Set up and test while stationary. Do not operate the phone while riding.": "停車中に設定・テストし、走行中はスマートフォンを操作しないでください。",
-  "Details": "詳しく"
+  "Details": "詳しく",
+  "Supported cameras use Bluetooth control. Find your model below.": "対応カメラはBluetoothで制御します。機種は下の一覧で確認してください。"
 }

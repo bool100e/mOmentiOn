@@ -26,3 +26,8 @@
 .guide-more>summary{cursor:pointer;padding:10px 0;min-height:44px;box-sizing:border-box;font-weight:600}
 .guide-more-body{padding:0 0 8px}
 .guide-more-body>:first-child{margin-top:8px}
+
+/* Brand-grouped models wrap without repeating their shared control method. */
+.camera-model-group h3{font-size:18px;margin:20px 0 10px}
+.article .camera-model-badges{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.article .camera-model-badges li{border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:0;font-size:14px;line-height:1.5;overflow-wrap:anywhere}

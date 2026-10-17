@@ -27,3 +27,13 @@
 .sidebar .sidebar-toc a.active { color: var(--accent); font-weight: 700; border-left: 2px solid currentColor; padding-left: 8px; }
 .sidebar a:hover { color: var(--accent); }
 @media(max-width:760px) { .sidebar-group { flex: 1; border: 0; margin: 0; padding: 8px 0 10px; } }
+
+/* Desktop outline stays expanded; mobile build navigation opens on demand. */
+.release-build-menu>summary{display:none}
+@media(max-width:760px){
+ .release-build-menu{min-width:0}
+ .sidebar .release-build-menu{padding:0;margin:0;border:0}
+ .release-build-menu>summary{display:list-item;cursor:pointer;padding:10px 0;margin:0;min-height:44px;box-sizing:border-box}
+ .release-build-menu .sidebar-toc{max-height:min(50vh,320px);overflow-y:auto;overscroll-behavior:contain;margin:0 0 12px;padding-left:10px}
+ .sidebar-group:has(.release-build-menu){min-width:0}
+}
