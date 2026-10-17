@@ -235,5 +235,5 @@
   "Speed, connection and recording status synchronize every second while the watch screen is active. Camera-button recordings are protected, duplicate commands are blocked, and controls are disabled when phone updates stop for five seconds.": "ウォッチ画面がアクティブな間、速度・接続・録画状態を1秒ごとに同期します。本体で開始した録画の保護、重複コマンドの防止、スマートフォンからの更新が5秒間途絶えた際の操作無効化に対応しています。",
   "Wear OS integration is not included in Android test build 34. A test release is pending.": "Wear OS連携は現在のAndroidテストビルド34には含まれていません。テスト配信を準備中です。",
   "Learn more →": "詳しく見る →",
-  "See your speed and recording status, and start or stop recording from Apple Watch through your iPhone.": "iPhoneと連携したApple Watchで速度と録画状態を確認し、録画を開始・停止できます。"
+  "Supports Apple Watch and Wear OS. See your speed and recording status, and start or stop recording through your paired phone.": "Apple WatchとWear OSに対応。ペアリングしたスマートフォンを通じて速度と録画状態を確認し、録画を開始・停止できます。"
 }

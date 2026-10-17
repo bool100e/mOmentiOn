@@ -235,5 +235,5 @@
   "Speed, connection and recording status synchronize every second while the watch screen is active. Camera-button recordings are protected, duplicate commands are blocked, and controls are disabled when phone updates stop for five seconds.": "La velocidad, la conexión y el estado de grabación se sincronizan cada segundo mientras la pantalla del reloj está activa. Se protegen las grabaciones iniciadas en la cámara, se bloquean comandos duplicados y se desactivan los controles tras cinco segundos sin actualizaciones del teléfono.",
   "Wear OS integration is not included in Android test build 34. A test release is pending.": "La integración con Wear OS no está incluida en la compilación de prueba 34 de Android. La distribución de prueba está pendiente.",
   "Learn more →": "Más información →",
-  "See your speed and recording status, and start or stop recording from Apple Watch through your iPhone.": "Consulta la velocidad y el estado de grabación e inicia o detén la grabación desde el Apple Watch conectado a tu iPhone."
+  "Supports Apple Watch and Wear OS. See your speed and recording status, and start or stop recording through your paired phone.": "Compatible con Apple Watch y Wear OS. Consulta la velocidad y el estado de grabación e inicia o detén la grabación a través del teléfono vinculado."
 }
