@@ -82,7 +82,7 @@ const current = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.sidebar a,.nav-links a').forEach(a => { if (a.getAttribute('href') === current) { a.classList.add('active'); a.setAttribute('aria-current','page'); } });
 updateThemeLabel(); toc();
 // Requested continuous, muted, inline video playback. Native controls remain available.
-const autoplayVideos = [...document.querySelectorAll('video:not([data-guide-video])')];
+const autoplayVideos = [...document.querySelectorAll('video:not([data-guide-video]):not([data-watch-video])')];
 function startVideos() {
  autoplayVideos.forEach(video => {
   video.muted = true;
@@ -99,6 +99,28 @@ autoplayVideos.forEach(video => video.addEventListener('canplay', () => {
 startVideos();
 document.addEventListener('visibilitychange', () => { if (!document.hidden) startVideos(); });
 document.addEventListener('pointerdown', startVideos, {once:true});
+
+// Actual Watch simulator footage: loop silently only while visible.
+const watchVideo = document.querySelector('[data-watch-video]');
+if (watchVideo) {
+ const reducedWatchMotion = matchMedia('(prefers-reduced-motion: reduce)');
+ let watchVisible = false;
+ const syncWatchPlayback = () => {
+  if (watchVisible && !document.hidden && !reducedWatchMotion.matches) {
+   watchVideo.muted = true;
+   watchVideo.play().catch(() => {});
+  } else watchVideo.pause();
+ };
+ if ('IntersectionObserver' in window) {
+  new IntersectionObserver(entries => {
+   watchVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.2;
+   syncWatchPlayback();
+  }, {threshold: [0, 0.2]}).observe(watchVideo);
+ }
+ document.addEventListener('visibilitychange', syncWatchPlayback);
+ reducedWatchMotion.addEventListener('change', syncWatchPlayback);
+ document.addEventListener('pointerdown', syncWatchPlayback, {once: true});
+}
 
 // Read the actual dial color so the tally stays in sync through seeks and loops.
 const heroVideo = document.querySelector('.hero-product video');

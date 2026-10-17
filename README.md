@@ -42,3 +42,5 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 Latest website update: iOS 1.0.1 (40) is assigned to existing TestFlight internal group 093026; Android 1.0 (34) is published to enrolled Alpha closed-test users. Insta360 SDK versions: iOS 1.11.3 and Android 2.1.5. X6 Bluetooth discovery is supported in the app. Google Play confirms build 34 supports 16 KB pages.
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
+
+Apple Watch media: `assets/apple-watch-loop.mp4` is 13.5 seconds of actual simulator preview capture (automatic, manual and camera-body recording states), 416x496, without an audio track. It loops while visible and pauses offscreen or in a hidden tab; reduced-motion preferences retain the poster. No live camera or phone link was used to record this preview.
