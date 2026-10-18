@@ -285,5 +285,10 @@
   "Bluetooth off": "Bluetooth desactivado",
   "Shown when Bluetooth is off and the camera is disconnected. Turn on Bluetooth and reconnect. The camera-started recording X takes priority.": "Aparece con Bluetooth desactivado y la cámara desconectada. Activa Bluetooth y vuelve a conectar. La X de grabación desde la cámara tiene prioridad.",
   "Display priority: camera-started X → Bluetooth off → GPS monitoring off → REC → speed.": "Prioridad: X de cámara → Bluetooth desactivado → GPS desactivado → REC → velocidad.",
-  "iOS: available in the next test build.": "iOS: disponible en la próxima compilación de prueba."
+  "iOS: available in the next test build.": "iOS: disponible en la próxima compilación de prueba.",
+  "Turn the camera on, then tap to connect. Approve any pairing or Wi-Fi prompt.": "Enciende la cámara y toca para conectar. Acepta cualquier solicitud de emparejamiento o Wi-Fi.",
+  "Connecting or retrying. Tap the stop icon to cancel, and record once the connection is ready.": "Conectando o reintentando. Toca el icono de parada para cancelar y graba cuando la conexión esté lista.",
+  "Tap to reconnect. The app tries to stop app-started recording first; camera-started recording keeps running.": "Toca para reconectar. La app intenta detener primero la grabación iniciada en la app; la iniciada en la cámara continúa.",
+  "Shown after a failed connection. Fix the cause from the error message, then tap to retry.": "Aparece tras un fallo de conexión. Resuelve la causa según el mensaje de error y toca para reintentar.",
+  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "Finaliza el seguimiento GPS y las conexiones e intenta detener la grabación iniciada en la app. iOS pide confirmación; Android cierra al instante."
 }

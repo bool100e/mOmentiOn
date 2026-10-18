@@ -285,5 +285,10 @@
   "Bluetooth off": "Bluetoothオフ",
   "Shown when Bluetooth is off and the camera is disconnected. Turn on Bluetooth and reconnect. The camera-started recording X takes priority.": "Bluetoothがオフでカメラが未接続の場合に表示します。Bluetoothをオンにして再接続してください。本体で開始した録画のXが優先されます。",
   "Display priority: camera-started X → Bluetooth off → GPS monitoring off → REC → speed.": "表示優先順：本体録画X → Bluetoothオフ → GPS監視オフ → REC → 速度。",
-  "iOS: available in the next test build.": "iOSは次のテストビルドから提供します。"
+  "iOS: available in the next test build.": "iOSは次のテストビルドから提供します。",
+  "Turn the camera on, then tap to connect. Approve any pairing or Wi-Fi prompt.": "カメラの電源を入れてからタップして接続します。ペアリングやWi-Fiの許可を求められたら承認してください。",
+  "Connecting or retrying. Tap the stop icon to cancel, and record once the connection is ready.": "接続・再試行中です。停止アイコンをタップするとキャンセルします。接続が完了してから録画してください。",
+  "Tap to reconnect. The app tries to stop app-started recording first; camera-started recording keeps running.": "タップしてカメラを再接続します。アプリで開始した録画は先に停止を試み、カメラ本体で開始した録画は継続します。",
+  "Shown after a failed connection. Fix the cause from the error message, then tap to retry.": "接続に失敗すると表示されます。エラー案内に従って原因を解決し、タップして再接続してください。",
+  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "GPS監視と接続を終了し、アプリで開始した録画の停止を試みます。iOSは確認後、Androidはすぐに終了します。"
 }
