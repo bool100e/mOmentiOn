@@ -176,3 +176,8 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .kinetic-hero .hero-product.synced-product figcaption{display:block}
 #screen-guide.home-screen-guide .guide-phone{width:180px;max-width:100%;margin:0 auto}
 @media(max-width:767px){#screen-guide.home-screen-guide .guide-phone{width:160px;margin:0 auto 24px}}
+/* Match the actual phone within the paired video, excluding the watch canvas. */
+#screen-guide.home-screen-guide .screen-guide{grid-template-columns:var(--hero-phone-outer-width,300px) minmax(0,1fr)}
+#screen-guide.home-screen-guide .guide-phone{max-width:100%;box-sizing:border-box}
+#screen-guide.home-screen-guide .guide-phone .guide-capture{border-radius:0}
+@media(max-width:767px){#screen-guide.home-screen-guide .screen-guide{display:block}}

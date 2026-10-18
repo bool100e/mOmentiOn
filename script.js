@@ -373,3 +373,21 @@ function fitRollerHeadline() {
 fitRollerHeadline();
 addEventListener('resize', fitRollerHeadline);
 document.fonts?.ready.then(fitRollerHeadline);
+
+// Match the numbered guide screen to the phone inside the paired hero canvas.
+const pairedHeroVideo = document.querySelector('.synced-product > video');
+const homeGuidePhone = document.querySelector('.home-screen-guide .guide-phone');
+if (pairedHeroVideo && homeGuidePhone) {
+ const guideSection = homeGuidePhone.closest('.home-screen-guide');
+ const syncGuidePhoneSize = () => {
+  const scale = pairedHeroVideo.getBoundingClientRect().width / 1240;
+  if (scale <= 0) return;
+  guideSection.style.setProperty('--hero-phone-outer-width', `${744 * scale}px`);
+  homeGuidePhone.style.width = `${744 * scale}px`;
+  homeGuidePhone.style.padding = `${8 * scale}px`;
+  homeGuidePhone.style.borderWidth = `${4 * scale}px`;
+  homeGuidePhone.style.borderRadius = `${84 * scale}px`;
+ };
+ new ResizeObserver(syncGuidePhoneSize).observe(pairedHeroVideo);
+ syncGuidePhoneSize();
+}
