@@ -290,5 +290,9 @@
   "Connecting or retrying. Tap the stop icon to cancel, and record once the connection is ready.": "Conectando o reintentando. Toca el icono de parada para cancelar y graba cuando la conexión esté lista.",
   "Tap to reconnect. The app tries to stop app-started recording first; camera-started recording keeps running.": "Toca para reconectar. La app intenta detener primero la grabación iniciada en la app; la iniciada en la cámara continúa.",
   "Shown after a failed connection. Fix the cause from the error message, then tap to retry.": "Aparece tras un fallo de conexión. Resuelve la causa según el mensaje de error y toca para reintentar.",
-  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "Finaliza el seguimiento GPS y las conexiones e intenta detener la grabación iniciada en la app. iOS pide confirmación; Android cierra al instante."
+  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "Finaliza el seguimiento GPS y las conexiones e intenta detener la grabación iniciada en la app. iOS pide confirmación; Android cierra al instante.",
+  "Latest test builds: iOS 1.0.1 (41) and Android 1.0 (34).": "Compilaciones de prueba actuales: iOS 1.0.1 (41) y Android 1.0 (34).",
+  "iOS 41 is available to TestFlight group 093026. Install or update with your enrolled account.": "iOS 41 está disponible para el grupo 093026 de TestFlight. Instala o actualiza con tu cuenta inscrita.",
+  "iOS 41 adds a Bluetooth-off symbol to the main button and Apple Watch.": "iOS 41 muestra Bluetooth desactivado en el botón principal y en Apple Watch.",
+  "iOS: available in TestFlight build 41.": "iOS: disponible desde la compilación 41 de TestFlight."
 }

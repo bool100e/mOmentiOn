@@ -290,5 +290,9 @@
   "Connecting or retrying. Tap the stop icon to cancel, and record once the connection is ready.": "接続・再試行中です。停止アイコンをタップするとキャンセルします。接続が完了してから録画してください。",
   "Tap to reconnect. The app tries to stop app-started recording first; camera-started recording keeps running.": "タップしてカメラを再接続します。アプリで開始した録画は先に停止を試み、カメラ本体で開始した録画は継続します。",
   "Shown after a failed connection. Fix the cause from the error message, then tap to retry.": "接続に失敗すると表示されます。エラー案内に従って原因を解決し、タップして再接続してください。",
-  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "GPS監視と接続を終了し、アプリで開始した録画の停止を試みます。iOSは確認後、Androidはすぐに終了します。"
+  "Ends GPS monitoring and connections and tries to stop app-started recording. iOS asks first; Android quits at once.": "GPS監視と接続を終了し、アプリで開始した録画の停止を試みます。iOSは確認後、Androidはすぐに終了します。",
+  "Latest test builds: iOS 1.0.1 (41) and Android 1.0 (34).": "最新テストビルド：iOS 1.0.1 (41)・Android 1.0 (34)。",
+  "iOS 41 is available to TestFlight group 093026. Install or update with your enrolled account.": "iOS 41はTestFlightグループ093026で配信中です。登録済みアカウントでインストール・更新できます。",
+  "iOS 41 adds a Bluetooth-off symbol to the main button and Apple Watch.": "iOS 41ではメインボタンとApple WatchにBluetoothオフ記号を表示します。",
+  "iOS: available in TestFlight build 41.": "iOSはTestFlightビルド41から利用できます。"
 }
