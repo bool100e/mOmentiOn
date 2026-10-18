@@ -160,7 +160,9 @@ if (heroVideo && recordingTally) {
   try {
    let red = 0, green = 0;
    for (const [x, y] of [[.5, .38], [.3, .48], [.7, .48]]) {
-    context.drawImage(heroVideo, Math.floor(heroVideo.videoWidth * x), Math.floor(heroVideo.videoHeight * y), 1, 1, 0, 0, 1, 1);
+    const sampleX = heroVideo.closest('.synced-product') ? (494 + 720 * x) / 1240 : x;
+    const sampleY = heroVideo.closest('.synced-product') ? (28 + 1564 * y) / 1620 : y;
+    context.drawImage(heroVideo, Math.floor(heroVideo.videoWidth * sampleX), Math.floor(heroVideo.videoHeight * sampleY), 1, 1, 0, 0, 1, 1);
     const pixel = context.getImageData(0, 0, 1, 1).data;
     red += pixel[0]; green += pixel[1];
    }
@@ -275,7 +277,7 @@ const heroProduct = document.querySelector('.hero-product');
 const heroTally = document.querySelector('.kinetic-hero .recording-tally');
 const heroDivider = document.querySelector('.kinetic-hero')?.nextElementSibling;
 function alignHeroProduct() {
- if (!heroProduct || !heroTally || !heroDivider) return;
+ if (!heroProduct || !heroTally || !heroDivider || heroProduct.classList.contains('synced-product')) return;
  const hero = heroProduct.closest('.kinetic-hero');
  hero.style.setProperty('--hero-group-shift', '0px');
  heroProduct.style.setProperty('--hero-shift', '0px');

@@ -141,3 +141,38 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .watch-pair .watch-frame :is(img,video){height:240px;width:auto;max-width:none}
 .watch-pair .wear-round :is(img,video){border-radius:50%}
 @media(max-width:767px){.watch-pair .watch-frame :is(img,video){height:clamp(110px,34vw,150px);width:auto}}
+
+/* The paired demo uses one encoded timeline so speeds and recording never drift. */
+.kinetic-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.hero-product.synced-product{width:100%;max-width:500px;margin:0;left:0;transform:none;justify-self:center}
+.synced-product>video{display:block;width:100%;height:auto;border-radius:0}
+.synced-product figcaption{margin-top:10px;line-height:1.7;font-size:12px}
+.capabilities{display:block}
+.capability-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.capability-list article:nth-child(even){margin-top:0}
+.home-screen-guide .guide-details{display:block;min-width:0}
+.home-screen-guide .guide-more{display:block;grid-column:1/-1;text-align:right;margin-top:16px}
+@media(max-width:767px){
+ .kinetic-hero{display:block}
+ .kinetic-hero h1{width:100%;max-width:none}
+ .hero-bottom{display:flex;flex-direction:column;gap:20px}
+ .hero-product.synced-product{order:0;width:100%;max-width:420px}
+ .kinetic-hero .hero-copy{order:1;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;max-width:none;margin:0}
+ .hero-copy .hero-brand{margin:0}.hero-copy .hero-brand img{width:72px}.hero-copy .hero-brand p{font-size:8px;letter-spacing:.12em}
+ .hero-copy .round-link{margin:0}
+ .capability-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
+ .capability-list h3{font-size:16px}.capability-list p{font-size:13px}
+ .home-screen-guide .guide-items{grid-template-columns:1fr 1fr;gap:20px 14px}
+ .home-screen-guide .guide-item-title{font-size:13px;gap:4px}
+ .home-screen-guide .detail-copy{padding:0}
+}
+@media(max-width:350px){.home-screen-guide .guide-items{grid-template-columns:1fr}}
+
+.synced-product figcaption{display:block}
+
+.home-screen-guide .guide-phone{width:180px;max-width:100%;margin:0 auto}
+.home-screen-guide .guide-phone .guide-capture{width:100%;max-width:none}
+@media(max-width:767px){.home-screen-guide .guide-phone{width:160px;margin-bottom:24px}}
+.kinetic-hero .hero-product.synced-product figcaption{display:block}
+#screen-guide.home-screen-guide .guide-phone{width:180px;max-width:100%;margin:0 auto}
+@media(max-width:767px){#screen-guide.home-screen-guide .guide-phone{width:160px;margin:0 auto 24px}}
