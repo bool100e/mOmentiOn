@@ -281,5 +281,9 @@
   "Review past activity.": "過去の動作を確認",
   "Phone + watch · synchronized demo": "アプリ＋ウォッチ・同期デモ",
   "Apple Watch and Wear OS support.": "Apple Watch・Wear OS対応。",
-  "Supported models →": "対応機種を見る →"
+  "Supported models →": "対応機種を見る →",
+  "Bluetooth off": "Bluetoothオフ",
+  "Shown when Bluetooth is off and the camera is disconnected. Turn on Bluetooth and reconnect. The camera-started recording X takes priority.": "Bluetoothがオフでカメラが未接続の場合に表示します。Bluetoothをオンにして再接続してください。本体で開始した録画のXが優先されます。",
+  "Display priority: camera-started X → Bluetooth off → GPS monitoring off → REC → speed.": "表示優先順：本体録画X → Bluetoothオフ → GPS監視オフ → REC → 速度。",
+  "iOS: available in the next test build.": "iOSは次のテストビルドから提供します。"
 }

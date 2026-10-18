@@ -281,5 +281,9 @@
   "Review past activity.": "Consulta la actividad anterior.",
   "Phone + watch · synchronized demo": "App + reloj · demostración sincronizada",
   "Apple Watch and Wear OS support.": "Compatible con Apple Watch y Wear OS.",
-  "Supported models →": "Modelos compatibles →"
+  "Supported models →": "Modelos compatibles →",
+  "Bluetooth off": "Bluetooth desactivado",
+  "Shown when Bluetooth is off and the camera is disconnected. Turn on Bluetooth and reconnect. The camera-started recording X takes priority.": "Aparece con Bluetooth desactivado y la cámara desconectada. Activa Bluetooth y vuelve a conectar. La X de grabación desde la cámara tiene prioridad.",
+  "Display priority: camera-started X → Bluetooth off → GPS monitoring off → REC → speed.": "Prioridad: X de cámara → Bluetooth desactivado → GPS desactivado → REC → velocidad.",
+  "iOS: available in the next test build.": "iOS: disponible en la próxima compilación de prueba."
 }
