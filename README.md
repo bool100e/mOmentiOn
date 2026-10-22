@@ -39,7 +39,7 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
-Latest website update: iOS 1.0.1 (40) is assigned to existing TestFlight internal group 093026; Android 1.0 (34) is published to enrolled Alpha closed-test users. Insta360 SDK versions: iOS 1.11.3 and Android 2.1.5. X6 Bluetooth discovery is supported in the app. Google Play confirms build 34 supports 16 KB pages.
+Latest website update: iOS 1.0.2 (48) is waiting for App Review and will release automatically after approval. Its Korean name/subtitle are “mOmentiOn - 액션캠 자동 녹화” / “블루투스 리모컨·속도 감지·주행 기록”; English name/subtitle are “mOmentiOn - Action Cam Remote” / “Auto Record by Speed & GPS Log”. The currently released iOS 1.0.1 (43) App Store install link remains available. Android distribution information is unchanged.
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
 

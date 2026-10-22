@@ -294,5 +294,9 @@
   "Latest test builds: iOS 1.0.1 (41) and Android 1.0 (34).": "Aktuelle Test-Builds: iOS 1.0.1 (41) und Android 1.0 (34).",
   "iOS 41 is available to TestFlight group 093026. Install or update with your enrolled account.": "iOS 41 ist für die TestFlight-Gruppe 093026 verfügbar. Mit dem registrierten Konto installieren oder aktualisieren.",
   "iOS 41 adds a Bluetooth-off symbol to the main button and Apple Watch.": "iOS 41 zeigt Bluetooth aus auf der Haupttaste und der Apple Watch an.",
-  "iOS: available in TestFlight build 41.": "iOS: ab TestFlight-Build 41 verfügbar."
+  "iOS: available in TestFlight build 41.": "iOS: ab TestFlight-Build 41 verfügbar.",
+  "mOmentiOn - Action Cam Remote": "mOmentiOn - Action Cam Remote",
+  "Auto Record by Speed & GPS Log": "Auto Record by Speed & GPS Log",
+  "iOS 1.0.2 (48) · Waiting for review · Auto-release after approval.": "iOS 1.0.2 (48) · Wartet auf Prüfung · Automatische Veröffentlichung nach Freigabe",
+  "Auto Record by Speed & GPS Log. Bluetooth control for action cameras, with route playback and comparisons.": "Geschwindigkeitsabhängige Aufnahme und GPS-Protokoll. Actionkameras per Bluetooth steuern, Fahrten wiedergeben und vergleichen."
 }
