@@ -21,5 +21,15 @@
  "Changes in each mOmentiOn build for iOS and Android, newest first.": "iOS·Android mOmentiOn 빌드별 변경 사항을 최신순으로 정리했습니다.",
  "How mOmentiOn handles data on your device, advertising, purchases, permissions, and support requests.": "mOmentiOn이 기기 내 데이터, 광고, 구매, 권한, 지원 문의 정보를 다루는 방식입니다.",
  "mOmentiOn capture dial on Apple Watch": "Apple Watch의 mOmentiOn 다이얼",
- "Auto Record by Speed & GPS Log. Bluetooth control for action cameras, with route playback and comparisons.": "블루투스 리모컨·속도 감지·주행 기록. 액션캠을 제어하고 주행 경로를 재생·비교하세요."
+ "Auto Record by Speed & GPS Log. Bluetooth control for action cameras, with route playback and comparisons.": "블루투스 리모컨·속도 감지·주행 기록. 액션캠을 제어하고 주행 경로를 재생·비교하세요.",
+ "Using Insta360?": "Insta360 사용 전",
+ "Turn on Bluetooth Wakeup in your camera settings before connecting.": "카메라 설정에서 Bluetooth Wakeup을 켠 뒤 연결하세요.",
+ "The first connection may take a little longer. Wait for the green main button.": "처음 연결할 때는 시간이 조금 걸릴 수 있습니다. 메인 버튼이 초록색이 될 때까지 기다려 주세요.",
+ "Setup guide →": "시작 안내 →",
+ "Insta360: Bluetooth Wakeup ON": "Insta360: Bluetooth Wakeup 켜기",
+ "Swipe down on the camera screen, then follow the path for your model.": "카메라 화면을 위에서 아래로 쓸어내린 뒤 모델에 맞는 메뉴를 여세요.",
+ "X5 / X4 Air: Settings → General → Bluetooth Wakeup → On.": "X5 / X4 Air: 설정 → 일반 → Bluetooth Wakeup → 켜기.",
+ "X3 / X4 / X6: Settings → Bluetooth Wakeup → On.": "X3 / X4 / X6: 설정 → Bluetooth Wakeup → 켜기.",
+ "ONE X2: Settings → General → Bluetooth Wakeup → On.": "ONE X2: 설정 → 일반 → Bluetooth Wakeup → 켜기.",
+ "Official Bluetooth Wakeup guide": "공식 Bluetooth Wakeup 안내"
 }

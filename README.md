@@ -44,3 +44,5 @@ Latest website update: iOS 1.0.2 (48) is waiting for App Review and will release
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
 
 Apple Watch media: `assets/apple-watch-speed-loop.mp4` is 12 seconds of actual simulator preview capture with continuously changing automatic-recording speed (6–42 km/h), 416x496, without an audio track. The website preview was built in a temporary app copy; release app sources are unchanged. It loops while visible and pauses offscreen or in a hidden tab; reduced-motion preferences retain the poster. No live camera or phone link was used to record this preview.
+
+Camera setup guidance: Home download, Getting started and Support now ask Insta360 users to enable Bluetooth Wakeup before connecting and to allow extra time for the first connection. Model-specific menu paths in Getting started link to the official Insta360 guide. This setting guidance does not claim that mOmentiOn powers on a switched-off camera.

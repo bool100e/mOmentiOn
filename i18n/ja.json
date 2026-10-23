@@ -298,5 +298,15 @@
   "mOmentiOn - Action Cam Remote": "mOmentiOn - Action Cam Remote",
   "Auto Record by Speed & GPS Log": "Auto Record by Speed & GPS Log",
   "iOS 1.0.2 (48) · Waiting for review · Auto-release after approval.": "iOS 1.0.2（48）· 審査待ち · 承認後に自動公開",
-  "Auto Record by Speed & GPS Log. Bluetooth control for action cameras, with route playback and comparisons.": "速度に応じた自動録画とGPSログ。Bluetoothでアクションカメラを操作し、走行ルートを再生・比較。"
+  "Auto Record by Speed & GPS Log. Bluetooth control for action cameras, with route playback and comparisons.": "速度に応じた自動録画とGPSログ。Bluetoothでアクションカメラを操作し、走行ルートを再生・比較。",
+  "Using Insta360?": "Insta360をお使いの方へ",
+  "Turn on Bluetooth Wakeup in your camera settings before connecting.": "接続する前に、カメラの設定でBluetooth Wakeupをオンにしてください。",
+  "The first connection may take a little longer. Wait for the green main button.": "初回接続には少し時間がかかる場合があります。メインボタンが緑色になるまでお待ちください。",
+  "Setup guide →": "設定ガイド →",
+  "Insta360: Bluetooth Wakeup ON": "Insta360：Bluetooth Wakeupをオン",
+  "Swipe down on the camera screen, then follow the path for your model.": "カメラ画面を上から下にスワイプし、お使いのモデルのメニューを開いてください。",
+  "X5 / X4 Air: Settings → General → Bluetooth Wakeup → On.": "X5 / X4 Air：設定 → 一般 → Bluetooth Wakeup → オン。",
+  "X3 / X4 / X6: Settings → Bluetooth Wakeup → On.": "X3 / X4 / X6：設定 → Bluetooth Wakeup → オン。",
+  "ONE X2: Settings → General → Bluetooth Wakeup → On.": "ONE X2：設定 → 一般 → Bluetooth Wakeup → オン。",
+  "Official Bluetooth Wakeup guide": "Bluetooth Wakeup公式ガイド"
 }
