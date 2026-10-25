@@ -308,5 +308,9 @@
   "X5 / X4 Air: Settings → General → Bluetooth Wakeup → On.": "X5 / X4 Air：設定 → 一般 → Bluetooth Wakeup → オン。",
   "X3 / X4 / X6: Settings → Bluetooth Wakeup → On.": "X3 / X4 / X6：設定 → Bluetooth Wakeup → オン。",
   "ONE X2: Settings → General → Bluetooth Wakeup → On.": "ONE X2：設定 → 一般 → Bluetooth Wakeup → オン。",
-  "Official Bluetooth Wakeup guide": "Bluetooth Wakeup公式ガイド"
+  "Official Bluetooth Wakeup guide": "Bluetooth Wakeup公式ガイド",
+  "iOS 1.0.2 (48) is now available on the App Store.": "iOS 1.0.2 (48) · App Storeで公開中。",
+  "iOS 1.0.3 (50) · Available to existing TestFlight testers.": "iOS 1.0.3 (50) · 既存のTestFlightテスターがインストールできます。",
+  "Android 1.0 (40) · Alpha review pending. Build 39 remains available to enrolled testers.": "Android 1.0 (40) · Alpha審査中。参加済みのテスターはビルド39を利用できます。",
+  "Builds 50 / 40 fix the ride date shown for newly restored original copies.": "ビルド50 / 40で、新たに復元したオリジナルのコピーの走行日表示を修正しました。"
 }
