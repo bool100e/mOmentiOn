@@ -9,9 +9,8 @@ const siteRoot = new URL('.', document.currentScript?.src || location.href);
 const themeButton = document.getElementById('theme');
 function updateThemeLabel() {
  const dark = root.dataset.theme === 'dark';
- themeButton.textContent = dark ? '☀' : '◐';
  themeButton.setAttribute('aria-label', (themeLabels[language] || themeLabels.en)[dark ? 0 : 1]);
- themeButton.setAttribute('aria-pressed', String(dark));
+ themeButton.setAttribute('aria-checked', String(dark));
  document.querySelector('meta[name="theme-color"]').content = dark ? '#202221' : '#F5F7F6';
 }
 function toc() {
@@ -299,16 +298,6 @@ alignHeroProduct();
 addEventListener('resize', alignHeroProduct);
 document.fonts?.ready.then(alignHeroProduct);
 
-// Tester sign-up opens the visitor's mail app; nothing is sent until they press send there.
-const testerAccountLabels = {Android: 'Google Play account', iPhone: 'Apple ID for TestFlight'};
-document.querySelectorAll('[data-tester-platform]').forEach(button => button.addEventListener('click', () => {
- const platform = button.dataset.testerPlatform;
- const subject = `[mOmentiOn] ${platform} 테스트 참여 / ${platform} test sign-up`;
- const body = `Platform: ${platform}\nTester email (${testerAccountLabels[platform]}): \nPage language: ${language}\n`;
- location.href = `mailto:vfx@kakao.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}));
-
-
 // Hero activity roller, slot-machine style: wait, spin downward through two or three turns while
 // blurring with speed, then settle with a small mechanical bounce on a random pictogram.
 // Position is computed each frame (modulo the icon count), so the loop never runs out of icons.
@@ -374,20 +363,20 @@ fitRollerHeadline();
 addEventListener('resize', fitRollerHeadline);
 document.fonts?.ready.then(fitRollerHeadline);
 
-// Match the numbered guide screen to the phone inside the paired hero canvas.
-const pairedHeroVideo = document.querySelector('.synced-product > video');
+// Fit the home guide phone to its adjacent explanation list, independently of the hero.
 const homeGuidePhone = document.querySelector('.home-screen-guide .guide-phone');
-if (pairedHeroVideo && homeGuidePhone) {
- const guideSection = homeGuidePhone.closest('.home-screen-guide');
- const syncGuidePhoneSize = () => {
-  const scale = pairedHeroVideo.getBoundingClientRect().width / 1240;
-  if (scale <= 0) return;
-  guideSection.style.setProperty('--hero-phone-outer-width', `${744 * scale}px`);
-  homeGuidePhone.style.width = `${744 * scale}px`;
-  homeGuidePhone.style.padding = `${8 * scale}px`;
-  homeGuidePhone.style.borderWidth = `${4 * scale}px`;
-  homeGuidePhone.style.borderRadius = `${84 * scale}px`;
+const homeGuideItems = document.querySelector('.home-screen-guide .guide-items');
+if (homeGuidePhone && homeGuideItems) {
+ const desktopGuide = matchMedia('(min-width: 768px)');
+ const fitGuidePhone = () => {
+  if (desktopGuide.matches) {
+   const height = homeGuideItems.getBoundingClientRect().height;
+   homeGuidePhone.style.setProperty('--guide-phone-width', `${Math.max(0, height - 18) * 720 / 1564 + 18}px`);
+  } else homeGuidePhone.style.removeProperty('--guide-phone-width');
  };
- new ResizeObserver(syncGuidePhoneSize).observe(pairedHeroVideo);
- syncGuidePhoneSize();
+ if ('ResizeObserver' in window) new ResizeObserver(fitGuidePhone).observe(homeGuideItems);
+ desktopGuide.addEventListener('change', fitGuidePhone);
+ addEventListener('resize', fitGuidePhone);
+ document.fonts?.ready.then(fitGuidePhone);
+ fitGuidePhone();
 }

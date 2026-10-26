@@ -185,3 +185,16 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 #ride-showcase .ride-intro,#ride-showcase .ride-intro h2{max-width:none}#ride-showcase .ride-intro h2{word-break:keep-all;overflow-wrap:normal}
 #screen-guide .guide-phone .guide-video{border-radius:30px}
 [data-theme=light] .synced-product>video{-webkit-mask:url(assets/phone-watch-synced-mask.png) center/100% 100% no-repeat;mask:url(assets/phone-watch-synced-mask.png) center/100% 100% no-repeat}
+/* Store downloads stay with the hero; the numbered guide follows its own list. */
+.hero-store-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+#screen-guide.home-screen-guide .guide-phone{position:relative;top:auto;width:var(--guide-phone-width,300px);max-width:100%;padding:7px;border-width:2px;border-radius:36px}
+#screen-guide.home-screen-guide .guide-phone .guide-capture{border-radius:27px}
+#screen-guide .guide-phone .guide-video{border-radius:0}
+@media(max-width:767px){
+ .kinetic-hero .hero-copy{flex-wrap:wrap}
+ .hero-store-links{margin:0}
+ #screen-guide.home-screen-guide .guide-phone{width:min(100%,280px);margin:0 auto 26px}
+}
+
+/* Keep the explanation at its natural height instead of stretching to the phone. */
+@media(min-width:768px){#screen-guide.home-screen-guide .guide-details{align-self:start}}
