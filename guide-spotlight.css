@@ -57,6 +57,8 @@
 }
 /* Override the mobile guide notch so every shared frame has identical hardware. */
 #ride-showcase .showcase-phone::before,#screen-guide .showcase-phone::before{top:13px;width:44px;height:15px}
+/* These recordings already contain a camera island that scales with the screen. */
+#recording-control .showcase-phone::before,.guide-phone::before{content:none}
 /* Allow long translated titles to wrap without shrinking the number. */
 #screen-guide.home-screen-guide .guide-item-title>span:last-child{min-width:0;overflow-wrap:anywhere}
 
