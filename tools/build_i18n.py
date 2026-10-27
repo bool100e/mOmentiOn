@@ -26,7 +26,7 @@ LANGUAGES = {'ko': ALL_PAGES, 'ja': CORE_PAGES, 'de': CORE_PAGES, 'es': CORE_PAG
 ALT_START, ALT_END = '<!-- i18n:alternates -->', '<!-- /i18n:alternates -->'
 
 TEXT_ELEMENT = re.compile(r'<(\w+)\b([^>]*?\sdata-en="([^"]*)"[^>]*)>(.*?)</\1>', re.S)
-TRANSLATABLE_ATTR = re.compile(r'\b(alt|aria-label|title)="([^"]*)"')
+TRANSLATABLE_ATTR = re.compile(r'\b(alt|aria-label|title|data-scroll-label|data-scroll-paused-label)="([^"]*)"')
 META_CONTENT = re.compile(r'(<meta (?:name|property)="(?:description|og:title|og:description|og:image:alt|twitter:title|twitter:description)" content=")([^"]*)(")')
 RELATIVE_URL = re.compile(r'\b(href|src|poster|data-src)="(?![a-z]+:|#|/|\.\./)([^"]*)"')
 

@@ -39,10 +39,10 @@
 #ride-showcase .ride-image-scroll img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;border-radius:0;margin:0}
 /* Verified 1240 × 1620 source: screen rectangle (494, 28, 720, 1564). */
 #ride-showcase .recording-crop>video{position:absolute;width:172.222222%;max-width:none;height:103.580563%;left:-68.611111%;top:-1.790281%;object-fit:fill}
-#screen-guide.home-screen-guide .screen-guide{grid-template-columns:var(--showcase-phone-width,280px) minmax(0,1fr);gap:28px;padding:24px 0}
+#screen-guide.home-screen-guide .screen-guide{--guide-column-gap:28px;grid-template-columns:var(--showcase-phone-width,280px) minmax(0,1fr);gap:var(--guide-column-gap);padding:24px 0}
 #screen-guide.home-screen-guide .showcase-phone{width:var(--showcase-phone-width,280px);max-width:100%;justify-self:start}
 #screen-guide.home-screen-guide .guide-details{grid-column:2}
-#screen-guide.home-screen-guide .guide-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px}
+#screen-guide.home-screen-guide .guide-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px var(--guide-column-gap)}
 #screen-guide.home-screen-guide .guide-item-title{margin-bottom:5px}
 #screen-guide.home-screen-guide .detail-copy p{margin:0;line-height:1.55}
 #screen-guide.home-screen-guide .guide-more{grid-column:2;text-align:left}
@@ -63,3 +63,14 @@
 /* Distribute desktop explanations over the independently measured phone height. */
 @media(min-width:768px){#screen-guide.home-screen-guide .guide-items{min-height:var(--showcase-phone-height,0px);align-content:space-between}}
 @media(max-width:767px){#screen-guide.home-screen-guide .guide-items{min-height:0;align-content:normal}}
+
+/* Keep native keyboard/touch scrolling while hiding the preview scrollbar. */
+#ride-showcase .ride-image-scroll{scrollbar-width:none;scroll-behavior:auto;overscroll-behavior:contain}
+#ride-showcase .ride-image-scroll::-webkit-scrollbar{display:none}
+
+/* Give the phone and both description columns equal visual weight on desktop. */
+@media(min-width:1024px){
+ #screen-guide.home-screen-guide .screen-guide{grid-template-columns:repeat(3,var(--showcase-phone-width,280px));justify-content:space-between;column-gap:0}
+ #screen-guide.home-screen-guide .guide-details{display:contents}
+ #screen-guide.home-screen-guide .guide-items{grid-column:2/4;grid-row:1;grid-template-columns:repeat(2,var(--showcase-phone-width,280px));justify-content:space-between;column-gap:0}
+}

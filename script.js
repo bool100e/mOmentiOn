@@ -375,3 +375,95 @@ if (firstShowcasePhone) {
  addEventListener('resize', syncShowcaseWidth);
  syncShowcaseWidth();
 }
+
+// Animate only the visible, loaded ride preview; native input always takes priority.
+function mountRideHistoryPreview() {
+ const preview = document.querySelector('#ride-history .ride-image-scroll');
+ if (!preview) return () => {};
+ const image = preview.querySelector('img');
+ const motion = matchMedia('(prefers-reduced-motion: reduce)');
+ const events = new AbortController();
+ const listen = (target, type, handler, options = {}) => target.addEventListener(type, handler, {...options, signal: events.signal});
+ let visible = false, hovered = false, focused = false, dragging = false;
+ let paused = preview.dataset.scrollPaused === 'true', frame = 0, timer = 0, last = 0, direction = 1;
+ let position = preview.scrollTop, expected = position, resumeAt = performance.now() + 1000;
+ preview.setAttribute('aria-label', paused ? preview.dataset.scrollPausedLabel : preview.dataset.scrollLabel);
+ const eligible = () => visible && image.complete && image.naturalWidth > 0
+  && !motion.matches && !document.hidden && !hovered && !focused && !dragging && !paused
+  && preview.scrollHeight > preview.clientHeight;
+ const stop = () => {
+  cancelAnimationFrame(frame); clearTimeout(timer);
+  frame = 0; timer = 0; last = 0;
+ };
+ const schedule = () => {
+  stop();
+  if (!eligible()) return;
+  const delay = resumeAt - performance.now();
+  if (delay > 0) timer = setTimeout(schedule, delay);
+  else frame = requestAnimationFrame(tick);
+ };
+ const defer = () => {
+  resumeAt = performance.now() + 3000;
+  position = preview.scrollTop;
+  expected = position;
+  schedule();
+ };
+ function tick(now) {
+  frame = 0;
+  if (!eligible()) { stop(); return; }
+  const limit = preview.scrollHeight - preview.clientHeight;
+  const elapsed = last ? Math.min(now - last, 64) : 0;
+  last = now;
+  const next = Math.max(0, Math.min(limit, position + direction * 35 * elapsed / 1000));
+  position = next;
+  preview.scrollTop = next;
+  expected = preview.scrollTop;
+  if ((direction > 0 && next >= limit) || (direction < 0 && next <= 0)) {
+   direction *= -1;
+   resumeAt = now + 1000;
+   schedule();
+  } else frame = requestAnimationFrame(tick);
+ }
+ // Space toggles persistent pause without adding controls over the phone artwork.
+ listen(preview, 'keydown', event => {
+  if (event.code === 'Space') {
+   event.preventDefault(); paused = !paused;
+   preview.dataset.scrollPaused = String(paused);
+   preview.setAttribute('aria-label', paused ? preview.dataset.scrollPausedLabel : preview.dataset.scrollLabel);
+  }
+  defer();
+ });
+ listen(preview, 'pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; stop(); } });
+ listen(preview, 'pointerleave', () => { hovered = false; defer(); });
+ listen(preview, 'focusin', () => { focused = true; stop(); });
+ listen(preview, 'focusout', () => { focused = preview.contains(document.activeElement); defer(); });
+ listen(preview, 'pointerdown', () => { dragging = true; defer(); });
+ const release = () => { if (dragging) { dragging = false; defer(); } };
+ listen(window, 'pointerup', release); listen(window, 'pointercancel', release);
+ listen(window, 'blur', () => { dragging = false; defer(); });
+ listen(preview, 'wheel', defer, {passive: true});
+ listen(preview, 'touchmove', defer, {passive: true});
+ listen(preview, 'scroll', () => {
+  if (Math.abs(preview.scrollTop - expected) > .5) defer();
+ }, {passive: true});
+ listen(image, 'load', schedule);
+ listen(document, 'visibilitychange', schedule);
+ listen(motion, 'change', schedule);
+ const observer = new IntersectionObserver(entries => {
+  visible = entries[0].isIntersecting;
+  schedule();
+ });
+ observer.observe(preview);
+ const resize = new ResizeObserver(() => {
+  position = preview.scrollTop;
+  expected = position;
+  schedule();
+ });
+ resize.observe(preview); resize.observe(image);
+ return () => { stop(); observer.disconnect(); resize.disconnect(); events.abort(); };
+}
+let unmountRideHistoryPreview = mountRideHistoryPreview();
+addEventListener('pagehide', () => { unmountRideHistoryPreview(); });
+addEventListener('pageshow', event => {
+ if (event.persisted) unmountRideHistoryPreview = mountRideHistoryPreview();
+});

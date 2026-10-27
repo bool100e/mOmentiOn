@@ -79,3 +79,18 @@
  .site-header .preferences .header-lang{margin-top:0;margin-bottom:0;align-self:center}
 }
 .site-header .preferences{align-items:center}
+
+/* Flatten desktop groups so all five controls share one directional gap. */
+@media(min-width:768px){
+ .site-header .nav{gap:clamp(16px,2.3vw,30px)}
+ .site-header .nav-links,.site-header .preferences{display:contents}
+ .site-header .brand{margin-right:auto}
+}
+@media(max-width:767px){
+ .site-header .nav{justify-content:center;gap:10px;padding-inline:16px}
+ .site-header .brand{flex-basis:100%;justify-content:center;margin:0}
+ .site-header .nav-links,.site-header .preferences{display:contents}
+ .site-header .nav-links>a,.site-header .store-menu,.site-header .header-lang,.site-header #theme{flex-shrink:0;margin:0;font-size:12px}
+ .site-header .header-lang{width:88px;min-width:0}
+ .site-header .store-menu summary{font-size:12px}
+}

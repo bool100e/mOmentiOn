@@ -313,5 +313,7 @@
   "iOS 1.0.3 (50) · Available to existing TestFlight testers.": "iOS 1.0.3 (50) · Disponible para los probadores actuales de TestFlight.",
   "Android 1.0 (40) · Alpha review pending. Build 39 remains available to enrolled testers.": "Android 1.0 (40) · Alpha pendiente de revisión. La compilación 39 sigue disponible para los probadores inscritos.",
   "Builds 50 / 40 fix the ride date shown for newly restored original copies.": "Las compilaciones 50 / 40 corrigen la fecha del recorrido mostrada en las nuevas copias restauradas del original.",
-  "Recording Control": "Control de grabación"
+  "Recording Control": "Control de grabación",
+  "Scrollable ride history. Space pauses or resumes automatic scrolling.": "Historial desplazable. Espacio pausa o reanuda el desplazamiento automático.",
+  "Ride history automatic scrolling paused. Space resumes after leaving the preview.": "Desplazamiento automático pausado. Pulsa Espacio y sal de la vista previa para reanudar."
 }

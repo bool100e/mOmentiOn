@@ -313,5 +313,7 @@
   "iOS 1.0.3 (50) · Available to existing TestFlight testers.": "iOS 1.0.3 (50) · 既存のTestFlightテスターがインストールできます。",
   "Android 1.0 (40) · Alpha review pending. Build 39 remains available to enrolled testers.": "Android 1.0 (40) · Alpha審査中。参加済みのテスターはビルド39を利用できます。",
   "Builds 50 / 40 fix the ride date shown for newly restored original copies.": "ビルド50 / 40で、新たに復元したオリジナルのコピーの走行日表示を修正しました。",
-  "Recording Control": "録画コントロール"
+  "Recording Control": "録画コントロール",
+  "Scrollable ride history. Space pauses or resumes automatic scrolling.": "スクロールできる走行履歴。スペースキーで自動スクロールを一時停止または再開します。",
+  "Ride history automatic scrolling paused. Space resumes after leaving the preview.": "走行履歴の自動スクロールは一時停止中です。スペースキーを押してプレビューから離れると再開します。"
 }

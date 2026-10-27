@@ -31,5 +31,7 @@
  "X5 / X4 Air: Settings → General → Bluetooth Wakeup → On.": "X5 / X4 Air: 설정 → 일반 → Bluetooth Wakeup → 켜기.",
  "X3 / X4 / X6: Settings → Bluetooth Wakeup → On.": "X3 / X4 / X6: 설정 → Bluetooth Wakeup → 켜기.",
  "ONE X2: Settings → General → Bluetooth Wakeup → On.": "ONE X2: 설정 → 일반 → Bluetooth Wakeup → 켜기.",
- "Official Bluetooth Wakeup guide": "공식 Bluetooth Wakeup 안내"
+ "Official Bluetooth Wakeup guide": "공식 Bluetooth Wakeup 안내",
+ "Scrollable ride history. Space pauses or resumes automatic scrolling.": "스크롤 가능한 주행 기록. 스페이스 키로 자동 스크롤을 일시 정지하거나 재개합니다.",
+ "Ride history automatic scrolling paused. Space resumes after leaving the preview.": "주행 기록 자동 스크롤 일시 정지됨. 스페이스 키를 누르고 미리보기를 벗어나면 재개합니다."
 }
