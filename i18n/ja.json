@@ -324,5 +324,8 @@
   "Features vary by camera model and firmware. GPS accuracy varies; estimated lean angle is for reference. Set up while safely stationary and do not operate your phone while riding.": "利用できる機能はカメラのモデルやファームウェアによって異なります。GPSの精度は状況により変わり、推定バンク角は参考値です。安全な場所に停車して設定し、走行中はスマートフォンを操作しないでください。",
   "Bluetooth remote for compatible Insta360 360 and DJI Osmo cameras.": "対応するInsta360の360度カメラやDJI Osmoカメラ用のBluetoothリモコン。",
   "Auto Record by Speed & GPS Log. Bluetooth remote control for compatible Insta360 360 and DJI Osmo cameras, GPX routes, heatmaps and ride comparisons.": "速度に応じた自動録画とGPS記録。対応するInsta360の360度カメラやDJI OsmoカメラのBluetoothリモコン操作、GPXルート、ヒートマップ、走行記録の比較に対応。",
-  "Scrollable ride history. Automatic scrolling continuously moves up and down.": "スクロールできる走行履歴。自動スクロールで上下に繰り返し移動します。"
+  "Scrollable ride history. Automatic scrolling continuously moves up and down.": "スクロールできる走行履歴。自動スクロールで上下に繰り返し移動します。",
+  "New settings: available to enrolled Android 44 closed testers; iOS 1.0.4 (51) is Waiting for Review and will release automatically after approval. The current official iOS release is 1.0.3 (50).": "新しい設定はAndroid 44の非公開テストに登録したテスターが利用できます。iOS 1.0.4 (51) は審査待ちで、承認後に自動公開されます。現在のiOS正式版は1.0.3 (50)です。",
+  "iOS build 51 and Android build 44 offer Simple/Advanced settings, with filled cards for Camera, Recording Speed, App and Pro. Three onboarding steps cover connecting the camera, checking GPS and recording.": "iOSビルド51とAndroidビルド44にはSimple/Advanced設定があり、カメラ・録画速度・アプリ・Proを塗りつぶしのカードで表示します。3段階の初期ガイドでカメラ接続・GPS確認・録画を案内します。",
+  "Recording-speed changes are saved with Confirm; Cancel keeps the previous speed. Existing preferences and recording behavior are preserved.": "録画速度の変更は「確認」で保存され、「キャンセル」すると以前の速度が維持されます。既存の設定値と録画動作は維持されます。"
 }

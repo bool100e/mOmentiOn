@@ -39,7 +39,7 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
 - After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
-Latest website update: iOS 1.0.2 (48) is released on the App Store. iOS 1.0.3 (50) is available to existing TestFlight testers; no public TestFlight invitation URL is supplied. Android 1.0 (40) is under closed Alpha review; build 39 remains available to enrolled testers. Builds 50 / 40 correct the ride date shown for newly restored original copies using the original filename. Repeated restores create separate copies and preserve the original file bytes.
+Latest website update: Android 1.0 (44) is published to the Alpha closed-testing track in 178 countries/regions for enrolled testers. iOS 1.0.4 (51) is Waiting for Review and will release automatically after approval; the current official App Store release is iOS 1.0.3 (50). iOS build 51 and Android build 44 add Simple/Advanced settings, filled Camera/Recording Speed/App/Pro cards and three onboarding steps (connect, GPS, record). Recording-speed changes are saved with Confirm; Cancel keeps the previous speed. Existing preferences and recording behavior are preserved. The guides distinguish Android 44 test availability from the pending iOS 51 release.
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
 
