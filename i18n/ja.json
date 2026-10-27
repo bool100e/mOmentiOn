@@ -315,5 +315,14 @@
   "Builds 50 / 40 fix the ride date shown for newly restored original copies.": "ビルド50 / 40で、新たに復元したオリジナルのコピーの走行日表示を修正しました。",
   "Recording Control": "録画コントロール",
   "Scrollable ride history. Space pauses or resumes automatic scrolling.": "スクロールできる走行履歴。スペースキーで自動スクロールを一時停止または再開します。",
-  "Ride history automatic scrolling paused. Space resumes after leaving the preview.": "走行履歴の自動スクロールは一時停止中です。スペースキーを押してプレビューから離れると再開します。"
+  "Ride history automatic scrolling paused. Space resumes after leaving the preview.": "走行履歴の自動スクロールは一時停止中です。スペースキーを押してプレビューから離れると再開します。",
+  "App description": "アプリの説明",
+  "Control compatible Insta360 360 and DJI Osmo cameras over Bluetooth. Start and stop recording at your selected speeds, or use manual remote control.": "対応するInsta360の360度カメラやDJI OsmoカメラをBluetoothで操作できます。設定した速度で録画を開始・停止するほか、手動のリモコン操作も可能です。",
+  "Background GPS, GPX import and export, speed heatmaps, speed and estimated lean angle and elevation graphs, ride comparisons, and image and video sharing.": "バックグラウンドでのGPS記録、GPXのインポート・エクスポート、速度ヒートマップ、速度・推定バンク角・標高のグラフ、走行記録の比較、画像や動画の共有に対応しています。",
+  "Free: automatic recording for 5 trial rides, then up to 4 manual recordings per day, with ads. Pro is a one-time purchase with no subscription that removes camera recording limits and ads.": "無料版では5回の走行で自動録画を試せます。その後は広告付きで1日最大4回の手動録画が可能です。Proはサブスクリプション不要の買い切りで、カメラ録画の回数制限と広告を解除します。",
+  "The Wear OS companion shows speed and recording status and sends controls through your paired Android phone. The phone app must be running and connected to the camera.": "Wear OS用コンパニオンアプリは速度と録画状態を表示し、ペアリングしたAndroidスマートフォンを通じて操作を送信します。スマートフォンのアプリが起動し、カメラに接続されている必要があります。",
+  "Features vary by camera model and firmware. GPS accuracy varies; estimated lean angle is for reference. Set up while safely stationary and do not operate your phone while riding.": "利用できる機能はカメラのモデルやファームウェアによって異なります。GPSの精度は状況により変わり、推定バンク角は参考値です。安全な場所に停車して設定し、走行中はスマートフォンを操作しないでください。",
+  "Bluetooth remote for compatible Insta360 360 and DJI Osmo cameras.": "対応するInsta360の360度カメラやDJI Osmoカメラ用のBluetoothリモコン。",
+  "Auto Record by Speed & GPS Log. Bluetooth remote control for compatible Insta360 360 and DJI Osmo cameras, GPX routes, heatmaps and ride comparisons.": "速度に応じた自動録画とGPS記録。対応するInsta360の360度カメラやDJI OsmoカメラのBluetoothリモコン操作、GPXルート、ヒートマップ、走行記録の比較に対応。",
+  "Scrollable ride history. Automatic scrolling continuously moves up and down.": "スクロールできる走行履歴。自動スクロールで上下に繰り返し移動します。"
 }

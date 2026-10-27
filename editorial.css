@@ -209,3 +209,9 @@ button:active,.button:active{transform:none}*,*:before,*:after{transition:none!i
 .hero-brand-group .hero-store-links{margin:15px auto 0}
 
 .hero-brand-group .hero-brand img{display:block;margin-inline:auto}
+
+/* Store copy stays compact beside the existing product preview. */
+.store-description{font-size:13px;line-height:1.6;margin:0 0 14px;color:var(--muted)}
+.store-description summary{cursor:pointer;color:var(--ink)}
+.store-description p{margin:10px 0}
+@media(max-width:767px){.kinetic-hero .hero-lead{display:block;font-size:12px;line-height:1.5}.store-description{font-size:11px;overflow-wrap:anywhere}}
