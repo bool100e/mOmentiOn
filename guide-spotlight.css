@@ -27,3 +27,39 @@
 .guide-tip strong{display:block;margin-bottom:3px;font-size:13px;color:#f2c80f}
 .guide-tip p{margin:0;color:#f2f2f2;font-size:12px}
 :lang(ja) .guide-tip{word-break:normal;line-break:strict}
+
+/* One hardware geometry for all four gallery screens and the numbered guide. */
+#ride-showcase .gallery-media{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+#ride-showcase .gallery-media article{min-width:0;width:100%;max-width:none;margin:0}
+#ride-showcase .gallery-media h3{min-height:2.8em;line-height:1.4;margin:0 0 12px}
+#ride-showcase .showcase-phone,#screen-guide.home-screen-guide .showcase-phone{box-sizing:border-box;position:relative;top:auto;width:100%;max-width:300px;padding:7px;border:2px solid #686b6c;border-radius:36px;margin:0 auto;background:#101112;box-shadow:inset 0 0 0 2px #292b2c}
+#ride-showcase .phone-screen,#screen-guide.home-screen-guide .showcase-phone .guide-capture{position:relative;top:auto;box-sizing:border-box;width:100%;max-width:none;height:auto;aspect-ratio:720/1564;overflow:hidden;border-radius:27px;margin:0;background:#232323}
+#ride-showcase .phone-screen>video,#screen-guide.home-screen-guide .showcase-phone .guide-video{display:block;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;border-radius:0;margin:0;background:#232323}
+#ride-showcase .ride-image-scroll{overflow-y:auto;overflow-x:hidden}
+#ride-showcase .ride-image-scroll img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;border-radius:0;margin:0}
+/* Verified 1240 × 1620 source: screen rectangle (494, 28, 720, 1564). */
+#ride-showcase .recording-crop>video{position:absolute;width:172.222222%;max-width:none;height:103.580563%;left:-68.611111%;top:-1.790281%;object-fit:fill}
+#screen-guide.home-screen-guide .screen-guide{grid-template-columns:var(--showcase-phone-width,280px) minmax(0,1fr);gap:28px;padding:24px 0}
+#screen-guide.home-screen-guide .showcase-phone{width:var(--showcase-phone-width,280px);max-width:100%;justify-self:start}
+#screen-guide.home-screen-guide .guide-details{grid-column:2}
+#screen-guide.home-screen-guide .guide-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px}
+#screen-guide.home-screen-guide .guide-item-title{margin-bottom:5px}
+#screen-guide.home-screen-guide .detail-copy p{margin:0;line-height:1.55}
+#screen-guide.home-screen-guide .guide-more{grid-column:2;text-align:left}
+@media(min-width:768px) and (max-width:1023px){#ride-showcase .gallery-media{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){
+ #ride-showcase .gallery-media{grid-template-columns:minmax(0,1fr);gap:28px}
+ #ride-showcase .gallery-media h3{min-height:0;text-align:center}
+ #screen-guide.home-screen-guide .screen-guide{display:block}
+ #screen-guide.home-screen-guide .showcase-phone{margin:0 auto 26px}
+ #screen-guide.home-screen-guide .guide-items{grid-template-columns:1fr;gap:18px}
+ #screen-guide.home-screen-guide .guide-more{display:block;text-align:center}
+}
+/* Override the mobile guide notch so every shared frame has identical hardware. */
+#ride-showcase .showcase-phone::before,#screen-guide .showcase-phone::before{top:13px;width:44px;height:15px}
+/* Allow long translated titles to wrap without shrinking the number. */
+#screen-guide.home-screen-guide .guide-item-title>span:last-child{min-width:0;overflow-wrap:anywhere}
+
+/* Distribute desktop explanations over the independently measured phone height. */
+@media(min-width:768px){#screen-guide.home-screen-guide .guide-items{min-height:var(--showcase-phone-height,0px);align-content:space-between}}
+@media(max-width:767px){#screen-guide.home-screen-guide .guide-items{min-height:0;align-content:normal}}

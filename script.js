@@ -363,20 +363,15 @@ fitRollerHeadline();
 addEventListener('resize', fitRollerHeadline);
 document.fonts?.ready.then(fitRollerHeadline);
 
-// Fit the home guide phone to its adjacent explanation list, independently of the hero.
-const homeGuidePhone = document.querySelector('.home-screen-guide .guide-phone');
-const homeGuideItems = document.querySelector('.home-screen-guide .guide-items');
-if (homeGuidePhone && homeGuideItems) {
- const desktopGuide = matchMedia('(min-width: 768px)');
- const fitGuidePhone = () => {
-  if (desktopGuide.matches) {
-   const height = homeGuideItems.getBoundingClientRect().height;
-   homeGuidePhone.style.setProperty('--guide-phone-width', `${Math.max(0, height - 18) * 720 / 1564 + 18}px`);
-  } else homeGuidePhone.style.removeProperty('--guide-phone-width');
+// Share the gallery's measured outer frame width with the numbered guide.
+const firstShowcasePhone = document.querySelector('#ride-showcase .showcase-phone');
+if (firstShowcasePhone) {
+ const syncShowcaseWidth = () => {
+  const frame = firstShowcasePhone.getBoundingClientRect();
+  root.style.setProperty('--showcase-phone-width', `${frame.width}px`);
+  root.style.setProperty('--showcase-phone-height', `${frame.height}px`);
  };
- if ('ResizeObserver' in window) new ResizeObserver(fitGuidePhone).observe(homeGuideItems);
- desktopGuide.addEventListener('change', fitGuidePhone);
- addEventListener('resize', fitGuidePhone);
- document.fonts?.ready.then(fitGuidePhone);
- fitGuidePhone();
+ if ('ResizeObserver' in window) new ResizeObserver(syncShowcaseWidth).observe(firstShowcasePhone);
+ addEventListener('resize', syncShowcaseWidth);
+ syncShowcaseWidth();
 }

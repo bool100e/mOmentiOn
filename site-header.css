@@ -69,3 +69,13 @@
 [data-theme=dark] .theme-thumb{transform:translateX(18px)}
 [data-theme=dark] .theme-thumb::before{content:'☾'}
 @media(prefers-reduced-motion:reduce){.theme-thumb{transition:none}}
+
+/* All desktop header controls use the same vertical center. */
+@media(min-width:768px){
+ .site-header .nav,.site-header .nav-links,.site-header .preferences{display:flex;align-items:center}
+ .site-header .nav-links{padding-top:0}
+ .site-header .nav-links>a,.site-header .store-menu summary{display:flex;align-items:center;min-height:44px;margin:0;line-height:1.2}
+ .site-header .store-menu{align-self:center}
+ .site-header .preferences .header-lang{margin-top:0;margin-bottom:0;align-self:center}
+}
+.site-header .preferences{align-items:center}
