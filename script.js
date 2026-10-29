@@ -299,7 +299,7 @@ addEventListener('resize', alignHeroProduct);
 document.fonts?.ready.then(alignHeroProduct);
 
 // Hero activity roller, slot-machine style: wait, spin downward through two or three turns while
-// blurring with speed, then settle with a small mechanical bounce on a random pictogram.
+// blurring with speed, then settle with a small mechanical bounce on a shuffled pictogram.
 // Position is computed each frame (modulo the icon count), so the loop never runs out of icons.
 const rollerTrack = document.querySelector('.roller-track');
 if (rollerTrack) {
@@ -308,6 +308,27 @@ if (rollerTrack) {
  rollerTrack.prepend(cells[count - 1].cloneNode(true));
  rollerTrack.append(cells[0].cloneNode(true), cells[1].cloneNode(true));
  let index = 0;
+ // The initial display consumes index 0 in the first cycle.
+ let bag = [];
+ const shuffle = items => {
+  for (let i = items.length - 1; i > 0; i--) {
+   const j = Math.floor(Math.random() * (i + 1));
+   [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+ };
+ bag = shuffle(Array.from({length: count - 1}, (_, i) => i + 1));
+ const nextTarget = () => {
+  if (!bag.length) {
+   bag = shuffle(Array.from({length: count}, (_, i) => i));
+   // Selection pops from the end; avoid repeating the previous cycle's last icon.
+   if (count > 1 && bag[bag.length - 1] === index) {
+    const swap = Math.floor(Math.random() * (count - 1));
+    [bag[swap], bag[bag.length - 1]] = [bag[bag.length - 1], bag[swap]];
+   }
+  }
+  return bag.pop();
+ };
  const render = (position, speed = 0) => {
   const p = ((position % count) + count) % count;
   rollerTrack.style.transform = `translateY(calc((var(--roller-h) - var(--cell)) / 2 - var(--cell) * ${(p + 1).toFixed(4)}))`;
@@ -318,8 +339,7 @@ if (rollerTrack) {
  const easeOut = t => 1 - Math.pow(1 - t, 4);
  const easeInOut = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
  const spin = () => {
-  let target = Math.floor(Math.random() * (count - 1));
-  if (target >= index) target += 1;
+  const target = nextTarget();
   const distance = count * (2 + Math.floor(Math.random() * 2)) + ((index - target + count) % count);
   const overshoot = .2, spinTime = 1500, settleTime = 260;
   const start = performance.now();
