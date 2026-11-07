@@ -98,6 +98,15 @@ def translate_page(source, page, lang, table):
     return set_alternates(out, page)
 
 
+def write_sitemap():
+    urls = [page_url(lang, page) for page in ALL_PAGES for lang in languages_for(page)]
+    entries = ''.join(f'  <url><loc>{html.escape(url)}</loc></url>\n' for url in urls)
+    (ROOT / 'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + entries + '</urlset>\n', encoding='utf-8')
+
+
 def main():
     sources = {page: (ROOT / f'{page}.html').read_text(encoding='utf-8') for page in ALL_PAGES}
     for page, source in sources.items():
@@ -116,6 +125,7 @@ def main():
         missing = sorted({html.unescape(m.group(3)) for page in pages for m in TEXT_ELEMENT.finditer(sources[page])} - tables[lang].keys())
         if missing:
             print(f'{lang}: {len(missing)} untranslated strings left in English:', *missing[:10], sep='\n  ')
+    write_sitemap()
     print('Generated', ', '.join(f'{lang}/ ({len(pages)} pages)' for lang, pages in LANGUAGES.items()))
 
 
