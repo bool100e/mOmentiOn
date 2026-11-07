@@ -100,6 +100,7 @@ def translate_page(source, page, lang, table):
 
 def write_sitemap():
     urls = [page_url(lang, page) for page in ALL_PAGES for lang in languages_for(page)]
+    (ROOT / 'sitemap.txt').write_text('\n'.join(urls) + '\n', encoding='utf-8')
     entries = ''.join(f'  <url><loc>{html.escape(url)}</loc></url>\n' for url in urls)
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
