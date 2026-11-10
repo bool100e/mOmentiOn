@@ -1,0 +1,5 @@
+{
+  "ios": {"version": "1.0.10", "build": 59, "status": "released"},
+  "android": {"build": 52, "status": "review_pending", "last_verified_public_build": 44},
+  "wear_os": {"build": 10002, "status": "review_pending"}
+}

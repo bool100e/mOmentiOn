@@ -1,6 +1,6 @@
 # mOmentiOn website
 
-English-default / Korean product website. GitHub Pages: https://bool100e.github.io/mOmentiOn/
+English-root product website with Korean, Japanese, German and Spanish pages. GitHub Pages: https://bool100e.github.io/mOmentiOn/
 
 Static HTML/CSS/JavaScript. No build dependencies. Publish the root of `main` with GitHub Pages.
 
@@ -17,7 +17,7 @@ English is the initial language. Explicit language and theme preferences are sto
 
 ## Media and release status
 
-The ride screenshot and videos are real user-supplied recordings, not fictional examples. The ride image includes GPS coordinates and timestamps; these will become public when deployed. Source files were preserved without re-encoding. Videos loop muted when at least 20% visible, and pause offscreen or in a hidden tab. Native controls and explicit user pause are respected. Reduced-motion preferences disable automatic playback. Posters are extracted from the supplied videos; `preload="none"` avoids fetching offscreen video before playback.
+The ride screenshot and videos are real user-supplied recordings, not fictional examples. The ride image includes GPS coordinates and timestamps; these will become public when deployed. Source files were preserved without re-encoding. Hero and showcase videos are configured for continuous muted, inline autoplay and looping, without visibility or reduced-motion gating in the playback script. Playback is requested on initial load, when the tab becomes visible and on the first pointer interaction; browser autoplay policy may require interaction. Screen-guide video loads near the viewport and plays only when the guide is considered visible, the tab is not hidden, reduced motion is disabled and no guide item is highlighted. Posters are extracted from the supplied videos. Hero and showcase videos retain `preload="auto"`; screen-guide videos use `preload="none"`. The ride-history preview continuously scrolls while visible in an active tab, including with reduced motion.
 
 ## Before Store Submission
 
@@ -25,7 +25,7 @@ The privacy text uses the owner's supplied SDK audit, not a new app-source or tr
 
 After approved deployment, verify public HTTPS access to `privacy.html` and `support.html`, link the policy inside the app, and set the corresponding App Store Connect URLs. Reconcile App Store privacy and Google Play Data safety answers with the actual released SDK configuration. Local browser checks do not establish store compliance or approval.
 
-Build 21 is labeled unreleased/replaced by 22. Earlier entries are described as development history where distribution is uncertain. iOS TestFlight has no supplied public invitation URL, so none is invented. Update availability and download links when confirmed.
+Release notes are organized by build, without release dates. Distribution notes in older entries describe historical records.
 
 No public app-source repository link is presented.
 
@@ -37,9 +37,24 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 
 - Korean text comes from each element's `data-ko` attribute; Japanese, German and Spanish text comes from `i18n/<lang>.json`, keyed by the English text.
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
-- After editing a page or a translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
+- Generated status labels are translated through `i18n/<lang>.json`, including Korean.
+- After editing a page, translation file or release-facts input, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
-Latest website update: Android 1.0 (46) is uploaded and saved, replacing pending Alpha 45; changes are under review (the fast-check section has disappeared) for a configured 100% rollout across 178 regions. It is not yet installable; old closed-test 44 remains available. S23 verification remains pending after Play approval. Production 44 remains under review; managed publishing is OFF. iOS TestFlight 1.0.6 (53) uploaded and processed successfully (ReadyToSubmit), and is assigned to existing internal group 093026 with six testers. Group members can access it; actual installation remains unconfirmed. No testers were changed. The three-fix test notes were saved. App Store 1.0.5 (52) remains Waiting for Review with automatic release after approval configured; the last confirmed public release is 1.0.4 (51). The three route fixes preserve selected graph times across display timeline/zoom changes, return Back from saved copies to the list, and show positive partial/transitive overlaps with stripes. Originals, settings and capture behavior are preserved. These are coordinator-reported observations, not a fresh store query by this writer. No new public release or actual device installation is claimed. All 13 hero pictograms and script.js are preserved.
+## Current release status
+
+<!-- release:current -->
+
+- iOS 1.0.10 (59) — Released on the App Store.
+- Android 52 — Google Play review pending.
+- Wear OS 10002 — Google Play review pending.
+- Last verified public Google Play build: 44.
+
+Testing has ended. Use the App Store or Google Play for official updates.
+<!-- /release:current -->
+
+The release facts above and the static current-status blocks in Getting started and Release notes are generated from `data/release-facts.json`. Store facts were supplied by the coordinator; this build does not query store consoles. Update that input and rerun the generator when a store status changes.
+
+The expanded Home description contains a factual app summary and concise camera, watch, GPX preservation and navigation answers. Its localized MobileApplication JSON-LD matches the visible summary and official store links. Static footer language links and application schema are generated after canonical URL transformation. The existing WebSite schema remains in place.
 
 Hero activity pictograms are from [Tabler Icons](https://tabler.io/icons) (MIT License, see `assets/tabler-icons-LICENSE.txt`).
 
@@ -48,3 +63,7 @@ Apple Watch media: `assets/apple-watch-speed-loop.mp4` is 12 seconds of actual s
 Camera setup guidance: Home download, Getting started and Support now ask Insta360 users to enable Bluetooth Wakeup before connecting and to allow extra time for the first connection. Model-specific menu paths in Getting started link to the official Insta360 guide. This setting guidance does not claim that mOmentiOn powers on a switched-off camera.
 
 Google Play listing alignment (2026-10-27): Home uses the approved Korean and English app names and short descriptions, with camera, route, trial and one-time Pro details in an expandable description. Korean page titles and social metadata are localized. The ride-history screenshot continuously scrolls up and down while visible in an active tab, including during hover, focus and reduced-motion settings; video playback preferences are unchanged.
+
+SEO verification: run `python3 tools/check_seo.py` after generation. It checks all 21 canonical/hreflang targets, static language anchors, visible app/schema agreement and shared release facts. Run the generator a second time to confirm deterministic output.
+
+Hero MP4: remuxed with FFmpeg stream copy and `+faststart`, retaining the original video track timescale (600). The `moov` metadata now precedes media data. Codec, resolution, frame rate, track timescale, duration/start, encoded packet content and timestamps, and decoded frame content and timestamps matched the preserved original. The playback-parameter comparison used FFmpeg stream summary lines, not all metadata tags. Auxiliary container tags changed, and container/stream `creation_time` metadata was removed; these metadata changes are distinct from playback content and timing. No re-encoding, video-attribute, preload, script or CSS changes were made. Actual startup improvement has not been measured; only metadata fetch ordering improved.
