@@ -344,5 +344,17 @@
   "Camera compatibility →": "対応カメラ →",
   "Current release status →": "現在の配信状況 →",
   "Apple Watch and Wear OS work with the paired phone app. Camera recording control requires the phone to be connected to the camera. See the guide for current release status.": "Apple Watch・Wear OSはペアリングしたスマートフォンのアプリと連携します。カメラの録画操作にはスマートフォンとカメラの接続が必要です。現在の配信状況はガイドをご覧ください。",
-  "Source GPX files are preserved. Restoring a route creates a separate copy.": "元のGPXファイルは保持されます。ルートを復元すると別のコピーが作成されます。"
+  "Source GPX files are preserved. Restoring a route creates a separate copy.": "元のGPXファイルは保持されます。ルートを復元すると別のコピーが作成されます。",
+  "Android: tap to send mOmentiOn to the background. When overlay permission and usage conditions allow it, a floating recording button appears over other apps. Tap it once to start or stop manual recording; double-tap to return to mOmentiOn.": "Android：タップするとmOmentiOnをバックグラウンドに移します。他のアプリの上に表示する権限と利用条件を満たすと、フローティング録画ボタンが表示されます。1回タップすると手動録画を開始・停止し、ダブルタップするとmOmentiOnに戻ります。",
+  "Simple and Advanced settings cover Camera, Recording Speed, App and Pro. Three onboarding steps cover connecting the camera, checking GPS and recording.": "Simple／Advanced設定ではカメラ・録画速度・アプリ・Proを設定できます。3段階の初期ガイドで、カメラ接続・GPS確認・録画を案内します。",
+  "In Simple settings, App Settings starts collapsed when you open or return to settings. Tap to expand it; Advanced settings behavior is unchanged.": "Simple設定を開くときや戻るとき、アプリ設定は折りたたまれた状態で表示されます。タップで展開できます。Advanced設定の動作は従来どおりです。",
+  "Turn the camera on, then tap to connect. Approve any Bluetooth pairing prompt.": "カメラの電源を入れ、タップして接続します。Bluetoothのペアリング要求が表示されたら承認してください。",
+  "Export a GPX route": "GPXルートを書き出す",
+  "These directions cover iOS 1.0.10 (59) and Android 52. Android 52 is in Google Play review.": "iOS 1.0.10（59）とAndroid 52での手順です。Android 52はGoogle Playで審査中です。",
+  "Open a single route in Saved rides, tap Export, then choose GPX.": "保存した走行記録から単独のルートを開き、「エクスポート」をタップしてからGPXを選びます。",
+  "Android: choose Open in map app for a single route; comparison items are not supported. Select a compatible app from the picker.": "Android：単独のルートで「地図アプリで開く」を選び、対応アプリの一覧からアプリを選びます。比較項目には対応していません。",
+  "iOS: choose Share to open the native share sheet and select a receiving app.": "iOS：「共有」でシステムの共有シートを開き、受け取り先のアプリを選びます。",
+  "Choose Privacy protection to exclude points within a 1 km radius of the start or end location. Routes crossing these areas are split. Original includes the original GPS data and metadata. The original route stays unchanged.": "「プライバシー保護」を選ぶと、出発地点または到着地点から半径1km以内のポイントを除外し、保護エリアを横切るルートを分割します。「オリジナル」には元のGPSデータとメタデータが含まれます。元のルートは変更されません。",
+  "The receiving app must support GPX. Route import and navigation depend on that app.": "受け取り先のアプリがGPXに対応している必要があります。ルートの読み込みやナビゲーションの対応は、そのアプリによって異なります。",
+  "Support, privacy and social links": "サポート・プライバシー・SNSリンク"
 }
