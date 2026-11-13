@@ -5,7 +5,7 @@ The English pages in the repository root are the source. Korean text comes
 from each element's data-ko attribute; Japanese, German and Spanish text comes
 from i18n/<lang>.json, keyed by the English text. Pages without a translation
 for a language stay English and are linked with an "(English)" note.
-Current release blocks and README status use data/release-facts.json.
+Current distribution records are not rendered as public status banners.
 Static language links and app schema are inserted after URL transformation.
 
 Run from the repository root after editing any page or translation file:
@@ -26,7 +26,6 @@ ALL_PAGES = ['index', 'getting-started', 'screen-guide', 'support', 'release-not
 CORE_PAGES = ['index', 'getting-started', 'screen-guide']
 LANGUAGES = {'ko': ALL_PAGES, 'ja': CORE_PAGES, 'de': CORE_PAGES, 'es': CORE_PAGES}
 ALT_START, ALT_END = '<!-- i18n:alternates -->', '<!-- /i18n:alternates -->'
-RELEASE_START, RELEASE_END = '<!-- release:current -->', '<!-- /release:current -->'
 LINKS_START, LINKS_END = '<!-- i18n:language-links -->', '<!-- /i18n:language-links -->'
 APP_START, APP_END = '<!-- seo:application -->', '<!-- /seo:application -->'
 LANGUAGE_NAMES = {'en': 'English', 'ko': '한국어', 'ja': '日本語', 'de': 'Deutsch', 'es': 'Español'}
@@ -65,36 +64,10 @@ def replace_block(source, start, end, body):
     return re.sub(pattern, lambda _: start + body + end, source, flags=re.S)
 
 
-def release_lines(facts, table):
-    status = {
-        'ios': {'released': 'Released on the App Store.', 'review_pending': 'App Store review pending.'},
-        'android': {'released': 'Released on Google Play.', 'review_pending': 'Google Play review pending.'},
-        'wear_os': {'released': 'Released on Google Play.', 'review_pending': 'Google Play review pending.'},
-    }
-    labels = {'ios': 'iOS', 'android': 'Android', 'wear_os': 'Wear OS'}
-    lines = []
-    for platform, label in labels.items():
-        fact = facts[platform]
-        build = f'{fact["version"]} ({fact["build"]})' if 'version' in fact else str(fact['build'])
-        state = status[platform][fact['status']]
-        lines.append((platform, f'{label} {build} — {table.get(state, state)}'))
-    public = 'Last verified public Google Play build: {build}.'
-    lines.append(('android_public', table.get(public, public).format(
-        build=facts['android']['last_verified_public_build'])))
-    return lines
-
-
-def generated_blocks(source, page, lang, table, facts):
+def generated_blocks(source, page, lang, table):
     def text(value):
         return html.escape(table.get(value, value), quote=False)
 
-    if RELEASE_START in source:
-        lines = '<br>'.join(f'<span data-release-platform="{platform}">{html.escape(line)}</span>'
-                              for platform, line in release_lines(facts, table))
-        body = ('<aside class="notice" id="current-release-status"><p class="small"><strong>'
-                + text('Current release status') + '</strong><br>' + lines + '</p><p class="small">'
-                + text(facts['distribution_note']) + '</p></aside>')
-        source = replace_block(source, RELEASE_START, RELEASE_END, body)
     links = []
     for target in languages_for(page):
         current = ' aria-current="page"' if target == lang else ''
@@ -128,7 +101,7 @@ def korean_dictionary(sources):
     return table
 
 
-def translate_page(source, page, lang, table, facts):
+def translate_page(source, page, lang, table):
     def text(value):
         return table.get(value, value)
 
@@ -164,7 +137,7 @@ def translate_page(source, page, lang, table, facts):
         if other not in LANGUAGES[lang]:
             out = re.sub(rf'(<a href="\.\./{re.escape(other)}\.html[^"]*"[^>]*>)(.*?)</a>', rf'\1\2 <small class="en-only">{note}</small></a>', out, flags=re.S)
     # Insert absolute language links and localized schema only after URL rewriting.
-    return set_alternates(generated_blocks(out, page, lang, table, facts), page)
+    return set_alternates(generated_blocks(out, page, lang, table), page)
 
 
 def write_sitemap():
@@ -179,13 +152,12 @@ def write_sitemap():
 
 def main():
     sources = {page: (ROOT / f'{page}.html').read_text(encoding='utf-8') for page in ALL_PAGES}
-    facts = json.loads((ROOT / 'data' / 'release-facts.json').read_text(encoding='utf-8'))
     tables = {'ko': korean_dictionary(sources.values())}
     for lang in ('ja', 'de', 'es'):
         tables[lang] = json.loads((ROOT / 'i18n' / f'{lang}.json').read_text(encoding='utf-8'))
     for page, source in sources.items():
         english = re.sub(r'(data-video-label-en="([^"]*)")(?! aria-label=)', r'\1 aria-label="\2"', source)
-        english = generated_blocks(english, page, 'en', {}, facts)
+        english = generated_blocks(english, page, 'en', {})
         (ROOT / f'{page}.html').write_text(set_alternates(english, page), encoding='utf-8')
     for lang, pages in LANGUAGES.items():
         folder = ROOT / lang
@@ -193,15 +165,11 @@ def main():
         for stale in folder.glob('*.html'):
             stale.unlink()
         for page in pages:
-            (folder / f'{page}.html').write_text(translate_page(sources[page], page, lang, tables[lang], facts), encoding='utf-8')
+            (folder / f'{page}.html').write_text(translate_page(sources[page], page, lang, tables[lang]), encoding='utf-8')
         missing = sorted({html.unescape(m.group(3)) for page in pages for m in TEXT_ELEMENT.finditer(sources[page])} - tables[lang].keys())
         if missing:
             print(f'{lang}: {len(missing)} untranslated strings left in English:', *missing[:10], sep='\n  ')
     write_sitemap()
-    readme = ROOT / 'README.md'
-    status = '\n\n' + '\n'.join('- ' + line for _, line in release_lines(facts, {}))
-    status += '\n\n' + facts['distribution_note'] + '\n'
-    readme.write_text(replace_block(readme.read_text(encoding='utf-8'), RELEASE_START, RELEASE_END, status), encoding='utf-8')
     print('Generated', ', '.join(f'{lang}/ ({len(pages)} pages)' for lang, pages in LANGUAGES.items()))
 
 

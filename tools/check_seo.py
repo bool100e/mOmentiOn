@@ -63,15 +63,10 @@ class Page(HTMLParser):
 
 
 def main():
-    facts = json.loads((build.ROOT / 'data/release-facts.json').read_text())
     sources = {page: (build.ROOT / f'{page}.html').read_text() for page in build.ALL_PAGES}
     tables = {'en': {}, 'ko': build.korean_dictionary(sources.values())}
     tables.update({lang: json.loads((build.ROOT / f'i18n/{lang}.json').read_text())
                    for lang in ('ja', 'de', 'es')})
-    for lang in build.LANGUAGES:
-        for label in ('Current release status', 'Released on the App Store.', 'Google Play review pending.',
-                      'Last verified public Google Play build: {build}.', facts['distribution_note']):
-            assert label in tables[lang], f'Missing status translation: {lang}: {label}'
     urls = [node.text for node in ET.parse(build.ROOT / 'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     assert len(urls) == len(set(urls)) == 21, 'Sitemap must keep 21 distinct URLs'
     assert urls == (build.ROOT / 'sitemap.txt').read_text().splitlines(), 'Sitemaps differ'
@@ -98,12 +93,12 @@ def main():
         for anchor in parsed.footer_links:
             assert anchor['lang'] == anchor['hreflang']
         if lang != 'en':
-            expected_source = build.translate_page(sources[name], name, lang, tables[lang], facts)
+            expected_source = build.translate_page(sources[name], name, lang, tables[lang])
             assert source == expected_source, f'Stale generated page: {path}'
-        if name in ('getting-started', 'release-notes'):
-            assert parsed.release == dict(build.release_lines(facts, tables[lang])), f'Release facts: {path}'
-            note = facts['distribution_note']
-            assert tables[lang].get(note, note) in ''.join(parsed.visible)
+        assert not parsed.release, f'Public release-status fields: {path}'
+        assert not any('#current-release-status' in href for href in parsed.anchors), f'Broken release-status link: {path}'
+        assert 'id="current-release-status"' not in source, f'Public release-status banner: {path}'
+        assert '<!-- release:current -->' not in source and '<!-- /release:current -->' not in source, f'Release-status markers: {path}'
         if name == 'index':
             apps = [item for item in parsed.schemas if item.get('@type') == 'MobileApplication']
             websites = [item for item in parsed.schemas if item.get('@type') == 'WebSite']
@@ -124,12 +119,11 @@ def main():
             assert target in pages, f'Alternate target not in sitemap: {target}'
             assert pages[target].alternates.get(parsed.lang) == url, f'Nonreciprocal hreflang: {url}'
     readme = (build.ROOT / 'README.md').read_text()
-    assert all(line in readme for _, line in build.release_lines(facts, {}))
-    assert f'Last verified public Google Play build: {facts["android"]["last_verified_public_build"]}.' in readme
+    assert '<!-- release:current -->' not in readme and '<!-- /release:current -->' not in readme
     assert not re.search(r'\b\d{4}-\d{2}-\d{2}\b|<time\b', sources['release-notes'])
     print('PASS: 21 canonical/hreflang pages, reciprocal alternates and static language links.')
     print('PASS: 5 localized app schemas match visible summaries and official store links; no invented ratings or pricing.')
-    print('PASS: shared current release facts, historical build notes and regenerated translations.')
+    print('PASS: no public release-status banners; historical build notes and regenerated translations.')
 
 
 if __name__ == '__main__':

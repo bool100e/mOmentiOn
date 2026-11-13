@@ -36,30 +36,19 @@ Logo and icon copied from the app repository. Outfit fonts use the SIL Open Font
 The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and `es/` are generated copies — do not edit them by hand.
 
 - Korean element text is maintained in the root page's `data-ko`; Japanese, German and Spanish text comes from `i18n/<lang>.json`, keyed by the English text.
-- The generator loads `i18n/ko.json` first, then fills missing keys from `data-ko`. Avoid conflicting overrides: the app-name element now uses `data-ko` without a duplicate JSON entry. Korean metadata, accessibility labels and generated status text still use the dictionary. Existing search spellings `모멘션` and `모맨션` are retained.
+- The generator loads `i18n/ko.json` first, then fills missing keys from `data-ko`. Avoid conflicting overrides: the app-name element now uses `data-ko` without a duplicate JSON entry. Korean metadata and accessibility labels still use the dictionary. Existing search spellings `모멘션` and `모맨션` are retained.
 - Japanese, German and Spanish cover Home, Getting started and Screen guide. Support, Release notes and Privacy Policy link to the English pages with an "(English)" note.
-- Generated status labels are translated through `i18n/<lang>.json`, including Korean.
-- After editing a page, translation file or release-facts input, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
+- After editing a page or translation file, run `python3 tools/build_i18n.py` from the repository root and commit the regenerated folders. It lists any strings still missing a translation.
 
-## Current release status
+## Distribution records
 
-<!-- release:current -->
-
-- iOS 1.0.11 (60) — Released on the App Store.
-- Android 52 — Google Play review pending.
-- Wear OS 10003 — Google Play review pending.
-- Last verified public Google Play build: 44.
-
-Requests to pause the Android and Wear OS closed tests are still in Google Play review. The Korean full description and trader details are also in review. Use the App Store or Google Play for official updates.
-<!-- /release:current -->
-
-The release facts above and the static current-status blocks in Getting started and Release notes are generated from `data/release-facts.json`. Store facts were supplied by the coordinator; this build does not query store consoles. Update that input only with a new store observation or newly supplied coordinator evidence, then rerun the generator. A source change or successful site check is not store-release evidence.
+`data/release-facts.json` is retained as an internal historical distribution record. Public pages do not display a current-release-status banner. Official store links and build-by-build release history remain available.
 
 ## Guide maintenance and local checks
 
 The route-tool details in Getting started and Screen guide distinguish released iOS 1.0.11 (60) from Android 52, still in Google Play review, and public Android 44. The Simple settings collapse behavior is scoped to iOS 1.0.11 (60) and Android 51 onward. Detailed route and graph instructions stay inside the existing collapsed sections.
 
-Run `python3 tools/build_i18n.py`, then `python3 tools/check_seo.py` and `git diff --check`. Run the generator a second time and compare the generated file hashes to verify deterministic output. The SEO check covers 21 canonical/hreflang targets, static language anchors, visible app/schema agreement and shared release facts. These local checks do not publish the site or verify desktop/mobile rendering.
+Run `python3 tools/build_i18n.py`, then `python3 tools/check_seo.py` and `git diff --check`. Run the generator a second time and compare the generated file hashes to verify deterministic output. The SEO check covers 21 canonical/hreflang targets, static language anchors, visible app/schema agreement and the absence of public status banners. These local checks do not publish the site or verify desktop/mobile rendering.
 
 For copy-only maintenance, preserve CSS, JavaScript, media, fonts, the 13 activity pictograms, sitemaps, robots rules, canonical URLs and official store links. The separate `reports-local.html`, `reports-local-privacy.html` and `reports-local-terms.html` pages are outside this guide-maintenance scope.
 
