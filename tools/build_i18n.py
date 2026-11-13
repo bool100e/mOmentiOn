@@ -78,6 +78,9 @@ def release_lines(facts, table):
         build = f'{fact["version"]} ({fact["build"]})' if 'version' in fact else str(fact['build'])
         state = status[platform][fact['status']]
         lines.append((platform, f'{label} {build} — {table.get(state, state)}'))
+    public = 'Last verified public Google Play build: {build}.'
+    lines.append(('android_public', table.get(public, public).format(
+        build=facts['android']['last_verified_public_build'])))
     return lines
 
 
@@ -90,7 +93,7 @@ def generated_blocks(source, page, lang, table, facts):
                               for platform, line in release_lines(facts, table))
         body = ('<aside class="notice" id="current-release-status"><p class="small"><strong>'
                 + text('Current release status') + '</strong><br>' + lines + '</p><p class="small">'
-                + text('Testing has ended. Use the App Store or Google Play for official updates.') + '</p></aside>')
+                + text(facts['distribution_note']) + '</p></aside>')
         source = replace_block(source, RELEASE_START, RELEASE_END, body)
     links = []
     for target in languages_for(page):
@@ -197,8 +200,7 @@ def main():
     write_sitemap()
     readme = ROOT / 'README.md'
     status = '\n\n' + '\n'.join('- ' + line for _, line in release_lines(facts, {}))
-    status += f'\n- Last verified public Google Play build: {facts["android"]["last_verified_public_build"]}.\n'
-    status += '\nTesting has ended. Use the App Store or Google Play for official updates.\n'
+    status += '\n\n' + facts['distribution_note'] + '\n'
     readme.write_text(replace_block(readme.read_text(encoding='utf-8'), RELEASE_START, RELEASE_END, status), encoding='utf-8')
     print('Generated', ', '.join(f'{lang}/ ({len(pages)} pages)' for lang, pages in LANGUAGES.items()))
 

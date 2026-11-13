@@ -333,7 +333,7 @@
   "App Store review pending.": "Wird im App Store geprüft.",
   "Released on Google Play.": "Auf Google Play veröffentlicht.",
   "Google Play review pending.": "Wird von Google Play geprüft.",
-  "Testing has ended. Use the App Store or Google Play for official updates.": "Die Tests sind beendet. Offizielle Updates erhältst du im App Store oder bei Google Play.",
+  "Requests to pause the Android and Wear OS closed tests are still in Google Play review. The Korean full description and trader details are also in review. Use the App Store or Google Play for official updates.": "Die Anträge zur Pausierung der geschlossenen Tests für Android und Wear OS werden noch von Google Play geprüft. Auch die vollständige koreanische Beschreibung und die Händlerangaben werden geprüft. Offizielle Updates erhältst du im App Store oder bei Google Play.",
   "mOmentiOn is an Android and iOS app for speed-triggered recording on compatible Insta360 and DJI cameras over Bluetooth, with GPX route logging, heatmaps and ride comparisons.": "mOmentiOn ist eine Android- und iOS-App für geschwindigkeitsabhängige Aufnahmen mit kompatiblen Insta360- und DJI-Kameras über Bluetooth, mit GPX-Routenaufzeichnung, Heatmaps und Fahrtvergleichen.",
   "Which cameras can I control?": "Welche Kameras kann ich steuern?",
   "Compatible Insta360 360 and DJI Osmo cameras connect over Bluetooth. Features vary by model and firmware.": "Kompatible Insta360-360- und DJI-Osmo-Kameras werden über Bluetooth verbunden. Die Funktionen hängen vom Modell und der Firmware ab.",
@@ -350,11 +350,12 @@
   "In Simple settings, App Settings starts collapsed when you open or return to settings. Tap to expand it; Advanced settings behavior is unchanged.": "Beim Öffnen oder erneuten Aufrufen der Simple-Einstellungen ist der Bereich App-Einstellungen zunächst eingeklappt. Tippe darauf, um ihn zu öffnen; das Verhalten der Advanced-Einstellungen bleibt unverändert.",
   "Turn the camera on, then tap to connect. Approve any Bluetooth pairing prompt.": "Schalte die Kamera ein und tippe zum Verbinden. Bestätige gegebenenfalls die Bluetooth-Kopplungsanfrage.",
   "Export a GPX route": "Eine GPX-Route exportieren",
-  "These directions cover iOS 1.0.10 (59) and Android 52. Android 52 is in Google Play review.": "Diese Anleitung gilt für iOS 1.0.10 (59) und Android 52. Android 52 wird derzeit von Google Play geprüft.",
+  "These directions cover iOS 1.0.11 (60) and Android 52. Android 52 is in Google Play review.": "Diese Anleitung gilt für iOS 1.0.11 (60) und Android 52. Android 52 wird derzeit von Google Play geprüft.",
   "Open a single route in Saved rides, tap Export, then choose GPX.": "Öffne unter Gespeicherte Fahrten eine einzelne Route, tippe auf Exportieren und wähle dann GPX.",
   "Android: choose Open in map app for a single route; comparison items are not supported. Select a compatible app from the picker.": "Android: Wähle für eine einzelne Route In Karten-App öffnen und dann eine kompatible App aus der App-Auswahl. Vergleichseinträge werden nicht unterstützt.",
   "iOS: choose Share to open the native share sheet and select a receiving app.": "iOS: Wähle Teilen, um das systemeigene Teilen-Menü zu öffnen und eine Ziel-App auszuwählen.",
   "Choose Privacy protection to exclude points within a 1 km radius of the start or end location. Routes crossing these areas are split. Original includes the original GPS data and metadata. The original route stays unchanged.": "Wähle Datenschutz, um Punkte im Umkreis von 1 km um Start oder Ziel auszuschließen. Routen durch diese Bereiche werden aufgeteilt. Original enthält die ursprünglichen GPS-Daten und Metadaten. Die ursprüngliche Route bleibt unverändert.",
   "The receiving app must support GPX. Route import and navigation depend on that app.": "Die Ziel-App muss GPX unterstützen. Routenimport und Navigation hängen von dieser App ab.",
-  "Support, privacy and social links": "Support-, Datenschutz- und Social-Media-Links"
+  "Support, privacy and social links": "Support-, Datenschutz- und Social-Media-Links",
+  "Last verified public Google Play build: {build}.": "Zuletzt bestätigter öffentlicher Google-Play-Build: {build}."
 }

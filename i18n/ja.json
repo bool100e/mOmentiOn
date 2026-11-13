@@ -333,7 +333,7 @@
   "App Store review pending.": "App Storeの審査中です。",
   "Released on Google Play.": "Google Playで公開済みです。",
   "Google Play review pending.": "Google Playの審査中です。",
-  "Testing has ended. Use the App Store or Google Play for official updates.": "テストは終了しました。正式な更新にはApp StoreまたはGoogle Playをご利用ください。",
+  "Requests to pause the Android and Wear OS closed tests are still in Google Play review. The Korean full description and trader details are also in review. Use the App Store or Google Play for official updates.": "Android・Wear OSのクローズドテスト停止申請は、引き続きGoogle Playで審査中です。韓国語の詳細説明とトレーダー情報も審査中です。正式な更新にはApp StoreまたはGoogle Playをご利用ください。",
   "mOmentiOn is an Android and iOS app for speed-triggered recording on compatible Insta360 and DJI cameras over Bluetooth, with GPX route logging, heatmaps and ride comparisons.": "mOmentiOnは、対応するInsta360・DJIカメラをBluetoothで接続し、速度に応じた録画とGPXルート記録、ヒートマップ、走行比較を提供するAndroid・iOSアプリです。",
   "Which cameras can I control?": "どのカメラを操作できますか？",
   "Compatible Insta360 360 and DJI Osmo cameras connect over Bluetooth. Features vary by model and firmware.": "対応するInsta360 360・DJI OsmoカメラをBluetoothで接続します。機能はモデルとファームウェアによって異なります。",
@@ -350,11 +350,12 @@
   "In Simple settings, App Settings starts collapsed when you open or return to settings. Tap to expand it; Advanced settings behavior is unchanged.": "Simple設定を開くときや戻るとき、アプリ設定は折りたたまれた状態で表示されます。タップで展開できます。Advanced設定の動作は従来どおりです。",
   "Turn the camera on, then tap to connect. Approve any Bluetooth pairing prompt.": "カメラの電源を入れ、タップして接続します。Bluetoothのペアリング要求が表示されたら承認してください。",
   "Export a GPX route": "GPXルートを書き出す",
-  "These directions cover iOS 1.0.10 (59) and Android 52. Android 52 is in Google Play review.": "iOS 1.0.10（59）とAndroid 52での手順です。Android 52はGoogle Playで審査中です。",
+  "These directions cover iOS 1.0.11 (60) and Android 52. Android 52 is in Google Play review.": "iOS 1.0.11（60）とAndroid 52での手順です。Android 52はGoogle Playで審査中です。",
   "Open a single route in Saved rides, tap Export, then choose GPX.": "保存した走行記録から単独のルートを開き、「エクスポート」をタップしてからGPXを選びます。",
   "Android: choose Open in map app for a single route; comparison items are not supported. Select a compatible app from the picker.": "Android：単独のルートで「地図アプリで開く」を選び、対応アプリの一覧からアプリを選びます。比較項目には対応していません。",
   "iOS: choose Share to open the native share sheet and select a receiving app.": "iOS：「共有」でシステムの共有シートを開き、受け取り先のアプリを選びます。",
   "Choose Privacy protection to exclude points within a 1 km radius of the start or end location. Routes crossing these areas are split. Original includes the original GPS data and metadata. The original route stays unchanged.": "「プライバシー保護」を選ぶと、出発地点または到着地点から半径1km以内のポイントを除外し、保護エリアを横切るルートを分割します。「オリジナル」には元のGPSデータとメタデータが含まれます。元のルートは変更されません。",
   "The receiving app must support GPX. Route import and navigation depend on that app.": "受け取り先のアプリがGPXに対応している必要があります。ルートの読み込みやナビゲーションの対応は、そのアプリによって異なります。",
-  "Support, privacy and social links": "サポート・プライバシー・SNSリンク"
+  "Support, privacy and social links": "サポート・プライバシー・SNSリンク",
+  "Last verified public Google Play build: {build}.": "最後に確認したGoogle Playの公開ビルド: {build}。"
 }

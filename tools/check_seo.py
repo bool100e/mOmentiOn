@@ -70,7 +70,7 @@ def main():
                    for lang in ('ja', 'de', 'es')})
     for lang in build.LANGUAGES:
         for label in ('Current release status', 'Released on the App Store.', 'Google Play review pending.',
-                      'Testing has ended. Use the App Store or Google Play for official updates.'):
+                      'Last verified public Google Play build: {build}.', facts['distribution_note']):
             assert label in tables[lang], f'Missing status translation: {lang}: {label}'
     urls = [node.text for node in ET.parse(build.ROOT / 'sitemap.xml').findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     assert len(urls) == len(set(urls)) == 21, 'Sitemap must keep 21 distinct URLs'
@@ -102,7 +102,7 @@ def main():
             assert source == expected_source, f'Stale generated page: {path}'
         if name in ('getting-started', 'release-notes'):
             assert parsed.release == dict(build.release_lines(facts, tables[lang])), f'Release facts: {path}'
-            note = 'Testing has ended. Use the App Store or Google Play for official updates.'
+            note = facts['distribution_note']
             assert tables[lang].get(note, note) in ''.join(parsed.visible)
         if name == 'index':
             apps = [item for item in parsed.schemas if item.get('@type') == 'MobileApplication']

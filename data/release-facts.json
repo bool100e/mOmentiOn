@@ -1,5 +1,6 @@
 {
-  "ios": {"version": "1.0.10", "build": 59, "status": "released"},
+  "ios": {"version": "1.0.11", "build": 60, "status": "released"},
   "android": {"build": 52, "status": "review_pending", "last_verified_public_build": 44},
-  "wear_os": {"build": 10002, "status": "review_pending"}
+  "wear_os": {"build": 10003, "status": "review_pending"},
+  "distribution_note": "Requests to pause the Android and Wear OS closed tests are still in Google Play review. The Korean full description and trader details are also in review. Use the App Store or Google Play for official updates."
 }

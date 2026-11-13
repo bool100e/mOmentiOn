@@ -44,12 +44,12 @@ The English pages in the repository root are the source. `ko/`, `ja/`, `de/` and
 
 <!-- release:current -->
 
-- iOS 1.0.10 (59) — Released on the App Store.
+- iOS 1.0.11 (60) — Released on the App Store.
 - Android 52 — Google Play review pending.
-- Wear OS 10002 — Google Play review pending.
+- Wear OS 10003 — Google Play review pending.
 - Last verified public Google Play build: 44.
 
-Testing has ended. Use the App Store or Google Play for official updates.
+Requests to pause the Android and Wear OS closed tests are still in Google Play review. The Korean full description and trader details are also in review. Use the App Store or Google Play for official updates.
 <!-- /release:current -->
 
 The release facts above and the static current-status blocks in Getting started and Release notes are generated from `data/release-facts.json`. Store facts were supplied by the coordinator; this build does not query store consoles. Update that input and rerun the generator when a store status changes.
